@@ -95,6 +95,7 @@ func can_walk() -> bool:
 	return true
 
 func can_jump() -> bool:
+	# проверяем что впереди fence (оставляем ray как есть)
 	ray.target_position = Vector2(STEP * move_dir, 0)
 	ray.force_raycast_update()
 
@@ -102,15 +103,25 @@ func can_jump() -> bool:
 	if col == null or not col.is_in_group("fence"):
 		return false
 
-	ray.target_position = Vector2(JUMP_STEP * move_dir, 0)
-	ray.force_raycast_update()
+	# ❗ ВАЖНО: проверяем точку приземления, а не луч
+	var space = get_world_2d().direct_space_state
+	
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = global_position + Vector2(JUMP_STEP * move_dir, 0)
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
+	query.exclude = [self]
 
-	var col2 = ray.get_collider()
-	if col2 != null and col2.is_in_group("sheep"):
-		return false
+	var result = space.intersect_point(query, 8)
+
+	for hit in result:
+		var obj = hit.collider
+		if obj.is_in_group("sheep"):
+			return false
+		if obj.is_in_group("fence"):
+			return false
 
 	return true
-
 # --------------------------------------------------
 # BLOCKED EFFECT
 # --------------------------------------------------
@@ -163,6 +174,8 @@ func _on_timer_timeout() -> void:
 		await do_jump()
 		timer.start()
 		return
+	elif want_jump and !can_jump():
+		want_jump = false
 	
 	if can_walk():
 		stop_blocked_effect()

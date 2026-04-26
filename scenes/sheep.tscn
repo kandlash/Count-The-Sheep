@@ -29,12 +29,27 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gw4f6"]
-radius = 6.0827627
+radius = 12.0
 
 [node name="sheep" type="Node2D" unique_id=1588974740]
 script = ExtResource("1_gw4f6")
+pulse_duration = null
+znak_scale_min = null
+znak_scale_max = null
 light_energy_min = 0.0
 light_energy_max = 0.0
+walk_squash = null
+walk_duration_squash = null
+walk_duration_move = null
+walk_duration_restore = null
+jump_squash = null
+jump_stretch = null
+jump_peak_height = null
+jump_up_duration = null
+jump_down_duration = null
+click_squash = null
+click_duration_in = null
+click_duration_out = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=592394954]
 position = Vector2(0, -7)
@@ -63,7 +78,7 @@ texture = ExtResource("3_6qn06")
 [node name="Area2D" type="Area2D" parent="." unique_id=1233574678 groups=["sheep"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1794551283]
-position = Vector2(-1, -2)
+position = Vector2(-3, -2)
 shape = SubResource("CircleShape2D_gw4f6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
