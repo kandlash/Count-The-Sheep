@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://df78k8rqr8eeq" path="res://scripts/sheep.gd" id="1_gw4f6"]
 [ext_resource type="Texture2D" uid="uid://5q5apvp7i17w" path="res://assets/sprites/Female Cow Brown.png" id="1_t8l8v"]
+[ext_resource type="Texture2D" uid="uid://dak30k3kndy6y" path="res://assets/sprites/vosklisatilni_znak.png" id="3_6qn06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gw4f6"]
 atlas = ExtResource("1_t8l8v")
@@ -18,15 +19,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_4mrxx"]
+offsets = PackedFloat32Array(0.12048193, 0.7560241)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6qn06"]
+gradient = SubResource("Gradient_4mrxx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_gw4f6"]
 radius = 15.0
 
 [node name="sheep" type="Node2D" unique_id=1588974740]
 script = ExtResource("1_gw4f6")
+light_energy_min = 0.0
+light_energy_max = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=592394954]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_6qn06")
+
+[node name="VosklisatilniLight" type="PointLight2D" parent="." unique_id=1658169549]
+enabled = false
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_6qn06")
+texture_scale = 0.2
 
 [node name="Timer" type="Timer" parent="." unique_id=184852793]
 wait_time = 0.25
@@ -36,6 +55,10 @@ one_shot = true
 target_position = Vector2(-22, 0)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="VosklisatilniZnak" type="Sprite2D" parent="." unique_id=1454096907]
+position = Vector2(0, -19)
+texture = ExtResource("3_6qn06")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1233574678 groups=["sheep"]]
 
