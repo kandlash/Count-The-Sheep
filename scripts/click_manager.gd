@@ -23,7 +23,9 @@ func _handle_click(pos: Vector2):
 	# берем ПЕРВУЮ подходящую овцу
 	for hit in result:
 		var obj = hit.collider
-		print(obj.is_in_group("sheep"))
 		if obj.is_in_group("sheep"):
+			print('sheep click - ', obj.get_parent())
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
+			obj.get_parent().click_animation()
 			obj.get_parent().request_jump()
 			return

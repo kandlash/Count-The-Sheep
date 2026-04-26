@@ -45,6 +45,11 @@ var blocked_tween: Tween
 @export var jump_up_duration := 0.2
 @export var jump_down_duration := 0.2
 
+
+@export_group("Click")
+@export var click_squash := Vector2(1.25, 0.75)
+@export var click_duration_in := 0.08
+@export var click_duration_out := 0.12
 # ------------------------------------------------
 
 func _ready() -> void:
@@ -113,7 +118,8 @@ func can_jump() -> bool:
 func start_blocked_effect():
 	if blocked_tween and blocked_tween.is_running():
 		return
-	
+		
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_BLOCKED)
 	vosklisatilni_znak.visible = true
 	vosklisatilni_light.enabled = true
 
@@ -216,3 +222,17 @@ func do_jump() -> void:
 
 	await fall.finished
 	is_busy = false
+
+
+func click_animation():
+	# не перебиваем важные анимации
+	if is_busy:
+		return
+	
+	var tween = create_tween()
+	
+	tween.tween_property(self, "scale", click_squash, click_duration_in)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+	tween.tween_property(self, "scale", Vector2.ONE, click_duration_out)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)

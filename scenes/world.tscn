@@ -477,7 +477,7 @@ spawn_delay_min = 6.0
 spawn_delay_max = 15.0
 
 [node name="sheep_killer" type="Area2D" parent="." unique_id=1832392548]
-position = Vector2(-112, 0)
+position = Vector2(-192, 0)
 script = ExtResource("8_4mrxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sheep_killer" unique_id=148843001]
@@ -485,7 +485,7 @@ position = Vector2(3, 123)
 shape = SubResource("RectangleShape2D_e3hyu")
 
 [node name="sheep_killer2" type="Area2D" parent="." unique_id=346751430]
-position = Vector2(544, 0)
+position = Vector2(592, 0)
 script = ExtResource("8_4mrxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sheep_killer2" unique_id=907120631]
