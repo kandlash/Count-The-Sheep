@@ -4,9 +4,6 @@
 
 [node name="sheep_generator" type="Node2D" unique_id=1854909243]
 script = ExtResource("1_s0i78")
-chances = Dictionary[String, int]({
-"common": 99
-})
 
 [node name="Timer" type="Timer" parent="." unique_id=799953607]
 one_shot = true

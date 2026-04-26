@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm5ehjn8k76r1" path="res://assets/tilesets/Fence's copiar.png" id="2_k0juu"]
 [ext_resource type="Texture2D" uid="uid://cbx7skcq4af2g" path="res://assets/tilesets/Road copiar.png" id="3_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c0l03rsk3kemu" path="res://assets/tilesets/Spring Crops.png" id="4_71j4m"]
+[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="4_jhx03"]
 [ext_resource type="Texture2D" uid="uid://b35yh7efhnesu" path="res://assets/tilesets/Maple Tree.png" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bav2fdjul3d57" path="res://scenes/sheep_generator.tscn" id="7_i7141"]
 [ext_resource type="Script" uid="uid://bjahiosubxxof" path="res://scripts/sheep_killer.gd" id="8_4mrxx"]
@@ -32,6 +33,9 @@ ProgressBar/font_sizes/font_size = 8
 font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_jhx03"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8fc1"]
+font_size = 7
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
 texture = ExtResource("1_4wyf3")
@@ -530,7 +534,7 @@ layout_mode = 0
 offset_left = 17.0
 offset_top = 10.0
 offset_right = 80.0
-offset_bottom = 50.0
+offset_bottom = 118.0
 
 [node name="Label" type="Label" parent="Camera2D/UIHolder/Control/Panel2" unique_id=297908134]
 layout_mode = 1
@@ -554,15 +558,105 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -11.5
+offset_top = -46.0
 offset_right = 20.0
-offset_bottom = 11.5
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_jhx03")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/UIHolder/Control/Panel2" unique_id=1600461306]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -24.0
+offset_right = -0.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer" unique_id=2022545447]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer" unique_id=874928587]
+layout_mode = 2
+texture = ExtResource("4_jhx03")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="common_label" type="Label" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer" unique_id=479461844]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o8fc1")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer" unique_id=1481198686]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer2" unique_id=968845962]
+layout_mode = 2
+texture = ExtResource("4_jhx03")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="uncommon_label" type="Label" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer2" unique_id=1624602761]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o8fc1")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer" unique_id=1704214411]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer3" unique_id=1364546263]
+layout_mode = 2
+texture = ExtResource("4_jhx03")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="rare_label" type="Label" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer3" unique_id=1469422090]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o8fc1")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer" unique_id=1232199308]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer4" unique_id=46741752]
+layout_mode = 2
+texture = ExtResource("4_jhx03")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="epic_label" type="Label" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer4" unique_id=664886753]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o8fc1")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer" unique_id=753327357]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer5" unique_id=1555948951]
+layout_mode = 2
+texture = ExtResource("4_jhx03")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="legendary_label" type="Label" parent="Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer5" unique_id=444637347]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o8fc1")
 
 [node name="ClickManager" type="Node2D" parent="." unique_id=656076700]
 script = ExtResource("1_i7141")

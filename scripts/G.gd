@@ -33,6 +33,14 @@ var sheep_base_chances := {
 	Rarity.LEGENDARY: 1.0
 }
 
+var rarity_counts := {
+	Rarity.COMMON: 0,
+	Rarity.UNCOMMON: 0,
+	Rarity.RARE: 0,
+	Rarity.EPIC: 0,
+	Rarity.LEGENDARY: 0
+}
+
 var sheep_chances := sheep_base_chances.duplicate()
 
 # =========================
@@ -50,6 +58,10 @@ func apply_lucky(power: float):
 	sheep_chances[Rarity.LEGENDARY] *= (1.0 + power * 2.0)
 
 	_normalize_sheep_chances()
+
+func add_rarity(rarity: int):
+	if rarity_counts.has(rarity):
+		rarity_counts[rarity] += 1
 
 func _normalize_sheep_chances():
 	var total := 0.0

@@ -10,6 +10,14 @@ class_name World
 @onready var tired_label: Label = $Camera2D/UIHolder/Control/Panel/tired_progressbar/tired_label
 
 
+@onready var common_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer/common_label
+@onready var uncommon_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer2/uncommon_label
+@onready var rare_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer3/rare_label
+@onready var epic_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer4/epic_label
+@onready var legendary_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer5/legendary_label
+
+
+
 var jumps_count:= 0
 var tired_points:=0
 var max_tired_points:=100
@@ -34,6 +42,7 @@ func _ready() -> void:
 	tired_progressbar.max_value = G.max_tired_points
 	tired_progressbar.value = 0
 	tired_label.text = "%d/%d" % [G.tired_points, G.max_tired_points]
+	_update_rarity_ui()
 	
 
 func _process(delta: float) -> void:
@@ -91,20 +100,29 @@ func _time_distance(a: int, b: int) -> int:
 	var diff = abs(a - b)
 	return min(diff, 24 * 60 - diff)
 	
-func add_jump(jump_points: int, tired_add: int):
+func add_jump(jump_points: int, tired_add: int, rarity: int):
 	G.jumps_count += jump_points
 	G.tired_points = clamp(G.tired_points + tired_add, 0, G.max_tired_points)
+
+	# 🆕 глобально учитываем редкость
+	G.add_rarity(rarity)
+
 	if G.tired_points == G.max_tired_points:
 		G.tired_points = 0
 		Transition.transition()
 		await Transition.on_transition_finished
-		print('reload!')
-		get_tree().change_scene_to_file("res://scenes/upgrade_shop.tscn")
-		
-		
+		get_tree().change_scene_to_file("res://scenes/money_count.tscn")
+
 	_update_jumps_ui()
 	_update_tired_ui_animated()
+	_update_rarity_ui()
 
+func _update_rarity_ui():
+	common_label.text = str(G.rarity_counts[G.Rarity.COMMON])
+	uncommon_label.text = str(G.rarity_counts[G.Rarity.UNCOMMON])
+	rare_label.text = str(G.rarity_counts[G.Rarity.RARE])
+	epic_label.text = str(G.rarity_counts[G.Rarity.EPIC])
+	legendary_label.text = str(G.rarity_counts[G.Rarity.LEGENDARY])
 
 func _update_jumps_ui() -> void:
 	jumps_label.text = str(G.jumps_count)
