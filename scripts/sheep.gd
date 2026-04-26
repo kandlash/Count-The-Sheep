@@ -12,6 +12,7 @@ enum State {
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var vosklisatilni_znak: Sprite2D = $VosklisatilniZnak
 @onready var vosklisatilni_light: PointLight2D = $VosklisatilniLight
+@onready var run_timer: Timer = $run_timer
 
 const STEP := 16
 const JUMP_STEP := 32
@@ -178,9 +179,13 @@ func _on_timer_timeout() -> void:
 		want_jump = false
 	
 	if can_walk():
+		run_timer.stop()
 		stop_blocked_effect()
 		await do_walk()
 	else:
+		if run_timer.is_stopped():
+			run_timer.start()
+		
 		start_blocked_effect()
 		state = State.BLOCKED
 	
@@ -249,3 +254,7 @@ func click_animation():
 	
 	tween.tween_property(self, "scale", Vector2.ONE, click_duration_out)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+
+
+func _on_run_timer_timeout() -> void:
+	queue_free()

@@ -33,23 +33,8 @@ radius = 12.0
 
 [node name="sheep" type="Node2D" unique_id=1588974740]
 script = ExtResource("1_gw4f6")
-pulse_duration = null
-znak_scale_min = null
-znak_scale_max = null
 light_energy_min = 0.0
 light_energy_max = 0.0
-walk_squash = null
-walk_duration_squash = null
-walk_duration_move = null
-walk_duration_restore = null
-jump_squash = null
-jump_stretch = null
-jump_peak_height = null
-jump_up_duration = null
-jump_down_duration = null
-click_squash = null
-click_duration_in = null
-click_duration_out = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=592394954]
 position = Vector2(0, -7)
@@ -81,4 +66,9 @@ texture = ExtResource("3_6qn06")
 position = Vector2(-3, -2)
 shape = SubResource("CircleShape2D_gw4f6")
 
+[node name="run_timer" type="Timer" parent="." unique_id=504168504]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="run_timer" to="." method="_on_run_timer_timeout"]
