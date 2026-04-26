@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bav2fdjul3d57"]
+
+[ext_resource type="Script" uid="uid://bts3q7l6gf6j2" path="res://scripts/sheep_generator.gd" id="1_s0i78"]
+
+[node name="sheep_generator" type="Node2D" unique_id=1854909243]
+script = ExtResource("1_s0i78")
+
+[node name="Timer" type="Timer" parent="." unique_id=799953607]
+one_shot = true
