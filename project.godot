@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 AudioManager="*uid://coruagk2s3ik7"
 G="*uid://dal4lsda244ka"
+upgrade_manager="*uid://odo4gu7iospi"
+Transition="*uid://biw22ayyx05gk"
 
 [display]
 

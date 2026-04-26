@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bqpeb8fqkvtg3"]
+
+[ext_resource type="Script" uid="uid://cv7ur3lfn7ikn" path="res://scripts/upgrades/upgrade_shop.gd" id="1_mrt2i"]
+[ext_resource type="PackedScene" uid="uid://cct7xr4pxwt6a" path="res://scenes/upgrade_node.tscn" id="1_v8ny2"]
+[ext_resource type="Script" uid="uid://c2j7xg4ic7oka" path="res://scripts/upgrades/upgrade_shop_main.gd" id="1_ya5xe"]
+[ext_resource type="PackedScene" uid="uid://bsqlu0en8unh2" path="res://scenes/upgrade_line.tscn" id="3_mfja5"]
+
+[node name="UpgradeShop" type="CanvasLayer" unique_id=1935150888]
+script = ExtResource("1_ya5xe")
+
+[node name="UpgradeShop" type="Control" parent="." unique_id=1169477032]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GraphRoot" type="Node2D" parent="UpgradeShop" unique_id=209743320]
+script = ExtResource("1_mrt2i")
+
+[node name="UpgradeNode" parent="UpgradeShop/GraphRoot" unique_id=516911011 instance=ExtResource("1_v8ny2")]
+offset_left = 45.0
+offset_top = 113.0
+offset_right = 53.0
+offset_bottom = 121.0
+upgrade_id = "owl_1"
+
+[node name="UpgradeNode2" parent="UpgradeShop/GraphRoot" unique_id=85148866 instance=ExtResource("1_v8ny2")]
+offset_left = 152.0
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 88.0
+upgrade_id = "owl_2"
+
+[node name="UpgradeNode3" parent="UpgradeShop/GraphRoot" unique_id=158135056 instance=ExtResource("1_v8ny2")]
+offset_left = 245.0
+offset_top = 43.0
+offset_right = 253.0
+offset_bottom = 51.0
+upgrade_id = "owl_3"
+
+[node name="UpgradeLine" parent="UpgradeShop/GraphRoot" unique_id=793715728 instance=ExtResource("3_mfja5")]
+default_color = Color(1, 0, 0, 1)

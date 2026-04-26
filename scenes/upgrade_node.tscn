@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cct7xr4pxwt6a"]
+
+[ext_resource type="Script" uid="uid://bpsd8hp32k5k" path="res://scripts/upgrades/upgrade_node.gd" id="1_i2vvs"]
+
+[node name="Button" type="Button" unique_id=85148866]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_i2vvs")

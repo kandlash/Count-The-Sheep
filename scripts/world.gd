@@ -31,9 +31,9 @@ func _ready() -> void:
 	
 	# важно для tired bar
 	tired_progressbar.min_value = 0
-	tired_progressbar.max_value = max_tired_points
+	tired_progressbar.max_value = G.max_tired_points
 	tired_progressbar.value = 0
-	tired_label.text = "%d/%d" % [tired_points, max_tired_points]
+	tired_label.text = "%d/%d" % [G.tired_points, G.max_tired_points]
 	
 
 func _process(delta: float) -> void:
@@ -91,17 +91,23 @@ func _time_distance(a: int, b: int) -> int:
 	var diff = abs(a - b)
 	return min(diff, 24 * 60 - diff)
 	
-
 func add_jump(jump_points: int, tired_add: int):
-	jumps_count += jump_points
-	tired_points = clamp(tired_points + tired_add, 0, max_tired_points)
-	
+	G.jumps_count += jump_points
+	G.tired_points = clamp(G.tired_points + tired_add, 0, G.max_tired_points)
+	if G.tired_points == G.max_tired_points:
+		G.tired_points = 0
+		Transition.transition()
+		await Transition.on_transition_finished
+		print('reload!')
+		get_tree().change_scene_to_file("res://scenes/upgrade_shop.tscn")
+		
+		
 	_update_jumps_ui()
 	_update_tired_ui_animated()
 
 
 func _update_jumps_ui() -> void:
-	jumps_label.text = str(jumps_count)
+	jumps_label.text = str(G.jumps_count)
 	
 	var tween := create_tween()
 	jumps_label.scale = Vector2(1.25, 1.25)
@@ -111,17 +117,14 @@ func _update_jumps_ui() -> void:
 
 
 func _update_tired_ui_animated() -> void:
-	# правильный текст: 40/100
-	tired_label.text = "%d/%d" % [tired_points, max_tired_points]
+	tired_label.text = "%d/%d" % [G.tired_points, G.max_tired_points]
 	
 	var tween := create_tween()
 	
-	# теперь используем РЕАЛЬНЫЕ значения, не 0..1
-	tween.tween_property(tired_progressbar, "value", tired_points, 0.4)\
+	tween.tween_property(tired_progressbar, "value", G.tired_points, 0.4)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
 	
-	# небольшой juice-пульс
 	tired_progressbar.scale = Vector2(1.03, 1.03)
 	tween.parallel().tween_property(tired_progressbar, "scale", Vector2.ONE, 0.25)\
 		.set_trans(Tween.TRANS_BACK)\
