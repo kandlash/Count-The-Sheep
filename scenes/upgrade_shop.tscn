@@ -61,3 +61,11 @@ upgrade_id = "lucky_3"
 
 [node name="UpgradeLine" parent="UpgradeShop/GraphRoot" unique_id=793715728 instance=ExtResource("3_mfja5")]
 default_color = Color(1, 0, 0, 1)
+
+[node name="money_label" type="Label" parent="UpgradeShop" unique_id=1882020366]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.0
+offset_right = 90.0
+offset_bottom = 25.0
+text = "0"
