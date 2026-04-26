@@ -33,6 +33,8 @@ func _ready() -> void:
 	tired_progressbar.min_value = 0
 	tired_progressbar.max_value = max_tired_points
 	tired_progressbar.value = 0
+	tired_label.text = "%d/%d" % [tired_points, max_tired_points]
+	
 
 func _process(delta: float) -> void:
 	if elapsed >= REAL_DURATION:
