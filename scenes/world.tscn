@@ -28,6 +28,11 @@ font_size = 8
 [sub_resource type="Theme" id="Theme_q5onr"]
 ProgressBar/font_sizes/font_size = 8
 
+[sub_resource type="LabelSettings" id="LabelSettings_q5onr"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_jhx03"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
 texture = ExtResource("1_4wyf3")
 0:0/0 = 0
@@ -517,6 +522,45 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "40/150"
 label_settings = SubResource("LabelSettings_e3hyu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Camera2D/UIHolder/Control" unique_id=1185795328]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 80.0
+offset_bottom = 50.0
+
+[node name="Label" type="Label" parent="Camera2D/UIHolder/Control/Panel2" unique_id=297908134]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 12.0
+grow_horizontal = 2
+text = "ПРЫЖКИ"
+label_settings = SubResource("LabelSettings_q5onr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jumps_label" type="Label" parent="Camera2D/UIHolder/Control/Panel2" unique_id=893835692]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_jhx03")
 horizontal_alignment = 1
 vertical_alignment = 1
 

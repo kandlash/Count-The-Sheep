@@ -242,7 +242,7 @@ func do_jump() -> void:
 
 	is_busy = true
 	state = State.JUMP
-
+	G.world.add_jump(1, 5)
 	var start_pos = position
 	var peak_pos = start_pos + Vector2((JUMP_STEP * move_dir) / 2, jump_peak_height)
 	var end_pos = start_pos + Vector2(JUMP_STEP * move_dir, 0)
