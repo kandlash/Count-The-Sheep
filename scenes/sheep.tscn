@@ -70,5 +70,20 @@ shape = SubResource("CircleShape2D_gw4f6")
 wait_time = 5.0
 one_shot = true
 
+[node name="Control" type="Control" parent="." unique_id=893136973]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="run_progressbar" type="ProgressBar" parent="Control" unique_id=1521528988]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 8.0
+offset_right = 8.092911
+offset_bottom = 12.0
+value = 62.84
+show_percentage = false
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="run_timer" to="." method="_on_run_timer_timeout"]

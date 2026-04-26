@@ -13,6 +13,7 @@ enum State {
 @onready var vosklisatilni_znak: Sprite2D = $VosklisatilniZnak
 @onready var vosklisatilni_light: PointLight2D = $VosklisatilniLight
 @onready var run_timer: Timer = $run_timer
+@onready var run_progressbar: ProgressBar = $Control/run_progressbar
 
 const STEP := 16
 const JUMP_STEP := 32
@@ -46,7 +47,6 @@ var blocked_tween: Tween
 @export var jump_up_duration := 0.2
 @export var jump_down_duration := 0.2
 
-
 @export_group("Click")
 @export var click_squash := Vector2(1.25, 0.75)
 @export var click_duration_in := 0.08
@@ -56,7 +56,17 @@ var blocked_tween: Tween
 func _ready() -> void:
 	vosklisatilni_znak.visible = false
 	vosklisatilni_light.enabled = false
+	
+	run_progressbar.visible = false
+	run_progressbar.value = 0
+	
 	timer.start()
+
+func _process(delta: float) -> void:
+	if not run_timer.is_stopped():
+		var t := run_timer.time_left
+		var total := run_timer.wait_time
+		run_progressbar.value = (1.0 - t / total) * 100.0
 
 # --------------------------------------------------
 # DIRECTION
@@ -96,7 +106,6 @@ func can_walk() -> bool:
 	return true
 
 func can_jump() -> bool:
-	# проверяем что впереди fence (оставляем ray как есть)
 	ray.target_position = Vector2(STEP * move_dir, 0)
 	ray.force_raycast_update()
 
@@ -104,7 +113,6 @@ func can_jump() -> bool:
 	if col == null or not col.is_in_group("fence"):
 		return false
 
-	# ❗ ВАЖНО: проверяем точку приземления, а не луч
 	var space = get_world_2d().direct_space_state
 	
 	var query = PhysicsPointQueryParameters2D.new()
@@ -123,6 +131,7 @@ func can_jump() -> bool:
 			return false
 
 	return true
+
 # --------------------------------------------------
 # BLOCKED EFFECT
 # --------------------------------------------------
@@ -162,6 +171,18 @@ func stop_blocked_effect():
 	vosklisatilni_light.energy = light_energy_min
 
 # --------------------------------------------------
+# RUN BAR
+# --------------------------------------------------
+
+func start_run_bar():
+	run_progressbar.visible = true
+	run_progressbar.value = 0
+
+func stop_run_bar():
+	run_progressbar.visible = false
+	run_progressbar.value = 0
+
+# --------------------------------------------------
 # TIMER
 # --------------------------------------------------
 
@@ -172,6 +193,8 @@ func _on_timer_timeout() -> void:
 	if want_jump and can_jump():
 		want_jump = false
 		stop_blocked_effect()
+		stop_run_bar()
+		run_timer.stop()
 		await do_jump()
 		timer.start()
 		return
@@ -180,11 +203,13 @@ func _on_timer_timeout() -> void:
 	
 	if can_walk():
 		run_timer.stop()
+		stop_run_bar()
 		stop_blocked_effect()
 		await do_walk()
 	else:
 		if run_timer.is_stopped():
 			run_timer.start()
+			start_run_bar()
 		
 		start_blocked_effect()
 		state = State.BLOCKED
@@ -212,6 +237,8 @@ func do_walk() -> void:
 
 func do_jump() -> void:
 	stop_blocked_effect()
+	stop_run_bar()
+	run_timer.stop()
 
 	is_busy = true
 	state = State.JUMP
@@ -241,9 +268,7 @@ func do_jump() -> void:
 	await fall.finished
 	is_busy = false
 
-
 func click_animation():
-	# не перебиваем важные анимации
 	if is_busy:
 		return
 	
@@ -254,7 +279,6 @@ func click_animation():
 	
 	tween.tween_property(self, "scale", Vector2.ONE, click_duration_out)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-
 
 func _on_run_timer_timeout() -> void:
 	queue_free()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dgskjbwbe56d0" path="res://assets/tilesets/Tileset Spring.png" id="1_4wyf3"]
 [ext_resource type="Script" uid="uid://bcrwwqqpo40nf" path="res://scripts/camera_2d.gd" id="1_7r4gi"]
+[ext_resource type="Script" uid="uid://da1nf2tck5sxg" path="res://scripts/world.gd" id="1_e3hyu"]
 [ext_resource type="Script" uid="uid://lbcp45g3ndob" path="res://scripts/click_manager.gd" id="1_i7141"]
 [ext_resource type="Script" uid="uid://cdqho503gioso" path="res://scripts/cursor_light.gd" id="1_w7kh3"]
 [ext_resource type="Texture2D" uid="uid://bm5ehjn8k76r1" path="res://assets/tilesets/Fence's copiar.png" id="2_k0juu"]
@@ -402,6 +403,7 @@ size = Vector2(8, 94)
 size = Vector2(26, 368)
 
 [node name="world" type="Node2D" unique_id=520197805]
+script = ExtResource("1_e3hyu")
 
 [node name="cursor_light" type="PointLight2D" parent="." unique_id=1528558070]
 position = Vector2(104, 137)
@@ -440,7 +442,7 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/UIHolder/Control/Panel" unique_id=649715511]
+[node name="time_progressbar" type="ProgressBar" parent="Camera2D/UIHolder/Control/Panel" unique_id=649715511]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 19.0
@@ -449,7 +451,7 @@ offset_bottom = 35.0
 value = 28.88
 show_percentage = false
 
-[node name="Label" type="Label" parent="Camera2D/UIHolder/Control/Panel/ProgressBar" unique_id=1833521575]
+[node name="Label" type="Label" parent="Camera2D/UIHolder/Control/Panel/time_progressbar" unique_id=1833521575]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -461,7 +463,7 @@ grow_vertical = 2
 text = "ДО КОНЦА НОЧИ"
 label_settings = SubResource("LabelSettings_e3hyu")
 
-[node name="time_label" type="Label" parent="Camera2D/UIHolder/Control/Panel/ProgressBar" unique_id=283793604]
+[node name="time_label" type="Label" parent="Camera2D/UIHolder/Control/Panel/time_progressbar" unique_id=283793604]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -479,7 +481,7 @@ label_settings = SubResource("LabelSettings_e3hyu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar2" type="ProgressBar" parent="Camera2D/UIHolder/Control/Panel" unique_id=500886129]
+[node name="tired_progressbar" type="ProgressBar" parent="Camera2D/UIHolder/Control/Panel" unique_id=500886129]
 layout_mode = 0
 offset_left = 199.0
 offset_top = 19.0
@@ -488,7 +490,7 @@ offset_bottom = 35.0
 theme = SubResource("Theme_q5onr")
 show_percentage = false
 
-[node name="Label" type="Label" parent="Camera2D/UIHolder/Control/Panel/ProgressBar2" unique_id=1584307640]
+[node name="Label" type="Label" parent="Camera2D/UIHolder/Control/Panel/tired_progressbar" unique_id=1584307640]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -500,7 +502,7 @@ grow_vertical = 2
 text = "УСТАЛОСТЬ"
 label_settings = SubResource("LabelSettings_e3hyu")
 
-[node name="tired_label" type="Label" parent="Camera2D/UIHolder/Control/Panel/ProgressBar2" unique_id=88939041]
+[node name="tired_label" type="Label" parent="Camera2D/UIHolder/Control/Panel/tired_progressbar" unique_id=88939041]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -602,9 +604,14 @@ script = ExtResource("8_4mrxx")
 position = Vector2(3, 120)
 shape = SubResource("RectangleShape2D_e3hyu")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=360716759]
+[node name="main_light" type="DirectionalLight2D" parent="." unique_id=360716759]
 energy = 0.5
 blend_mode = 1
+
+[node name="sunset_light" type="DirectionalLight2D" parent="." unique_id=1953626672]
+position = Vector2(-1, 0)
+color = Color(1, 0, 0, 1)
+energy = 0.3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=275605735]
 stream = ExtResource("11_e3hyu")
