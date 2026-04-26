@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b35yh7efhnesu" path="res://assets/tilesets/Maple Tree.png" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bav2fdjul3d57" path="res://scenes/sheep_generator.tscn" id="7_i7141"]
 [ext_resource type="Script" uid="uid://bjahiosubxxof" path="res://scripts/sheep_killer.gd" id="8_4mrxx"]
+[ext_resource type="AudioStream" uid="uid://c6opn1ux3b0tm" path="res://assets/music/Warmth.mp3" id="11_e3hyu"]
 
 [sub_resource type="Gradient" id="Gradient_4mrxx"]
 offsets = PackedFloat32Array(0.12048193, 0.7560241)
@@ -495,6 +496,11 @@ shape = SubResource("RectangleShape2D_e3hyu")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=360716759]
 energy = 0.78
 blend_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=275605735]
+stream = ExtResource("11_e3hyu")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="area_entered" from="sheep_killer" to="sheep_killer" method="_on_area_entered"]
 [connection signal="area_entered" from="sheep_killer2" to="sheep_killer2" method="_on_area_entered"]
