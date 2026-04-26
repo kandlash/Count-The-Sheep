@@ -41,5 +41,40 @@ static func get_data():
 				[{ "type": "max_tired", "value": 300 }]
 			]
 		},
+		"lucky_1": {
+		"name": "Счастливчик I",
+		"max_level": 1,
+		"cost": [200],
+		"parents": [],
+		"next": ["lucky_2"],
+
+		"effects": [
+			[{ "type": "lucky", "value": 0.10 }]
+		]
+	},
+
+	"lucky_2": {
+		"name": "Счастливчик II",
+		"max_level": 1,
+		"cost": [500],
+		"parents": ["lucky_1"],
+		"next": ["lucky_3"],
+
+		"effects": [
+			[{ "type": "lucky", "value": 0.20 }]
+		]
+	},
+
+	"lucky_3": {
+		"name": "Счастливчик III",
+		"max_level": 1,
+		"cost": [1200],
+		"parents": ["lucky_2"],
+		"next": [],
+
+		"effects": [
+			[{ "type": "lucky", "value": 0.35 }]
+		]
+	},
 		
 	}

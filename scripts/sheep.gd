@@ -53,6 +53,17 @@ var blocked_tween: Tween
 @export var click_duration_out := 0.12
 # ------------------------------------------------
 
+var rarity: int = 0
+var reward := 1
+
+@export var rarity_colors := {
+	0: Color.WHITE,          # COMMON
+	1: Color(0.4, 1.0, 0.4), # UNCOMMON
+	2: Color(0.4, 0.6, 1.0), # RARE
+	3: Color(0.8, 0.4, 1.0), # EPIC
+	4: Color(1.0, 0.7, 0.2)  # LEGENDARY
+}
+
 func _ready() -> void:
 	vosklisatilni_znak.visible = false
 	vosklisatilni_light.enabled = false
@@ -71,6 +82,34 @@ func _process(delta: float) -> void:
 # --------------------------------------------------
 # DIRECTION
 # --------------------------------------------------
+
+func set_rarity(r: int):
+	rarity = r
+
+	# 🎨 цвет
+	if rarity_colors.has(r):
+		animated_sprite_2d.modulate = rarity_colors[r]
+
+	# 💰 награда (баланс легко крутить)
+	match rarity:
+		G.Rarity.COMMON:
+			reward = 1
+
+		G.Rarity.UNCOMMON:
+			reward = 2
+
+		G.Rarity.RARE:
+			reward = 5
+
+		G.Rarity.EPIC:
+			reward = 15
+
+		G.Rarity.LEGENDARY:
+			reward = 50
+
+	# ✨ можно чуть увеличить размер для редких
+	var scale_bonus := 1.0 + (r * 0.05)
+	scale *= scale_bonus
 
 func set_direction(dir: int):
 	move_dir = dir

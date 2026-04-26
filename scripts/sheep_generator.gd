@@ -8,12 +8,11 @@ enum SheepDirection {
 	RIGHT
 }
 
+var timer: Timer
+
 @export var direction: SheepDirection = SheepDirection.LEFT
 @export var spawn_delay_min := 1.0
 @export var spawn_delay_max := 3.0
-
-var timer: Timer
-
 
 func _ready() -> void:
 	timer = Timer.new()
@@ -21,13 +20,11 @@ func _ready() -> void:
 	add_child(timer)
 	timer.timeout.connect(_spawn_sheep)
 	
-	_start_timer(1.0, 3.0)
-
+	_start_timer()
 
 func _start_timer(sdmin: float = spawn_delay_min, sdmax: float = spawn_delay_max):
 	timer.wait_time = randf_range(sdmin, sdmax)
 	timer.start()
-
 
 func _spawn_sheep():
 	var sheep = SHEEP.instantiate()
@@ -35,9 +32,27 @@ func _spawn_sheep():
 	
 	sheep.global_position = global_position
 	
-	# направление
 	var dir = -1 if direction == SheepDirection.LEFT else 1
-	
 	sheep.set_direction(dir)
-	
+
+	var rarity = _roll_rarity()
+	sheep.set_rarity(rarity)
+
 	_start_timer()
+
+func _roll_rarity() -> int:
+	var chances = G.sheep_chances
+
+	var total := 0.0
+	for v in chances.values():
+		total += v
+
+	var roll := randf() * total
+	var acc := 0.0
+
+	for r in chances.keys():
+		acc += chances[r]
+		if roll <= acc:
+			return r
+
+	return G.Rarity.COMMON

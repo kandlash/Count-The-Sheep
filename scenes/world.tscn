@@ -411,7 +411,6 @@ size = Vector2(26, 368)
 script = ExtResource("1_e3hyu")
 
 [node name="cursor_light" type="PointLight2D" parent="." unique_id=1528558070]
-visible = false
 position = Vector2(104, 137)
 color = Color(1, 0.34117648, 0, 1)
 energy = 1.31

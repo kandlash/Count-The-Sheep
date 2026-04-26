@@ -56,6 +56,10 @@ func _apply_single_effect(effect: Dictionary):
 
 		"income_multiplier":
 			G.income_multiplier = effect["value"]
+
+		# 🆕 LUCKY
+		"lucky":
+			G.apply_lucky(effect["value"])
 		
 		_:
 			push_warning("Unknown effect: " + str(effect))
