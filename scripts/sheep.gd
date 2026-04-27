@@ -51,17 +51,23 @@ var blocked_tween: Tween
 @export var click_squash := Vector2(1.25, 0.75)
 @export var click_duration_in := 0.08
 @export var click_duration_out := 0.12
+
+@export_group("Speed Boost")
+@export var boost_multiplier := 0.5   # 0.5 = в 2 раза быстрее
+
 # ------------------------------------------------
+
+var _has_walk_boost := false
 
 var rarity: int = 0
 var reward := 1
 
 @export var rarity_colors := {
-	0: Color.WHITE,          # COMMON
-	1: Color(0.4, 1.0, 0.4), # UNCOMMON
-	2: Color(0.4, 0.6, 1.0), # RARE
-	3: Color(0.8, 0.4, 1.0), # EPIC
-	4: Color(1.0, 0.7, 0.2)  # LEGENDARY
+	0: Color.WHITE,
+	1: Color(0.4, 1.0, 0.4),
+	2: Color(0.4, 0.6, 1.0),
+	3: Color(0.8, 0.4, 1.0),
+	4: Color(1.0, 0.7, 0.2)
 }
 
 func _ready() -> void:
@@ -80,34 +86,41 @@ func _process(delta: float) -> void:
 		run_progressbar.value = (1.0 - t / total) * 100.0
 
 # --------------------------------------------------
+# BOOST
+# --------------------------------------------------
+
+func apply_speed_boost():
+	if is_busy:
+		return
+	if state == State.BLOCKED:
+		return
+	if _has_walk_boost:
+		return
+	
+	_has_walk_boost = true
+
+# --------------------------------------------------
 # DIRECTION
 # --------------------------------------------------
 
 func set_rarity(r: int):
 	rarity = r
 
-	# 🎨 цвет
 	if rarity_colors.has(r):
 		animated_sprite_2d.modulate = rarity_colors[r]
 
-	# 💰 награда (баланс легко крутить)
 	match rarity:
 		G.Rarity.COMMON:
 			reward = 1
-
 		G.Rarity.UNCOMMON:
 			reward = 2
-
 		G.Rarity.RARE:
 			reward = 5
-
 		G.Rarity.EPIC:
 			reward = 15
-
 		G.Rarity.LEGENDARY:
 			reward = 50
 
-	# ✨ можно чуть увеличить размер для редких
 	var scale_bonus := 1.0 + (r * 0.05)
 	scale *= scale_bonus
 
@@ -263,13 +276,21 @@ func do_walk() -> void:
 	is_busy = true
 	state = State.WALK
 
+	var move_time = walk_duration_move
+	var restore_time = walk_duration_restore
+
+	if _has_walk_boost:
+		move_time *= boost_multiplier
+		restore_time *= boost_multiplier
+		_has_walk_boost = false
+
 	var tween = create_tween()
 
 	tween.tween_property(self, "scale", walk_squash, walk_duration_squash)
-	tween.tween_property(self, "position:x", position.x + STEP * move_dir, walk_duration_move)\
+	tween.tween_property(self, "position:x", position.x + STEP * move_dir, move_time)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2(1, 1), walk_duration_restore)
+	tween.tween_property(self, "scale", Vector2(1, 1), restore_time)
 
 	await tween.finished
 	is_busy = false
@@ -282,6 +303,7 @@ func do_jump() -> void:
 	is_busy = true
 	state = State.JUMP
 	G.world.add_jump(1, 5, rarity)
+
 	var start_pos = position
 	var peak_pos = start_pos + Vector2((JUMP_STEP * move_dir) / 2, jump_peak_height)
 	var end_pos = start_pos + Vector2(JUMP_STEP * move_dir, 0)
@@ -310,6 +332,8 @@ func do_jump() -> void:
 func click_animation():
 	if is_busy:
 		return
+	
+	apply_speed_boost()
 	
 	var tween = create_tween()
 	

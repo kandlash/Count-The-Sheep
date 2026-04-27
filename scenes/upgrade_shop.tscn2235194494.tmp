@@ -83,6 +83,9 @@ upgrade_id = "lucky_3"
 [node name="UpgradeLine" parent="GraphRoot" unique_id=793715728 instance=ExtResource("3_mfja5")]
 default_color = Color(1, 0, 0, 1)
 
+[node name="UpgradeShop" type="CanvasLayer" parent="." unique_id=1935150888]
+script = ExtResource("1_ya5xe")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1708263219]
 
 [node name="Panel4" type="Panel" parent="CanvasLayer" unique_id=1014104851]
