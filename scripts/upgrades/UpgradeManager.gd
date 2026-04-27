@@ -63,7 +63,9 @@ func _apply_single_effect(effect: Dictionary):
 		
 		"sheep_speed_percent":
 			G.sheep_walk_speed -= G.sheep_walk_speed * effect["value"] / 100
-		
+			
+		"spawn_dog":
+			G.dogs_to_spawn += effect["value"]
 		_:
 			push_warning("Unknown effect: " + str(effect))
 
@@ -83,3 +85,11 @@ func is_unlocked(id: String) -> bool:
 			return false
 
 	return true
+
+func _spawn_dog(amount: int):
+	if G.world == null:
+		push_warning("World is null, cannot spawn dog")
+		return
+
+	for i in amount:
+		G.world.add_dog()

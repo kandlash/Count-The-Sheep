@@ -28,6 +28,7 @@ var blocked_tween: Tween
 # 🧠 ВАЖНО ДЛЯ СОБАКИ
 var blocked_by_fence := false
 
+
 # -------------------- EXPORTS --------------------
 
 @export_group("Blocked Effect")

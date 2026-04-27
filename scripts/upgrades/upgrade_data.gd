@@ -116,5 +116,40 @@ static func get_data():
 			[{ "type": "sheep_speed_percent", "value": 100.0 }]
 		]
 	},
+	"dog_1": {
+		"name": "Собачник I",
+		"max_level": 1,
+		"cost": [100],
+		"parents": [],
+		"next": ["dog_2"],
+
+		"effects": [
+			[{ "type": "spawn_dog", "value": 1 }]
+		]
+	},
+
+	"dog_2": {
+		"name": "Собачник II",
+		"max_level": 1,
+		"cost": [500],
+		"parents": ["dog_1"],
+		"next": ["dog_3"],
+
+		"effects": [
+			[{ "type": "spawn_dog", "value": 1 }]
+		]
+	},
+
+	"dog_3": {
+		"name": "Собачник III",
+		"max_level": 1,
+		"cost": [500],
+		"parents": ["dog_2"],
+		"next": [],
+
+		"effects": [
+			[{ "type": "spawn_dog", "value": 1 }]
+		]
+	},
 		
 	}

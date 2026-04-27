@@ -45,6 +45,27 @@ offset_right = 833.0
 offset_bottom = 421.0
 upgrade_id = "owl_1"
 
+[node name="UpgradeNode7" parent="GraphRoot" unique_id=1815895742 instance=ExtResource("1_v8ny2")]
+offset_left = 705.0
+offset_top = 491.0
+offset_right = 833.0
+offset_bottom = 619.0
+upgrade_id = "dog_1"
+
+[node name="UpgradeNode8" parent="GraphRoot" unique_id=1236975622 instance=ExtResource("1_v8ny2")]
+offset_left = 705.0
+offset_top = 690.99994
+offset_right = 833.0
+offset_bottom = 818.99994
+upgrade_id = "dog_2"
+
+[node name="UpgradeNode9" parent="GraphRoot" unique_id=1025859 instance=ExtResource("1_v8ny2")]
+offset_left = 705.0
+offset_top = 899.0
+offset_right = 833.0
+offset_bottom = 1027.0
+upgrade_id = "dog_3"
+
 [node name="UpgradeNode2" parent="GraphRoot" unique_id=85148866 instance=ExtResource("1_v8ny2")]
 offset_left = 916.0
 offset_top = 293.0
@@ -80,7 +101,7 @@ offset_right = 834.0
 offset_bottom = -157.99997
 upgrade_id = "lucky_3"
 
-[node name="UpgradeButton" parent="GraphRoot" unique_id=1815895742 instance=ExtResource("1_v8ny2")]
+[node name="UpgradeButton" parent="GraphRoot" unique_id=1838496495 instance=ExtResource("1_v8ny2")]
 offset_left = 507.0
 offset_top = 293.0
 offset_right = 635.0

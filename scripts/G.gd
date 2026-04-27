@@ -45,6 +45,8 @@ var rarity_counts := {
 
 var sheep_chances := sheep_base_chances.duplicate()
 
+var dogs_to_spawn := 0
+
 # =========================
 # 🍀 LUCKY
 # =========================

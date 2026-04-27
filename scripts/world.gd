@@ -15,14 +15,33 @@ class_name World
 @onready var epic_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer4/epic_label
 @onready var legendary_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer5/legendary_label
 
+@export var dog_scene: PackedScene
+
 
 const REAL_DURATION := 15.0 * 60.0 # ночь
 var elapsed := 0.0
 
+var dogs := []
+
+
+func _sync_dogs_from_g():
+	if G.dogs_to_spawn <= 0:
+		return
+
+	for i in G.dogs_to_spawn:
+		_spawn_dog()
+
+
+
+func _spawn_dog():
+	var dog = dog_scene.instantiate()
+	add_child(dog)
+	dogs.append(dog)
+
 
 func _ready() -> void:
 	G.world = self
-
+	_sync_dogs_from_g()
 	time_progressbar.min_value = 0
 	time_progressbar.max_value = REAL_DURATION
 	time_progressbar.value = 0

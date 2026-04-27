@@ -414,6 +414,7 @@ size = Vector2(26, 368)
 
 [node name="world" type="Node2D" unique_id=520197805]
 script = ExtResource("1_e3hyu")
+dog_scene = ExtResource("14_o8fc1")
 
 [node name="cursor_light" type="PointLight2D" parent="." unique_id=1528558070]
 position = Vector2(104, 137)
@@ -756,9 +757,6 @@ energy = 0.3
 stream = ExtResource("11_e3hyu")
 volume_db = -80.0
 autoplay = true
-
-[node name="dog" parent="." unique_id=537338450 instance=ExtResource("14_o8fc1")]
-position = Vector2(189, 146)
 
 [connection signal="area_entered" from="sheep_killer" to="sheep_killer" method="_on_area_entered"]
 [connection signal="area_entered" from="sheep_killer2" to="sheep_killer2" method="_on_area_entered"]
