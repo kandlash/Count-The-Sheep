@@ -106,22 +106,32 @@ func _try_find_target() -> void:
 		if not is_instance_valid(s):
 			continue
 
-		if s.get_parent().state != s.get_parent().State.BLOCKED:
+		var sheep = s.get_parent()
+
+		if sheep.state != sheep.State.BLOCKED:
 			continue
 
-		if not s.get_parent().blocked_by_fence:
+		if not sheep.blocked_by_fence:
 			continue
 
-		if global_position.distance_to( s.get_parent().global_position) > scan_radius:
+		if sheep.hunted_by != null:
 			continue
 
-		candidates.append(s)
+		if global_position.distance_to(sheep.global_position) > scan_radius:
+			continue
+
+		candidates.append(sheep)
 
 	if candidates.is_empty():
 		return
 
-	target_sheep = candidates.pick_random().get_parent()
-	state = State.CHASE
+	candidates.shuffle()
+
+	for s in candidates:
+		if s.try_claim(self):
+			target_sheep = s
+			state = State.CHASE
+			return
 
 func _bark() -> void:
 	state = State.BARK

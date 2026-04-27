@@ -72,6 +72,23 @@ var reward := 1
 	4: Color(1.0, 0.7, 0.2)
 }
 
+# 🧠 NEW: кто "охотится" за овцой
+var hunted_by: Node = null
+
+
+# -------------------- CLAIM SYSTEM --------------------
+
+func try_claim(dog: Node) -> bool:
+	if hunted_by == null or not is_instance_valid(hunted_by):
+		hunted_by = dog
+		return true
+	return false
+
+
+func release_claim(dog: Node) -> void:
+	if hunted_by == dog:
+		hunted_by = null
+
 # --------------------------------------------------
 
 func _ready() -> void:
