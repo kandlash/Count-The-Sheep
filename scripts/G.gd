@@ -1,9 +1,9 @@
 extends Node
 
-var tired_points := 0
+var tired_points :=  0.0
 var jumps_count := 0
 
-var max_tired_points := 100
+var max_tired_points := 60.0
 var money := 100
 
 var jump_power := 1.0
@@ -34,11 +34,11 @@ var sheep_base_chances := {
 }
 
 var rarity_counts := {
-	Rarity.COMMON: 10,
-	Rarity.UNCOMMON: 12,
-	Rarity.RARE: 14,
-	Rarity.EPIC: 5,
-	Rarity.LEGENDARY: 5
+	Rarity.COMMON: 0,
+	Rarity.UNCOMMON: 0,
+	Rarity.RARE: 0,
+	Rarity.EPIC: 0,
+	Rarity.LEGENDARY: 0
 }
 
 var sheep_chances := sheep_base_chances.duplicate()
