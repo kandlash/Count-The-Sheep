@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://cv68enrx1jy60"]
 
 [ext_resource type="Script" uid="uid://cflrdcsxowdni" path="res://scripts/money_count.gd" id="1_iaony"]
+[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="2_gq3fm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vlaoy"]
 font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_iaony"]
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_gq3fm"]
+font_size = 18
 
 [node name="money_count" type="CanvasLayer" unique_id=966901064]
 script = ExtResource("1_iaony")
@@ -31,24 +38,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -103.0
-offset_top = -84.0
-offset_right = 103.0
-offset_bottom = 84.0
+offset_left = -153.0
+offset_top = -82.0
+offset_right = 153.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel2" unique_id=2078261866]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 42.0
+offset_top = 10.0
+offset_right = 346.0
+offset_bottom = 138.0
 alignment = 1
 
 [node name="jump_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=1754175732]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=337319088]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=1088530075]
 layout_mode = 2
@@ -60,8 +71,18 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_vlaoy")
 
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=2118010586]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
 [node name="comon_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=1056795010]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=1443971493]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=528125909]
 layout_mode = 2
@@ -73,8 +94,18 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_vlaoy")
 
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=1957887276]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
 [node name="uncomon_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=607765951]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=374057246]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1499821594]
 layout_mode = 2
@@ -86,8 +117,18 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_vlaoy")
 
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1223899382]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
 [node name="rare_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=2069167572]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1597140274]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1966972663]
 layout_mode = 2
@@ -99,8 +140,18 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_vlaoy")
 
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=530152942]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
 [node name="epic_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=1513426893]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=532457749]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=857934552]
 layout_mode = 2
@@ -112,8 +163,18 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_vlaoy")
 
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=1206481866]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
 [node name="legendary_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=58824122]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=716439552]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=552953470]
 layout_mode = 2
@@ -125,6 +186,11 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_vlaoy")
 
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=1727506536]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
 [node name="result_container" type="HBoxContainer" parent="Control/Panel2" unique_id=1435053402]
 layout_mode = 1
 anchors_preset = 8
@@ -132,22 +198,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.5
-offset_top = 62.0
-offset_right = 30.5
-offset_bottom = 80.0
+offset_left = -41.5
+offset_top = 52.0
+offset_right = 41.5
+offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/result_container" unique_id=832334380]
 layout_mode = 2
 text = "ИТОГО:"
-label_settings = SubResource("LabelSettings_vlaoy")
+label_settings = SubResource("LabelSettings_iaony")
 
 [node name="result_label" type="Label" parent="Control/Panel2/result_container" unique_id=1889030765]
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_vlaoy")
+label_settings = SubResource("LabelSettings_gq3fm")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/result_container" unique_id=134537208]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
 
 [node name="Label" type="Label" parent="Control" unique_id=805258904]
 layout_mode = 1

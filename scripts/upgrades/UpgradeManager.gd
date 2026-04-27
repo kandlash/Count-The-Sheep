@@ -67,11 +67,16 @@ func _apply_single_effect(effect: Dictionary):
 func is_unlocked(id: String) -> bool:
 	var cfg = data[id]
 
+	# если нет родителей — доступен сразу
 	if !cfg.has("parents") or cfg["parents"].is_empty():
 		return true
 
+	# 🔥 ВСЕ родители должны быть замакшены
 	for p in cfg["parents"]:
-		if G.upgrades.get(p, 0) > 0:
-			return true
+		var parent_lvl = get_level(p)
+		var parent_max = data[p]["max_level"]
 
-	return false
+		if parent_lvl < parent_max:
+			return false
+
+	return true

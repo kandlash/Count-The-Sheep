@@ -2,18 +2,8 @@
 
 [ext_resource type="Script" uid="uid://drnf7w20q5757" path="res://extenstions/AudioManager/AudioManager.gd" id="1_8qd8g"]
 [ext_resource type="Script" uid="uid://d3tecsfeqmjlg" path="res://extenstions/AudioManager/SoundEffectSetting.gd" id="2_liach"]
-[ext_resource type="AudioStream" uid="uid://6sjsq6qp3eha" path="res://assets/sounds/digital_footstep_snow_1.mp3" id="3_3asnw"]
 [ext_resource type="AudioStream" uid="uid://c77wnm35eha72" path="res://assets/sounds/pop_3.mp3" id="4_m6ggh"]
 [ext_resource type="AudioStream" uid="uid://dmw2yrkvrl75h" path="res://assets/sounds/water_drop_synthetic.mp3" id="5_aoitu"]
-
-[sub_resource type="Resource" id="Resource_3asnw"]
-script = ExtResource("2_liach")
-limit = 3
-type = 3
-sound_effect = ExtResource("3_3asnw")
-volume = -30.0
-pitch_randomness = 0.3
-metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
 
 [sub_resource type="Resource" id="Resource_aoitu"]
 script = ExtResource("2_liach")
@@ -32,4 +22,4 @@ metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
 
 [node name="AudioManager" type="Node2D" unique_id=1774653072]
 script = ExtResource("1_8qd8g")
-sound_effects = Array[ExtResource("2_liach")]([SubResource("Resource_3asnw"), SubResource("Resource_aoitu"), SubResource("Resource_njtn3")])
+sound_effects = Array[ExtResource("2_liach")]([SubResource("Resource_aoitu"), SubResource("Resource_njtn3")])
