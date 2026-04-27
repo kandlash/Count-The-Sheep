@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cflrdcsxowdni" path="res://scripts/money_count.gd" id="1_iaony"]
 [ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="2_gq3fm"]
+[ext_resource type="Texture2D" uid="uid://dm0ry6jw84fv4" path="res://assets/sprites/20250420manaSoulHeaderA-Sheet.png" id="3_0j7l4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq3fm"]
 bg_color = Color(0, 0, 0, 1)
@@ -33,14 +34,45 @@ font_color = Color(0.8156863, 0.7254902, 0.6117647, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_yoy78"]
 font_size = 13
 
-[sub_resource type="LabelSettings" id="LabelSettings_iaony"]
-font_size = 18
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j7l4"]
+bg_color = Color(0.12941177, 0.12156863, 0.1254902, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.56078434, 0.42352942, 0.33333334, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 2
+
+[sub_resource type="Theme" id="Theme_7s07o"]
+Panel/styles/panel = SubResource("StyleBoxFlat_0j7l4")
 
 [sub_resource type="LabelSettings" id="LabelSettings_gq3fm"]
-font_size = 18
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46pkb"]
+bg_color = Color(0.12941177, 0.12156863, 0.1254902, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.56078434, 0.42352942, 0.33333334, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 2
+
+[sub_resource type="Theme" id="Theme_yoy78"]
+Panel/styles/panel = SubResource("StyleBoxFlat_46pkb")
 
 [sub_resource type="LabelSettings" id="LabelSettings_46pkb"]
-font_size = 15
+font_size = 10
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0j7l4"]
 font_size = 10
@@ -239,25 +271,23 @@ offset_right = 113.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_7s07o")
 
 [node name="result_container" type="HBoxContainer" parent="Control/Panel2/Panel" unique_id=1435053402]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.5
+offset_left = -40.0
 offset_top = -13.0
-offset_right = 56.5
+offset_right = 40.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control/Panel2/Panel/result_container" unique_id=832334380]
-layout_mode = 2
-text = "key_result_salary"
-label_settings = SubResource("LabelSettings_iaony")
+alignment = 1
 
 [node name="result_label" type="Label" parent="Control/Panel2/Panel/result_container" unique_id=1889030765]
 layout_mode = 2
@@ -268,6 +298,21 @@ label_settings = SubResource("LabelSettings_gq3fm")
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel2/Panel" unique_id=1760884745]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -48.0
+offset_right = 80.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_0j7l4")
 
 [node name="Panel3" type="Panel" parent="Control" unique_id=1421320829]
 layout_mode = 1
@@ -282,21 +327,23 @@ offset_right = 112.0
 offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_46pkb")
+theme = SubResource("Theme_yoy78")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel3" unique_id=1876253803]
+z_index = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.5
-offset_top = -11.0
-offset_right = 90.5
-offset_bottom = 11.0
+offset_left = -36.5
+offset_top = -6.0
+offset_right = 36.5
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Control/Panel3/HBoxContainer" unique_id=731686389]
 layout_mode = 2
@@ -312,6 +359,21 @@ label_settings = SubResource("LabelSettings_46pkb")
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel3" unique_id=1676773628]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -48.0
+offset_right = 80.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_0j7l4")
 
 [node name="Panel4" type="Panel" parent="Control" unique_id=150797373]
 layout_mode = 1
