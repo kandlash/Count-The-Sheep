@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyxu8bdgmd3aj"]
+
+[ext_resource type="Script" uid="uid://bwjpgj6aub1b3" path="res://scripts/dog.gd" id="1_vwjdu"]
+[ext_resource type="Texture2D" uid="uid://br8ringofgaqf" path="res://assets/sprites/dog_default.png" id="2_qjqk5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmowd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qjqk5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dog" type="Node2D" unique_id=537338450]
+script = ExtResource("1_vwjdu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1577758006]
+sprite_frames = SubResource("SpriteFrames_gmowd")

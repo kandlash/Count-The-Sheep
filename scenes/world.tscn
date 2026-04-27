@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bav2fdjul3d57" path="res://scenes/sheep_generator.tscn" id="7_i7141"]
 [ext_resource type="Script" uid="uid://bjahiosubxxof" path="res://scripts/sheep_killer.gd" id="8_4mrxx"]
 [ext_resource type="AudioStream" uid="uid://c6opn1ux3b0tm" path="res://assets/music/Warmth.mp3" id="11_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://dyxu8bdgmd3aj" path="res://scenes/dog.tscn" id="14_o8fc1"]
 
 [sub_resource type="Gradient" id="Gradient_4mrxx"]
 offsets = PackedFloat32Array(0.12048193, 0.7560241)
@@ -755,6 +756,9 @@ energy = 0.3
 stream = ExtResource("11_e3hyu")
 volume_db = -80.0
 autoplay = true
+
+[node name="dog" parent="." unique_id=537338450 instance=ExtResource("14_o8fc1")]
+position = Vector2(189, 146)
 
 [connection signal="area_entered" from="sheep_killer" to="sheep_killer" method="_on_area_entered"]
 [connection signal="area_entered" from="sheep_killer2" to="sheep_killer2" method="_on_area_entered"]

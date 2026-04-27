@@ -25,6 +25,9 @@ var move_dir := -1
 
 var blocked_tween: Tween
 
+# 🧠 ВАЖНО ДЛЯ СОБАКИ
+var blocked_by_fence := false
+
 # -------------------- EXPORTS --------------------
 
 @export_group("Blocked Effect")
@@ -53,9 +56,7 @@ var blocked_tween: Tween
 @export var click_duration_out := 0.12
 
 @export_group("Speed Boost")
-@export var boost_multiplier := 0.5   # 0.5 = в 2 раза быстрее
-
-# ------------------------------------------------
+@export var boost_multiplier := 0.5
 
 var _has_walk_boost := false
 
@@ -70,6 +71,8 @@ var reward := 1
 	4: Color(1.0, 0.7, 0.2)
 }
 
+# --------------------------------------------------
+
 func _ready() -> void:
 	vosklisatilni_znak.visible = false
 	vosklisatilni_light.enabled = false
@@ -78,6 +81,8 @@ func _ready() -> void:
 	run_progressbar.value = 0
 	
 	timer.start()
+
+# --------------------------------------------------
 
 func _process(delta: float) -> void:
 	if not run_timer.is_stopped():
@@ -109,17 +114,12 @@ func set_rarity(r: int):
 	if rarity_colors.has(r):
 		animated_sprite_2d.modulate = rarity_colors[r]
 
-	match rarity:
-		G.Rarity.COMMON:
-			reward = 1
-		G.Rarity.UNCOMMON:
-			reward = 2
-		G.Rarity.RARE:
-			reward = 5
-		G.Rarity.EPIC:
-			reward = 15
-		G.Rarity.LEGENDARY:
-			reward = 50
+	match r:
+		0: reward = 1
+		1: reward = 2
+		2: reward = 5
+		3: reward = 15
+		4: reward = 50
 
 	var scale_bonus := 1.0 + (r * 0.05)
 	scale *= scale_bonus
@@ -147,14 +147,18 @@ func can_walk() -> bool:
 
 	var col = ray.get_collider()
 	if col == null:
+		blocked_by_fence = false
 		return true
-	
+
 	if col.is_in_group("sheep"):
+		blocked_by_fence = false
 		return false
-	
+
 	if col.is_in_group("fence"):
+		blocked_by_fence = true
 		return false
-	
+
+	blocked_by_fence = false
 	return true
 
 func can_jump() -> bool:
@@ -191,8 +195,7 @@ func can_jump() -> bool:
 func start_blocked_effect():
 	if blocked_tween and blocked_tween.is_running():
 		return
-		
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_BLOCKED)
+
 	vosklisatilni_znak.visible = true
 	vosklisatilni_light.enabled = true
 
@@ -215,33 +218,21 @@ func stop_blocked_effect():
 	if blocked_tween:
 		blocked_tween.kill()
 		blocked_tween = null
-	
+
 	vosklisatilni_znak.visible = false
 	vosklisatilni_light.enabled = false
-	
+
 	vosklisatilni_znak.scale = Vector2.ONE
 	vosklisatilni_light.energy = light_energy_min
 
 # --------------------------------------------------
-# RUN BAR
-# --------------------------------------------------
-
-func start_run_bar():
-	run_progressbar.visible = true
-	run_progressbar.value = 0
-
-func stop_run_bar():
-	run_progressbar.visible = false
-	run_progressbar.value = 0
-
-# --------------------------------------------------
-# TIMER
+# TIMER LOOP
 # --------------------------------------------------
 
 func _on_timer_timeout() -> void:
 	if is_busy:
 		return
-	
+
 	if want_jump and can_jump():
 		want_jump = false
 		stop_blocked_effect()
@@ -252,7 +243,7 @@ func _on_timer_timeout() -> void:
 		return
 	elif want_jump and !can_jump():
 		want_jump = false
-	
+
 	if can_walk():
 		run_timer.stop()
 		stop_run_bar()
@@ -262,10 +253,10 @@ func _on_timer_timeout() -> void:
 		if run_timer.is_stopped():
 			run_timer.start()
 			start_run_bar()
-		
+
 		start_blocked_effect()
 		state = State.BLOCKED
-	
+
 	timer.start()
 
 # --------------------------------------------------
@@ -275,6 +266,7 @@ func _on_timer_timeout() -> void:
 func do_walk() -> void:
 	is_busy = true
 	state = State.WALK
+	blocked_by_fence = false
 
 	var move_time = G.sheep_walk_speed
 	var restore_time = walk_duration_restore
@@ -290,7 +282,7 @@ func do_walk() -> void:
 	tween.tween_property(self, "position:x", position.x + STEP * move_dir, move_time)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2(1, 1), restore_time)
+	tween.tween_property(self, "scale", Vector2.ONE, restore_time)
 
 	await tween.finished
 	is_busy = false
@@ -302,8 +294,7 @@ func do_jump() -> void:
 
 	is_busy = true
 	state = State.JUMP
-	G.world.add_jump(1, 5, rarity)
-
+	
 	var start_pos = position
 	var peak_pos = start_pos + Vector2((JUMP_STEP * move_dir) / 2, jump_peak_height)
 	var end_pos = start_pos + Vector2(JUMP_STEP * move_dir, 0)
@@ -319,29 +310,42 @@ func do_jump() -> void:
 	tween.parallel().tween_property(self, "scale", jump_stretch, jump_up_duration)
 
 	await tween.finished
+	
+	G.world.add_jump(1, 0, rarity)
 
 	var fall = create_tween()
 	fall.tween_property(self, "position", end_pos, jump_down_duration)\
 		.set_trans(Tween.TRANS_BOUNCE)
 
-	fall.parallel().tween_property(self, "scale", Vector2(1, 1), jump_down_duration)
+	fall.parallel().tween_property(self, "scale", Vector2.ONE, jump_down_duration)
 
 	await fall.finished
+
 	is_busy = false
+	blocked_by_fence = false
 
 func click_animation():
 	if is_busy:
 		return
-	
-	apply_speed_boost()
-	
+
 	var tween = create_tween()
-	
+
 	tween.tween_property(self, "scale", click_squash, click_duration_in)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	
+
 	tween.tween_property(self, "scale", Vector2.ONE, click_duration_out)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+
+# --------------------------------------------------
+
+func start_run_bar():
+	run_progressbar.visible = true
+	run_progressbar.value = 0
+
+
+func stop_run_bar():
+	run_progressbar.visible = false
+	run_progressbar.value = 0
 
 func _on_run_timer_timeout() -> void:
 	queue_free()
