@@ -21,6 +21,8 @@ enum State {
 @export var squash := Vector2(1.15, 0.85)
 @export var stretch := Vector2(0.9, 1.1)
 
+@export var turn_duration := 0.12
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var state: State = State.WANDER
@@ -30,6 +32,13 @@ var _scan_timer := 0.0
 var _wander_target := Vector2.ZERO
 var _base_scale := Vector2.ONE
 var _time := 0.0
+
+var _facing := 1.0
+
+var _turning := false
+var _turn_t := 0.0
+var _turn_from := 1.0
+var _turn_to := 1.0
 
 
 func _ready() -> void:
@@ -42,6 +51,8 @@ func _physics_process(delta: float) -> void:
 	_scan_timer -= delta
 
 	_apply_bob()
+
+	_update_turn(delta)
 
 	match state:
 		State.WANDER:
@@ -56,6 +67,7 @@ func _physics_process(delta: float) -> void:
 		State.BARK:
 			pass
 
+
 func _wander(delta: float) -> void:
 	var dir = _wander_target - global_position
 
@@ -67,13 +79,15 @@ func _wander(delta: float) -> void:
 	global_position += dir * wander_speed * delta
 
 	_face(dir)
-	_apply_walk_animation(delta, wander_speed)
+	_apply_walk_animation(wander_speed)
+
 
 func _pick_wander_target() -> void:
 	_wander_target = global_position + Vector2(
 		randf_range(-wander_radius, wander_radius),
 		randf_range(-wander_radius, wander_radius)
 	)
+
 
 func _chase(delta: float) -> void:
 	if not is_instance_valid(target_sheep):
@@ -96,7 +110,8 @@ func _chase(delta: float) -> void:
 	global_position += dir * move_speed * delta
 
 	_face(dir)
-	_apply_walk_animation(delta, move_speed)
+	_apply_walk_animation(move_speed)
+
 
 func _try_find_target() -> void:
 	var sheep_list = get_tree().get_nodes_in_group("sheep")
@@ -133,6 +148,7 @@ func _try_find_target() -> void:
 			state = State.CHASE
 			return
 
+
 func _bark() -> void:
 	state = State.BARK
 
@@ -143,24 +159,70 @@ func _bark() -> void:
 
 	_reset()
 
+
 func _reset() -> void:
 	target_sheep = null
 	state = State.WANDER
 
+
+# --- TURN SYSTEM (SMOOTH FLIP) ---
+
 func _face(dir: Vector2) -> void:
-	if abs(dir.x) > 0.01:
-		scale.x = _base_scale.x * sign(dir.x)
+	if abs(dir.x) < 0.01:
+		return
 
-func _apply_walk_animation(delta: float, speed: float) -> void:
+	var new_facing = sign(dir.x)
+
+	if new_facing != _facing and not _turning:
+		_start_turn(new_facing)
+
+
+func _start_turn(to: float) -> void:
+	_turning = true
+	_turn_t = 0.0
+	_turn_from = _facing
+	_turn_to = to
+
+
+func _update_turn(delta: float) -> void:
+	if not _turning:
+		return
+
+	_turn_t += delta / turn_duration
+
+	var t = clamp(_turn_t, 0.0, 1.0)
+
+	# squash-in -> flip -> squash-out
+	var squash_x = 1.0
+
+	if t < 0.5:
+		squash_x = lerp(1.0, 0.2, t * 2.0)
+	else:
+		squash_x = lerp(0.2, 1.0, (t - 0.5) * 2.0)
+
+	var y = _base_scale.y
+
+	scale = Vector2(_base_scale.x * squash_x * _facing, y)
+
+	if t >= 1.0:
+		_turning = false
+		_facing = _turn_to
+
+
+func _apply_walk_animation(speed: float) -> void:
 	var t := _time * (speed / 60.0)
-
 	var s = abs(sin(t * 10.0)) * 0.5 + 0.5
 
-	scale.y = _base_scale.y * lerp(1.0, stretch.y, s)
-	scale.x = _base_scale.x * lerp(1.0, squash.x, s)
+	var y_scale = _base_scale.y * lerp(1.0, stretch.y, s)
+
+	# только если НЕ в повороте
+	if not _turning:
+		scale = Vector2(_base_scale.x * _facing, y_scale)
+
 
 func _apply_bob() -> void:
 	position.y += sin(_time * bob_speed) * bob_amount * 0.01
+
 
 func _is_valid_target(sheep: Node) -> bool:
 	return sheep.state == sheep.State.BLOCKED and sheep.blocked_by_fence
