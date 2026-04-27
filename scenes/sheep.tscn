@@ -1,18 +1,14 @@
 [gd_scene format=3 uid="uid://mkci2tl1k4fs"]
 
 [ext_resource type="Script" uid="uid://df78k8rqr8eeq" path="res://scripts/sheep.gd" id="1_gw4f6"]
-[ext_resource type="Texture2D" uid="uid://5q5apvp7i17w" path="res://assets/sprites/Female Cow Brown.png" id="1_t8l8v"]
+[ext_resource type="Texture2D" uid="uid://drhtvrwj10otq" path="res://assets/sprites/sheep_default.png" id="2_6qn06"]
 [ext_resource type="Texture2D" uid="uid://dak30k3kndy6y" path="res://assets/sprites/vosklisatilni_znak.png" id="3_6qn06"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gw4f6"]
-atlas = ExtResource("1_t8l8v")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qn06"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gw4f6")
+"texture": ExtResource("2_6qn06")
 }],
 "loop": true,
 "name": &"default",
@@ -37,7 +33,7 @@ light_energy_min = 0.0
 light_energy_max = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=592394954]
-position = Vector2(0, -7)
+position = Vector2(-2, -1)
 sprite_frames = SubResource("SpriteFrames_6qn06")
 
 [node name="VosklisatilniLight" type="PointLight2D" parent="." unique_id=1658169549]

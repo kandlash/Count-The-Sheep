@@ -1,23 +1,23 @@
-extends CanvasLayer
+extends Control
 class_name MoneyCount
 
-@onready var jump_container: HBoxContainer = $Control/Panel2/VBoxContainer/jump_container
-@onready var comon_container: HBoxContainer = $Control/Panel2/VBoxContainer/comon_container
-@onready var uncomon_container: HBoxContainer = $Control/Panel2/VBoxContainer/uncomon_container
-@onready var rare_container: HBoxContainer = $Control/Panel2/VBoxContainer/rare_container
-@onready var epic_container: HBoxContainer = $Control/Panel2/VBoxContainer/epic_container
-@onready var legendary_container: HBoxContainer = $Control/Panel2/VBoxContainer/legendary_container
-@onready var result_container: HBoxContainer = $Control/Panel2/Panel/result_container
+@onready var jump_container: HBoxContainer = $Panel2/VBoxContainer/jump_container
+@onready var comon_container: HBoxContainer = $Panel2/VBoxContainer/comon_container
+@onready var uncomon_container: HBoxContainer = $Panel2/VBoxContainer/uncomon_container
+@onready var rare_container: HBoxContainer = $Panel2/VBoxContainer/rare_container
+@onready var epic_container: HBoxContainer = $Panel2/VBoxContainer/epic_container
+@onready var legendary_container: HBoxContainer = $Panel2/VBoxContainer/legendary_container
+@onready var result_container: HBoxContainer = $Panel2/Panel/result_container
 
-@onready var jump_label: Label = $Control/Panel2/VBoxContainer/jump_container/jump_label
-@onready var common_label: Label = $Control/Panel2/VBoxContainer/comon_container/common_label
-@onready var uncomon_label: Label = $Control/Panel2/VBoxContainer/uncomon_container/uncomon_label
-@onready var rare_label: Label = $Control/Panel2/VBoxContainer/rare_container/rare_label
-@onready var epic_label: Label = $Control/Panel2/VBoxContainer/epic_container/epic_label
-@onready var legendary_label: Label = $Control/Panel2/VBoxContainer/legendary_container/legendary_label
-@onready var result_label: Label = $Control/Panel2/Panel/result_container/result_label
+@onready var jump_label: Label = $Panel2/VBoxContainer/jump_container/jump_label
+@onready var common_label: Label = $Panel2/VBoxContainer/comon_container/common_label
+@onready var uncomon_label: Label = $Panel2/VBoxContainer/uncomon_container/uncomon_label
+@onready var rare_label: Label = $Panel2/VBoxContainer/rare_container/rare_label
+@onready var epic_label: Label = $Panel2/VBoxContainer/epic_container/epic_label
+@onready var legendary_label: Label = $Panel2/VBoxContainer/legendary_container/legendary_label
+@onready var result_label: Label = $Panel2/Panel/result_container/result_label
 
-@onready var money_label: Label = $Control/Panel4/HBoxContainer/money_label
+@onready var money_label: Label = $Panel4/HBoxContainer/money_label
 
 
 # 💰 награды

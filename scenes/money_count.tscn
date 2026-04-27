@@ -77,18 +77,16 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_0j7l4"]
 font_size = 10
 
-[node name="money_count" type="CanvasLayer" unique_id=966901064]
-script = ExtResource("1_iaony")
-
-[node name="Control" type="Control" parent="." unique_id=710266520]
+[node name="money_count" type="Control" unique_id=710266520]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iaony")
 
-[node name="Panel" type="Panel" parent="Control" unique_id=1819164761]
+[node name="Panel" type="Panel" parent="." unique_id=1819164761]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,7 +95,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0j7l4")
 
-[node name="Panel2" type="Panel" parent="Control" unique_id=1338438363]
+[node name="Panel2" type="Panel" parent="." unique_id=1338438363]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,7 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_46pkb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel2" unique_id=2078261866]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2" unique_id=2078261866]
 layout_mode = 1
 offset_left = 42.0
 offset_top = 28.0
@@ -120,145 +118,145 @@ offset_right = 346.0
 offset_bottom = 156.0
 alignment = 1
 
-[node name="jump_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=1754175732]
+[node name="jump_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=1754175732]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=337319088]
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/jump_container" unique_id=337319088]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=1088530075]
+[node name="Label" type="Label" parent="Panel2/VBoxContainer/jump_container" unique_id=1088530075]
 layout_mode = 2
 text = "key_jump_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
-[node name="jump_label" type="Label" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=106245327]
+[node name="jump_label" type="Label" parent="Panel2/VBoxContainer/jump_container" unique_id=106245327]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yoy78")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=2118010586]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/jump_container" unique_id=2118010586]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="comon_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=1056795010]
+[node name="comon_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=1056795010]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=1443971493]
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/comon_container" unique_id=1443971493]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=528125909]
+[node name="Label" type="Label" parent="Panel2/VBoxContainer/comon_container" unique_id=528125909]
 layout_mode = 2
 text = "key_common_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
-[node name="common_label" type="Label" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=2131423063]
+[node name="common_label" type="Label" parent="Panel2/VBoxContainer/comon_container" unique_id=2131423063]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yoy78")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=1957887276]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/comon_container" unique_id=1957887276]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="uncomon_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=607765951]
+[node name="uncomon_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=607765951]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=374057246]
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/uncomon_container" unique_id=374057246]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1499821594]
+[node name="Label" type="Label" parent="Panel2/VBoxContainer/uncomon_container" unique_id=1499821594]
 layout_mode = 2
 text = "key_uncommon_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
-[node name="uncomon_label" type="Label" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1412148004]
+[node name="uncomon_label" type="Label" parent="Panel2/VBoxContainer/uncomon_container" unique_id=1412148004]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yoy78")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1223899382]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/uncomon_container" unique_id=1223899382]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="rare_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=2069167572]
+[node name="rare_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=2069167572]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1597140274]
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/rare_container" unique_id=1597140274]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1966972663]
+[node name="Label" type="Label" parent="Panel2/VBoxContainer/rare_container" unique_id=1966972663]
 layout_mode = 2
 text = "key_rare_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
-[node name="rare_label" type="Label" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1933172955]
+[node name="rare_label" type="Label" parent="Panel2/VBoxContainer/rare_container" unique_id=1933172955]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yoy78")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=530152942]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/rare_container" unique_id=530152942]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="epic_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=1513426893]
+[node name="epic_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=1513426893]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=532457749]
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/epic_container" unique_id=532457749]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=857934552]
+[node name="Label" type="Label" parent="Panel2/VBoxContainer/epic_container" unique_id=857934552]
 layout_mode = 2
 text = "key_epic_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
-[node name="epic_label" type="Label" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=1955926448]
+[node name="epic_label" type="Label" parent="Panel2/VBoxContainer/epic_container" unique_id=1955926448]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yoy78")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=1206481866]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/epic_container" unique_id=1206481866]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="legendary_container" type="HBoxContainer" parent="Control/Panel2/VBoxContainer" unique_id=58824122]
+[node name="legendary_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=58824122]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=716439552]
+[node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/legendary_container" unique_id=716439552]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=552953470]
+[node name="Label" type="Label" parent="Panel2/VBoxContainer/legendary_container" unique_id=552953470]
 layout_mode = 2
 text = "key_legend_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
-[node name="legendary_label" type="Label" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=1213265033]
+[node name="legendary_label" type="Label" parent="Panel2/VBoxContainer/legendary_container" unique_id=1213265033]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_yoy78")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=1727506536]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/legendary_container" unique_id=1727506536]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/Panel2" unique_id=363207188]
+[node name="Panel" type="Panel" parent="Panel2" unique_id=363207188]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -273,7 +271,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_7s07o")
 
-[node name="result_container" type="HBoxContainer" parent="Control/Panel2/Panel" unique_id=1435053402]
+[node name="result_container" type="HBoxContainer" parent="Panel2/Panel" unique_id=1435053402]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -289,17 +287,17 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="result_label" type="Label" parent="Control/Panel2/Panel/result_container" unique_id=1889030765]
+[node name="result_label" type="Label" parent="Panel2/Panel/result_container" unique_id=1889030765]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_gq3fm")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel2/Panel/result_container" unique_id=134537208]
+[node name="TextureRect2" type="TextureRect" parent="Panel2/Panel/result_container" unique_id=134537208]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2/Panel" unique_id=1760884745]
+[node name="TextureRect" type="TextureRect" parent="Panel2/Panel" unique_id=1760884745]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -314,7 +312,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_0j7l4")
 
-[node name="Panel3" type="Panel" parent="Control" unique_id=1421320829]
+[node name="Panel3" type="Panel" parent="." unique_id=1421320829]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -329,7 +327,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_yoy78")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel3" unique_id=1876253803]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel3" unique_id=1876253803]
 z_index = 3
 layout_mode = 1
 anchors_preset = 8
@@ -345,22 +343,22 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/Panel3/HBoxContainer" unique_id=731686389]
+[node name="TextureRect3" type="TextureRect" parent="Panel3/HBoxContainer" unique_id=731686389]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="Control/Panel3/HBoxContainer" unique_id=805258904]
+[node name="Label" type="Label" parent="Panel3/HBoxContainer" unique_id=805258904]
 layout_mode = 2
 text = "key_salary"
 label_settings = SubResource("LabelSettings_46pkb")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel3/HBoxContainer" unique_id=1012318002]
+[node name="TextureRect2" type="TextureRect" parent="Panel3/HBoxContainer" unique_id=1012318002]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel3" unique_id=1676773628]
+[node name="TextureRect" type="TextureRect" parent="Panel3" unique_id=1676773628]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -375,7 +373,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_0j7l4")
 
-[node name="Panel4" type="Panel" parent="Control" unique_id=150797373]
+[node name="Panel4" type="Panel" parent="." unique_id=150797373]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -387,7 +385,7 @@ offset_bottom = 45.0
 grow_horizontal = 0
 theme = SubResource("Theme_46pkb")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel4" unique_id=1782573571]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel4" unique_id=1782573571]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -402,12 +400,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="money_label" type="Label" parent="Control/Panel4/HBoxContainer" unique_id=729605523]
+[node name="money_label" type="Label" parent="Panel4/HBoxContainer" unique_id=729605523]
 layout_mode = 2
 text = "555555"
 label_settings = SubResource("LabelSettings_0j7l4")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Panel4/HBoxContainer" unique_id=1872405234]
+[node name="TextureRect2" type="TextureRect" parent="Panel4/HBoxContainer" unique_id=1872405234]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
