@@ -276,7 +276,7 @@ func do_walk() -> void:
 	is_busy = true
 	state = State.WALK
 
-	var move_time = walk_duration_move
+	var move_time = G.sheep_walk_speed
 	var restore_time = walk_duration_restore
 
 	if _has_walk_boost:

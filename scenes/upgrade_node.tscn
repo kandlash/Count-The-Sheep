@@ -32,6 +32,11 @@ font_size = 28
 [sub_resource type="LabelSettings" id="LabelSettings_5d8m8"]
 font_size = 28
 
+[sub_resource type="LabelSettings" id="LabelSettings_t7abb"]
+font_size = 19
+shadow_size = 23
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="UpgradeButton" type="TextureButton" unique_id=1815895742]
 offset_right = 128.0
 offset_bottom = 128.0
@@ -109,6 +114,25 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "1222"
 label_settings = SubResource("LabelSettings_5d8m8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="editor_name_label" type="Label" parent="." unique_id=1328957915]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.62869
+offset_top = 33.4758
+offset_right = 71.03845
+offset_bottom = 60.4758
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7851997
+text = "test"
+label_settings = SubResource("LabelSettings_t7abb")
 horizontal_alignment = 1
 vertical_alignment = 1
 

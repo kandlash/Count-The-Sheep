@@ -12,6 +12,7 @@ class_name UpgradeNode
 @onready var upgrade_level: Label = $upgrade_info/upgrade_level
 @onready var cost_label: Label = $upgrade_info/cost_label
 @onready var upgrade_info: Panel = $upgrade_info
+@onready var editor_name_label: Label = $editor_name_label
 
 var manager: UpgradeManager
 
@@ -21,18 +22,20 @@ var manager: UpgradeManager
 
 func _ready():
 	if not Engine.is_editor_hint():
-		
 		manager = upgrade_manager
 		if manager:
 			manager.changed.connect(_update)
 
 	call_deferred("_update")
-	
+
 	if upgrade_info:
-		upgrade_info.visible = Engine.is_editor_hint()
+		upgrade_info.visible = false
+
+	if editor_name_label:
+		editor_name_label.visible = Engine.is_editor_hint()
 
 # --------------------------------------------------
-# SAFE NODE INIT
+# SAFE NODES
 # --------------------------------------------------
 
 func _ensure_nodes():
@@ -46,6 +49,8 @@ func _ensure_nodes():
 		cost_label = get_node_or_null("upgrade_info/cost_label")
 	if upgrade_info == null:
 		upgrade_info = get_node_or_null("upgrade_info")
+	if editor_name_label == null:
+		editor_name_label = get_node_or_null("editor_name_label")
 
 # --------------------------------------------------
 # INPUT
@@ -69,9 +74,6 @@ func _update():
 	
 	_ensure_nodes()
 
-	if upgrade_name == null:
-		return
-
 	if upgrade_id == "":
 		return
 
@@ -80,17 +82,11 @@ func _update():
 		return
 
 	# -------------------------
-	# EDITOR MODE (без локализации)
+	# EDITOR MODE
 	# -------------------------
 	if Engine.is_editor_hint():
-		upgrade_name.text = data.get("name", "NoName")
-		upgrade_level.text = "1/%d" % data.get("max_level", 1)
-
-		var costs = data.get("cost", [])
-		if costs.size() > 0:
-			cost_label.text = str(costs[0])
-		else:
-			cost_label.text = "0"
+		if editor_name_label:
+			editor_name_label.text = data.get("name", "NoName")
 
 		return
 
@@ -111,12 +107,12 @@ func _update():
 
 	if lvl - 1 < data["cost"].size():
 		if lvl == data["max_level"]:
-			cost_label.text = str(data["cost"][lvl-1])
+			cost_label.text = str(data["cost"][lvl - 1])
 		else:
 			cost_label.text = str(data["cost"][lvl])
 	else:
 		cost_label.text = "MAX"
-	
+
 	if lvl == data["max_level"]:
 		cost_label.text = "MAX"
 

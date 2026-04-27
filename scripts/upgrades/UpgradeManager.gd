@@ -61,6 +61,9 @@ func _apply_single_effect(effect: Dictionary):
 		"lucky":
 			G.apply_lucky(effect["value"])
 		
+		"sheep_speed_percent":
+			G.sheep_walk_speed -= G.sheep_walk_speed * effect["value"] / 100
+		
 		_:
 			push_warning("Unknown effect: " + str(effect))
 

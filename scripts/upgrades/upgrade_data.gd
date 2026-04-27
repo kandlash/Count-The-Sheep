@@ -85,9 +85,9 @@ static func get_data():
 		"next": ["speedy_sheep_2"],
 
 		"effects": [
-			[{ "type": "percent", "value": 5.0 }],
-			[{ "type": "percent", "value": 5.0 }],
-			[{ "type": "percent", "value": 5.0 }]
+			[{ "type": "sheep_speed_percent", "value": 5.0 }],
+			[{ "type": "sheep_speed_percent", "value": 5.0 }],
+			[{ "type": "sheep_speed_percent", "value": 5.0 }]
 		]
 	},
 	"speedy_sheep_2": {
@@ -98,9 +98,9 @@ static func get_data():
 		"next": ["speedy_sheep_2"],
 
 		"effects": [
-			[{ "type": "percent", "value": 5.0 }],
-			[{ "type": "percent", "value": 5.0 }],
-			[{ "type": "percent", "value": 5.0 }]
+			[{ "type": "sheep_speed_percent", "value": 5.0 }],
+			[{ "type": "sheep_speed_percent", "value": 5.0 }],
+			[{ "type": "sheep_speed_percent", "value": 5.0 }]
 		]
 	},
 	"speedy_sheep_3": {
@@ -111,9 +111,9 @@ static func get_data():
 		"next": [],
 
 		"effects": [
-			[{ "type": "percent", "value": 5.0 }],
-			[{ "type": "percent", "value": 10.0 }],
-			[{ "type": "percent", "value": 15.0 }]
+			[{ "type": "sheep_speed_percent", "value": 5.0 }],
+			[{ "type": "sheep_speed_percent", "value": 10.0 }],
+			[{ "type": "sheep_speed_percent", "value": 100.0 }]
 		]
 	},
 		

@@ -14,11 +14,7 @@ var zoom := 0.2
 
 func _ready():
 	content.scale = Vector2.ONE * zoom
-	
 
-func process(delta: float):
-	if Input.is_action_just_pressed("ui_accept"):
-		get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _input(event):
 	# -----------------------
@@ -49,6 +45,8 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	money_label.text = str(G.money)
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _apply_zoom(factor: float, mouse_pos: Vector2):
 	var new_zoom = clamp(zoom * factor, zoom_min, zoom_max)

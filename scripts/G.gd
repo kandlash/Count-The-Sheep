@@ -9,6 +9,8 @@ var money := 100000
 var jump_power := 1.0
 var income_multiplier := 1.0
 
+var sheep_walk_speed := 0.2
+
 var upgrades := {} # id -> level
 
 var world: World
