@@ -42,6 +42,9 @@ font_size = 18
 [sub_resource type="LabelSettings" id="LabelSettings_46pkb"]
 font_size = 15
 
+[sub_resource type="LabelSettings" id="LabelSettings_0j7l4"]
+font_size = 10
+
 [node name="money_count" type="CanvasLayer" unique_id=966901064]
 script = ExtResource("1_iaony")
 
@@ -95,7 +98,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=1088530075]
 layout_mode = 2
-text = "БОНУС ПРЫЖКОВ:"
+text = "key_jump_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
 [node name="jump_label" type="Label" parent="Control/Panel2/VBoxContainer/jump_container" unique_id=106245327]
@@ -118,7 +121,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=528125909]
 layout_mode = 2
-text = "БОНУС ЗА ОБЫЧНЫХ:"
+text = "key_common_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
 [node name="common_label" type="Label" parent="Control/Panel2/VBoxContainer/comon_container" unique_id=2131423063]
@@ -141,7 +144,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1499821594]
 layout_mode = 2
-text = "БОНУС ЗА НЕОБЫЧНЫХ:"
+text = "key_uncommon_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
 [node name="uncomon_label" type="Label" parent="Control/Panel2/VBoxContainer/uncomon_container" unique_id=1412148004]
@@ -164,7 +167,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1966972663]
 layout_mode = 2
-text = "БОНУС ЗА РЕДКИХ:"
+text = "key_rare_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
 [node name="rare_label" type="Label" parent="Control/Panel2/VBoxContainer/rare_container" unique_id=1933172955]
@@ -187,7 +190,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=857934552]
 layout_mode = 2
-text = "БОНУС ЗА ЭПИЧЕСКИХ:"
+text = "key_epic_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
 [node name="epic_label" type="Label" parent="Control/Panel2/VBoxContainer/epic_container" unique_id=1955926448]
@@ -210,7 +213,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=552953470]
 layout_mode = 2
-text = "БОНУС ЗА ЛЕГЕНДАРНЫХ:"
+text = "key_legend_bonus"
 label_settings = SubResource("LabelSettings_vlaoy")
 
 [node name="legendary_label" type="Label" parent="Control/Panel2/VBoxContainer/legendary_container" unique_id=1213265033]
@@ -253,7 +256,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control/Panel2/Panel/result_container" unique_id=832334380]
 layout_mode = 2
-text = "ИТОГО:"
+text = "key_result_salary"
 label_settings = SubResource("LabelSettings_iaony")
 
 [node name="result_label" type="Label" parent="Control/Panel2/Panel/result_container" unique_id=1889030765]
@@ -302,10 +305,47 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="Control/Panel3/HBoxContainer" unique_id=805258904]
 layout_mode = 2
-text = "ВАША ЗАРПЛАТА"
+text = "key_salary"
 label_settings = SubResource("LabelSettings_46pkb")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/Panel3/HBoxContainer" unique_id=1012318002]
+layout_mode = 2
+texture = ExtResource("2_gq3fm")
+expand_mode = 2
+
+[node name="Panel4" type="Panel" parent="Control" unique_id=150797373]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -79.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme = SubResource("Theme_46pkb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel4" unique_id=1782573571]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = -11.5
+offset_right = 18.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="money_label" type="Label" parent="Control/Panel4/HBoxContainer" unique_id=729605523]
+layout_mode = 2
+text = "555555"
+label_settings = SubResource("LabelSettings_0j7l4")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel4/HBoxContainer" unique_id=1872405234]
 layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2

@@ -3,7 +3,7 @@ class_name UpgradeData
 static func get_data():
 	return {
 		"owl_1": {
-			"name": "Сова I",
+			"name": "key_upgrade_owl_1",
 			"max_level": 3,
 			"cost": [10, 20, 40],
 			"parents": [],

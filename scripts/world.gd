@@ -30,6 +30,7 @@ var elapsed := 0.0
 var total_game_minutes := 0
 
 func _ready() -> void:
+	TranslationServer.set_locale("en")
 	G.world = self
 	total_game_minutes = (24 * 60 - START_TIME_MIN) + END_TIME_MIN
 	

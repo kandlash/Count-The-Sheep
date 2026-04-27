@@ -469,7 +469,7 @@ offset_top = -20.0
 offset_right = 70.0
 offset_bottom = -8.0
 grow_vertical = 2
-text = "ДО КОНЦА НОЧИ"
+text = "key_night_time_label"
 label_settings = SubResource("LabelSettings_e3hyu")
 
 [node name="time_label" type="Label" parent="Camera2D/UIHolder/Control/Panel/time_progressbar" unique_id=283793604]
@@ -508,7 +508,7 @@ offset_top = -20.0
 offset_right = 70.0
 offset_bottom = -8.0
 grow_vertical = 2
-text = "УСТАЛОСТЬ"
+text = "key_tired_label"
 label_settings = SubResource("LabelSettings_e3hyu")
 
 [node name="tired_label" type="Label" parent="Camera2D/UIHolder/Control/Panel/tired_progressbar" unique_id=88939041]
@@ -545,7 +545,7 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 12.0
 grow_horizontal = 2
-text = "ПРЫЖКИ"
+text = "key_jumps_label"
 label_settings = SubResource("LabelSettings_q5onr")
 horizontal_alignment = 1
 vertical_alignment = 1

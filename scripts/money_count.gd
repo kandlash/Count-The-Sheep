@@ -17,6 +17,9 @@ class_name MoneyCount
 @onready var legendary_label: Label = $Control/Panel2/VBoxContainer/legendary_container/legendary_label
 @onready var result_label: Label = $Control/Panel2/Panel/result_container/result_label
 
+@onready var money_label: Label = $Control/Panel4/HBoxContainer/money_label
+
+
 # 💰 награды
 var rewards := {
 	G.Rarity.COMMON: 1,
@@ -32,6 +35,7 @@ var jump_reward := 1
 
 func _ready():
 	_hide_all()
+	money_label.text = str(G.money)
 	await start_count()
 
 # --------------------------------------------------
@@ -95,7 +99,7 @@ func start_count():
 
 	await _show_result(total_money)
 
-	G.money += total_money
+	await _animate_money_gain(total_money)
 
 	# очистка (важно)
 	for k in G.rarity_counts.keys():
@@ -104,6 +108,36 @@ func start_count():
 # --------------------------------------------------
 # 🧮 LINE
 # --------------------------------------------------
+
+func _animate_money_gain(amount: int):
+	if amount <= 0:
+		return
+
+	var start_money = G.money
+	var end_money = G.money + amount
+
+	# 💥 небольшой "пинок" результата
+	var punch = create_tween()
+	punch.tween_property(result_label, "scale", Vector2(1.2, 1.2), 0.1)
+	punch.tween_property(result_label, "scale", Vector2.ONE, 0.15)
+
+	await punch.finished
+
+	# 💰 плавный апдейт денег
+	var duration := 0.8
+
+	var tween = create_tween()
+	tween.tween_method(
+		func(value):
+			money_label.text = str(int(value)),
+		start_money,
+		end_money,
+		duration
+	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	await tween.finished
+
+	# фиксируем в G после анимации
+	G.money = end_money
 
 func _show_line(container: Control, label: Label, rarity: int) -> int:
 	var count = G.rarity_counts[rarity]
