@@ -20,7 +20,7 @@ func _ready() -> void:
 	add_child(timer)
 	timer.timeout.connect(_spawn_sheep)
 	
-	_start_timer()
+	_start_timer(3.0, 5.0)
 
 func _start_timer(sdmin: float = spawn_delay_min, sdmax: float = spawn_delay_max):
 	timer.wait_time = randf_range(sdmin, sdmax)

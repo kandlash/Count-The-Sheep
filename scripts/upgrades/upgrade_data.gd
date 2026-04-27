@@ -76,5 +76,45 @@ static func get_data():
 			[{ "type": "lucky", "value": 0.35 }]
 		]
 	},
+	
+	"speedy_sheep_1": {
+		"name": "Скорость I",
+		"max_level": 3,
+		"cost": [50, 100, 150],
+		"parents": [],
+		"next": ["speedy_sheep_2"],
+
+		"effects": [
+			[{ "type": "percent", "value": 5.0 }],
+			[{ "type": "percent", "value": 5.0 }],
+			[{ "type": "percent", "value": 5.0 }]
+		]
+	},
+	"speedy_sheep_2": {
+		"name": "Скорость II",
+		"max_level": 3,
+		"cost": [300, 400, 500],
+		"parents": ["speedy_sheep_1"],
+		"next": ["speedy_sheep_2"],
+
+		"effects": [
+			[{ "type": "percent", "value": 5.0 }],
+			[{ "type": "percent", "value": 5.0 }],
+			[{ "type": "percent", "value": 5.0 }]
+		]
+	},
+	"speedy_sheep_3": {
+		"name": "Скорость III",
+		"max_level": 3,
+		"cost": [800, 1200, 1500],
+		"parents": ["speedy_sheep_2"],
+		"next": [],
+
+		"effects": [
+			[{ "type": "percent", "value": 5.0 }],
+			[{ "type": "percent", "value": 10.0 }],
+			[{ "type": "percent", "value": 15.0 }]
+		]
+	},
 		
 	}

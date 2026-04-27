@@ -16,7 +16,7 @@ func _ready():
 	content.scale = Vector2.ONE * zoom
 	
 
-
+func process(delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 

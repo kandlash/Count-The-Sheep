@@ -42,6 +42,8 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
+		Transition.transition()
+		await Transition.on_transition_finished
 		get_tree().change_scene_to_file("res://scenes/upgrade_shop.tscn")
 
 

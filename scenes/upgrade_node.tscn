@@ -32,7 +32,7 @@ font_size = 28
 [sub_resource type="LabelSettings" id="LabelSettings_5d8m8"]
 font_size = 28
 
-[node name="Button" type="TextureButton" unique_id=1815895742]
+[node name="UpgradeButton" type="TextureButton" unique_id=1815895742]
 offset_right = 128.0
 offset_bottom = 128.0
 rotation = 0.78689164

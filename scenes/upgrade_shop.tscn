@@ -61,24 +61,45 @@ upgrade_id = "owl_3"
 
 [node name="UpgradeNode4" parent="GraphRoot" unique_id=1212946822 instance=ExtResource("1_v8ny2")]
 offset_left = 706.0
-offset_top = 5.9999847
+offset_top = 96.000015
 offset_right = 834.0
-offset_bottom = 133.99998
+offset_bottom = 224.00002
 upgrade_id = "lucky_1"
 
 [node name="UpgradeNode5" parent="GraphRoot" unique_id=1611075887 instance=ExtResource("1_v8ny2")]
 offset_left = 706.0
-offset_top = -230.0
+offset_top = -108.000015
 offset_right = 834.0
-offset_bottom = -102.0
+offset_bottom = 19.999985
 upgrade_id = "lucky_2"
 
 [node name="UpgradeNode6" parent="GraphRoot" unique_id=1715093704 instance=ExtResource("1_v8ny2")]
 offset_left = 706.0
-offset_top = -444.0
+offset_top = -285.99997
 offset_right = 834.0
-offset_bottom = -316.0
+offset_bottom = -157.99997
 upgrade_id = "lucky_3"
+
+[node name="UpgradeButton" parent="GraphRoot" unique_id=1815895742 instance=ExtResource("1_v8ny2")]
+offset_left = 507.0
+offset_top = 293.0
+offset_right = 635.0
+offset_bottom = 421.0
+upgrade_id = "speedy_sheep_1"
+
+[node name="UpgradeButton2" parent="GraphRoot" unique_id=453049788 instance=ExtResource("1_v8ny2")]
+offset_left = 319.00003
+offset_top = 293.0
+offset_right = 447.00003
+offset_bottom = 421.0
+upgrade_id = "speedy_sheep_2"
+
+[node name="UpgradeButton3" parent="GraphRoot" unique_id=1049936712 instance=ExtResource("1_v8ny2")]
+offset_left = 138.0
+offset_top = 293.0
+offset_right = 266.0
+offset_bottom = 421.0
+upgrade_id = "speedy_sheep_3"
 
 [node name="UpgradeLine" parent="GraphRoot" unique_id=793715728 instance=ExtResource("3_mfja5")]
 default_color = Color(1, 0, 0, 1)

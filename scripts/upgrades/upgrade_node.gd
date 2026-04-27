@@ -32,7 +32,7 @@ func _ready():
 		upgrade_info.visible = Engine.is_editor_hint()
 
 # --------------------------------------------------
-# SAFE NODE INIT (ВАЖНО ДЛЯ @tool)
+# SAFE NODE INIT
 # --------------------------------------------------
 
 func _ensure_nodes():
@@ -64,13 +64,11 @@ func _pressed():
 # --------------------------------------------------
 
 func _update():
-	# защита от раннего вызова
 	if not is_inside_tree():
 		return
 	
 	_ensure_nodes()
 
-	# если UI ещё не готов — выходим
 	if upgrade_name == null:
 		return
 
@@ -82,7 +80,7 @@ func _update():
 		return
 
 	# -------------------------
-	# EDITOR MODE
+	# EDITOR MODE (без локализации)
 	# -------------------------
 	if Engine.is_editor_hint():
 		upgrade_name.text = data.get("name", "NoName")
@@ -112,8 +110,14 @@ func _update():
 	upgrade_level.text = "%d/%d" % [lvl, data["max_level"]]
 
 	if lvl - 1 < data["cost"].size():
-		cost_label.text = str(data["cost"][lvl - 1])
+		if lvl == data["max_level"]:
+			cost_label.text = str(data["cost"][lvl-1])
+		else:
+			cost_label.text = str(data["cost"][lvl])
 	else:
+		cost_label.text = "MAX"
+	
+	if lvl == data["max_level"]:
 		cost_label.text = "MAX"
 
 	disabled = !manager.can_buy(upgrade_id)
