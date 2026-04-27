@@ -7,7 +7,7 @@ class_name MoneyCount
 @onready var rare_container: HBoxContainer = $Control/Panel2/VBoxContainer/rare_container
 @onready var epic_container: HBoxContainer = $Control/Panel2/VBoxContainer/epic_container
 @onready var legendary_container: HBoxContainer = $Control/Panel2/VBoxContainer/legendary_container
-@onready var result_container: HBoxContainer = $Control/Panel2/result_container
+@onready var result_container: HBoxContainer = $Control/Panel2/Panel/result_container
 
 @onready var jump_label: Label = $Control/Panel2/VBoxContainer/jump_container/jump_label
 @onready var common_label: Label = $Control/Panel2/VBoxContainer/comon_container/common_label
@@ -15,7 +15,7 @@ class_name MoneyCount
 @onready var rare_label: Label = $Control/Panel2/VBoxContainer/rare_container/rare_label
 @onready var epic_label: Label = $Control/Panel2/VBoxContainer/epic_container/epic_label
 @onready var legendary_label: Label = $Control/Panel2/VBoxContainer/legendary_container/legendary_label
-@onready var result_label: Label = $Control/Panel2/result_container/result_label
+@onready var result_label: Label = $Control/Panel2/Panel/result_container/result_label
 
 # 💰 награды
 var rewards := {
