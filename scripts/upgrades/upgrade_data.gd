@@ -42,7 +42,7 @@ static func get_data():
 			]
 		},
 		"lucky_1": {
-		"name": "Счастливчик I",
+		"name": "Везунчик I",
 		"max_level": 1,
 		"cost": [200],
 		"parents": [],
@@ -54,7 +54,7 @@ static func get_data():
 	},
 
 	"lucky_2": {
-		"name": "Счастливчик II",
+		"name": "Везунчик II",
 		"max_level": 1,
 		"cost": [500],
 		"parents": ["lucky_1"],
@@ -66,7 +66,7 @@ static func get_data():
 	},
 
 	"lucky_3": {
-		"name": "Счастливчик III",
+		"name": "Везунчик III",
 		"max_level": 1,
 		"cost": [1200],
 		"parents": ["lucky_2"],

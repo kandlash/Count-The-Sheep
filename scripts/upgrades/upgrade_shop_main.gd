@@ -7,13 +7,15 @@ extends Control
 var dragging := false
 var last_mouse_pos := Vector2.ZERO
 
-var zoom := 1.0
-@export var zoom_min := 0.5
-@export var zoom_max := 2.5
+var zoom := 0.2
+@export var zoom_min := 0.1
+@export var zoom_max := 3.5
 @export var zoom_speed := 0.1
 
-func _process(delta: float) -> void:
-	money_label.text = str(G.money)
+func _ready():
+	content.scale = Vector2.ONE * zoom
+	
+
 
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
@@ -45,6 +47,8 @@ func _input(event):
 
 		content.position += delta
 
+func _process(delta: float) -> void:
+	money_label.text = str(G.money)
 
 func _apply_zoom(factor: float, mouse_pos: Vector2):
 	var new_zoom = clamp(zoom * factor, zoom_min, zoom_max)

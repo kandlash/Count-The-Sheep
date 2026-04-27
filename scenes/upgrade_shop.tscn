@@ -39,45 +39,45 @@ script = ExtResource("1_ya5xe")
 script = ExtResource("1_mrt2i")
 
 [node name="UpgradeNode" parent="GraphRoot" unique_id=516911011 instance=ExtResource("1_v8ny2")]
-offset_left = 219.0
-offset_top = 137.0
-offset_right = 227.0
-offset_bottom = 145.0
+offset_left = 705.0
+offset_top = 293.0
+offset_right = 833.0
+offset_bottom = 421.0
 upgrade_id = "owl_1"
 
 [node name="UpgradeNode2" parent="GraphRoot" unique_id=85148866 instance=ExtResource("1_v8ny2")]
-offset_left = 219.0
-offset_top = 79.0
-offset_right = 227.0
-offset_bottom = 87.0
+offset_left = 916.0
+offset_top = 293.0
+offset_right = 1044.0
+offset_bottom = 421.0
 upgrade_id = "owl_2"
 
 [node name="UpgradeNode3" parent="GraphRoot" unique_id=158135056 instance=ExtResource("1_v8ny2")]
-offset_left = 219.0
-offset_top = 25.0
-offset_right = 227.0
-offset_bottom = 33.0
+offset_left = 1129.0
+offset_top = 294.0
+offset_right = 1257.0
+offset_bottom = 422.0
 upgrade_id = "owl_3"
 
 [node name="UpgradeNode4" parent="GraphRoot" unique_id=1212946822 instance=ExtResource("1_v8ny2")]
-offset_left = 357.0
-offset_top = 25.0
-offset_right = 365.0
-offset_bottom = 33.0
+offset_left = 706.0
+offset_top = 5.9999847
+offset_right = 834.0
+offset_bottom = 133.99998
 upgrade_id = "lucky_1"
 
 [node name="UpgradeNode5" parent="GraphRoot" unique_id=1611075887 instance=ExtResource("1_v8ny2")]
-offset_left = 357.0
-offset_top = 78.0
-offset_right = 365.0
-offset_bottom = 86.0
+offset_left = 706.0
+offset_top = -230.0
+offset_right = 834.0
+offset_bottom = -102.0
 upgrade_id = "lucky_2"
 
 [node name="UpgradeNode6" parent="GraphRoot" unique_id=1715093704 instance=ExtResource("1_v8ny2")]
-offset_left = 357.0
-offset_top = 135.0
-offset_right = 365.0
-offset_bottom = 143.0
+offset_left = 706.0
+offset_top = -444.0
+offset_right = 834.0
+offset_bottom = -316.0
 upgrade_id = "lucky_3"
 
 [node name="UpgradeLine" parent="GraphRoot" unique_id=793715728 instance=ExtResource("3_mfja5")]

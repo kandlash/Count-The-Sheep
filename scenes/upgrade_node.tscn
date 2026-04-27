@@ -1,8 +1,116 @@
 [gd_scene format=3 uid="uid://cct7xr4pxwt6a"]
 
 [ext_resource type="Script" uid="uid://bpsd8hp32k5k" path="res://scripts/upgrades/upgrade_node.gd" id="1_i2vvs"]
+[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="1_o6dpi"]
 
-[node name="Button" type="Button" unique_id=85148866]
-offset_right = 8.0
-offset_bottom = 8.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6dpi"]
+bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.56078434, 0.42352942, 0.33333334, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 2
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_fthb7"]
+Panel/styles/panel = SubResource("StyleBoxFlat_o6dpi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6dpi"]
+font_size = 48
+
+[sub_resource type="Theme" id="Theme_o6dpi"]
+RichTextLabel/font_sizes/normal_font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_fthb7"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_5d8m8"]
+font_size = 28
+
+[node name="Button" type="TextureButton" unique_id=1815895742]
+offset_right = 128.0
+offset_bottom = 128.0
+rotation = 0.78689164
+texture_normal = ExtResource("1_o6dpi")
 script = ExtResource("1_i2vvs")
+
+[node name="upgrade_info" type="Panel" parent="." unique_id=994263373]
+z_index = 5
+layout_mode = 0
+offset_left = -278.58823
+offset_top = -43.501762
+offset_right = 50.06186
+offset_bottom = 183.49078
+rotation = -0.7810317
+theme = SubResource("Theme_fthb7")
+
+[node name="upgrade_name" type="Label" parent="upgrade_info" unique_id=991754411]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_right = 44.5
+offset_bottom = 67.0
+grow_horizontal = 2
+text = "test"
+label_settings = SubResource("LabelSettings_o6dpi")
+
+[node name="upgrade_discription" type="RichTextLabel" parent="upgrade_info" unique_id=1751046820]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.224487
+offset_top = -35.673233
+offset_right = 309.10632
+offset_bottom = 65.16147
+grow_vertical = 2
+theme = SubResource("Theme_o6dpi")
+bbcode_enabled = true
+text = "test"
+fit_content = true
+
+[node name="upgrade_level" type="Label" parent="upgrade_info" unique_id=1225709991]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.68579
+offset_top = -44.641678
+offset_right = -3.685791
+offset_bottom = -5.641678
+grow_horizontal = 0
+grow_vertical = 0
+text = "2/3"
+label_settings = SubResource("LabelSettings_fthb7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cost_label" type="Label" parent="upgrade_info" unique_id=504803476]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.033783
+offset_top = -44.764603
+offset_right = 31.966217
+offset_bottom = -5.7646027
+grow_horizontal = 2
+grow_vertical = 0
+text = "1222"
+label_settings = SubResource("LabelSettings_5d8m8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
