@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Count the sheep"
-run/main_scene="uid://dt72flxhyi2ly"
+run/main_scene="uid://bu0qhypduq5y8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -21,7 +21,6 @@ var elapsed := 0.0
 
 
 func _ready() -> void:
-	TranslationServer.set_locale("en")
 	G.world = self
 
 	time_progressbar.min_value = 0

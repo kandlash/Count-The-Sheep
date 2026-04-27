@@ -70,6 +70,7 @@ _data = {
 script = ExtResource("1_rerct")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=851041989]
+z_index = 4096
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
