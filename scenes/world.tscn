@@ -485,13 +485,30 @@ direction = 1
 spawn_delay_min = 8.0
 spawn_delay_max = 17.0
 
-[node name="sheep_generator3" parent="." unique_id=215713845 instance=ExtResource("7_i7141")]
-position = Vector2(256, 71)
+[node name="sheep_generator5" parent="." unique_id=1102858592 instance=ExtResource("7_i7141")]
+position = Vector2(256, -89)
 spawn_delay_min = 6.0
 spawn_delay_max = 15.0
 
-[node name="sheep_generator5" parent="." unique_id=1102858592 instance=ExtResource("7_i7141")]
-position = Vector2(256, -89)
+[node name="sheep_generator7" parent="." unique_id=1507430451 instance=ExtResource("7_i7141")]
+position = Vector2(256, -40)
+spawn_delay_min = 6.0
+spawn_delay_max = 15.0
+
+[node name="sheep_generator3" parent="." unique_id=360258890 instance=ExtResource("7_i7141")]
+position = Vector2(-320, 40)
+direction = 1
+spawn_delay_min = 5.0
+spawn_delay_max = 15.0
+
+[node name="sheep_generator4" parent="." unique_id=1256166410 instance=ExtResource("7_i7141")]
+position = Vector2(-320, 88)
+direction = 1
+spawn_delay_min = 8.0
+spawn_delay_max = 17.0
+
+[node name="sheep_generator6" parent="." unique_id=1671146411 instance=ExtResource("7_i7141")]
+position = Vector2(256, 56)
 spawn_delay_min = 6.0
 spawn_delay_max = 15.0
 
@@ -760,8 +777,6 @@ label_settings = SubResource("LabelSettings_o8fc1")
 stream = ExtResource("11_e3hyu")
 volume_db = -80.0
 autoplay = true
-
-[node name="dog" parent="." unique_id=537338450 instance=ExtResource("14_o8fc1")]
 
 [connection signal="area_entered" from="sheep_killer" to="sheep_killer" method="_on_area_entered"]
 [connection signal="area_entered" from="sheep_killer2" to="sheep_killer2" method="_on_area_entered"]
