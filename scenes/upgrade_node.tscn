@@ -88,7 +88,7 @@ offset_bottom = 65.16147
 grow_vertical = 2
 theme = SubResource("Theme_o6dpi")
 bbcode_enabled = true
-text = "test"
+text = "[color=green]test[/color]"
 fit_content = true
 
 [node name="upgrade_level" type="Label" parent="upgrade_info" unique_id=1225709991]

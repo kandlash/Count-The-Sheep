@@ -104,12 +104,15 @@ func _update():
 
 	upgrade_name.text = data["name"]
 	upgrade_level.text = "%d/%d" % [lvl, data["max_level"]]
-
+	upgrade_discription.clear()
+	
 	if lvl - 1 < data["cost"].size():
 		if lvl == data["max_level"]:
 			cost_label.text = str(data["cost"][lvl - 1])
+			upgrade_discription.append_text(data["description"].replace("-value", str(data["effects"][lvl-1][0]["value"])))
 		else:
 			cost_label.text = str(data["cost"][lvl])
+			upgrade_discription.append_text(data["description"].replace("-value", str(data["effects"][lvl][0]["value"])))
 	else:
 		cost_label.text = "MAX"
 

@@ -54,12 +54,12 @@ var dogs_to_spawn := 0
 func apply_lucky(power: float):
 	sheep_chances = sheep_base_chances.duplicate()
 
-	sheep_chances[Rarity.COMMON] *= (1.0 - power)
+	sheep_chances[Rarity.COMMON] *= (1.0 - power/100)
 
-	sheep_chances[Rarity.UNCOMMON] *= (1.0 + power * 0.5)
-	sheep_chances[Rarity.RARE] *= (1.0 + power)
-	sheep_chances[Rarity.EPIC] *= (1.0 + power * 1.5)
-	sheep_chances[Rarity.LEGENDARY] *= (1.0 + power * 2.0)
+	sheep_chances[Rarity.UNCOMMON] *= (1.0 + (power/100) * 0.5)
+	sheep_chances[Rarity.RARE] *= (1.0 + (power/100))
+	sheep_chances[Rarity.EPIC] *= (1.0 + (power/100) * 1.5)
+	sheep_chances[Rarity.LEGENDARY] *= (1.0 + (power/100) * 2.0)
 
 	_normalize_sheep_chances()
 
