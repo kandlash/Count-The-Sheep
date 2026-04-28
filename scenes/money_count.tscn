@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cflrdcsxowdni" path="res://scripts/money_count.gd" id="1_iaony"]
 [ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="2_gq3fm"]
 [ext_resource type="Texture2D" uid="uid://dm0ry6jw84fv4" path="res://assets/sprites/20250420manaSoulHeaderA-Sheet.png" id="3_0j7l4"]
+[ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="4_7s07o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq3fm"]
 bg_color = Color(0, 0, 0, 1)
@@ -76,22 +77,6 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0j7l4"]
 font_size = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yoy78"]
-bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh3e3"]
-bg_color = Color(0.56078434, 0.42352942, 0.33333334, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.2535206, 0.17999935, 0.13140383, 1)
-
-[sub_resource type="Theme" id="Theme_dddj4"]
-Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
 
 [node name="money_count" type="Control" unique_id=710266520]
 layout_mode = 3
@@ -426,21 +411,11 @@ layout_mode = 2
 texture = ExtResource("2_gq3fm")
 expand_mode = 2
 
-[node name="next_button" type="Button" parent="." unique_id=1691241050]
+[node name="next_button" parent="." unique_id=1598570472 instance=ExtResource("4_7s07o")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -65.0
-offset_top = -48.0
-offset_right = -16.0
-offset_bottom = -17.0
-grow_horizontal = 0
-grow_vertical = 0
-theme = SubResource("Theme_dddj4")
-disabled = true
-text = "NEXT"
+offset_left = -58.0
+offset_top = -41.0
+offset_right = -9.0
+offset_bottom = -10.0
 
 [connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bjj5b62k3vv5f" path="res://assets/sprites/upgrade_icons/dog_upgrade.png" id="4_qu5s7"]
 [ext_resource type="Texture2D" uid="uid://cu24x8j6x52mu" path="res://assets/sprites/upgrade_icons/shee_lucky_upgrade.png" id="4_ybft6"]
 [ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="5_54pk2"]
+[ext_resource type="Texture2D" uid="uid://caifbefs6piv7" path="res://assets/sprites/upgrade_icons/dog_speed_upgrade.png" id="5_q1psx"]
+[ext_resource type="Texture2D" uid="uid://e32o4pylq7gg" path="res://assets/sprites/upgrade_icons/shee_feed_upgrade.png" id="6_lt0d2"]
+[ext_resource type="Texture2D" uid="uid://baocqqy5x0bc1" path="res://assets/sprites/upgrade_icons/big_brain_upgrade.png" id="8_mndg8"]
+[ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="9_o5je6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s07o"]
 bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
@@ -29,22 +33,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_7s07o")
 [sub_resource type="LabelSettings" id="LabelSettings_ybft6"]
 font_size = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yoy78"]
-bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh3e3"]
-bg_color = Color(0.56078434, 0.42352942, 0.33333334, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.2535206, 0.17999935, 0.13140383, 1)
-
-[sub_resource type="Theme" id="Theme_dddj4"]
-Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
-
 [node name="UpgradeShop" type="Control" unique_id=1169477032]
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +41,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ya5xe")
+metadata/_edit_vertical_guides_ = [1326.0, 1043.0]
+metadata/_edit_horizontal_guides_ = [224.0, 20.0, -158.0]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1915249550]
 z_index = -25
@@ -60,10 +50,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -5093.0
-offset_top = -4616.0
-offset_right = 6424.0
-offset_bottom = 6150.0
+offset_left = -5080.0
+offset_top = -4461.0
+offset_right = 6437.0
+offset_bottom = 6305.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1254902, 0.11372549, 0.11764706, 1)
@@ -85,6 +75,30 @@ offset_right = 833.0
 offset_bottom = 619.0
 texture_normal = ExtResource("4_qu5s7")
 upgrade_id = "dog_1"
+
+[node name="UpgradeNode17" parent="GraphRoot" unique_id=939890506 instance=ExtResource("1_v8ny2")]
+offset_left = 915.00006
+offset_top = 491.0
+offset_right = 1043.0
+offset_bottom = 619.0
+texture_normal = ExtResource("5_q1psx")
+upgrade_id = "speedy_dogs_1"
+
+[node name="UpgradeNode18" parent="GraphRoot" unique_id=1453832302 instance=ExtResource("1_v8ny2")]
+offset_left = 1129.0
+offset_top = 491.0
+offset_right = 1257.0
+offset_bottom = 619.0
+texture_normal = ExtResource("5_q1psx")
+upgrade_id = "speedy_dogs_2"
+
+[node name="UpgradeNode19" parent="GraphRoot" unique_id=529551412 instance=ExtResource("1_v8ny2")]
+offset_left = 1326.0001
+offset_top = 491.0
+offset_right = 1454.0001
+offset_bottom = 619.0
+texture_normal = ExtResource("5_q1psx")
+upgrade_id = "speedy_dogs_3"
 
 [node name="UpgradeNode8" parent="GraphRoot" unique_id=1236975622 instance=ExtResource("1_v8ny2")]
 offset_left = 705.0
@@ -109,6 +123,34 @@ offset_right = 1044.0
 offset_bottom = 421.0
 upgrade_id = "owl_2"
 
+[node name="UpgradeNode13" parent="GraphRoot" unique_id=316448916 instance=ExtResource("1_v8ny2")]
+offset_left = 916.0
+offset_top = -108.0
+offset_right = 1044.0
+offset_bottom = 20.0
+upgrade_id = "raririty_bonuses_1"
+
+[node name="UpgradeNode14" parent="GraphRoot" unique_id=1016548520 instance=ExtResource("1_v8ny2")]
+offset_left = 1130.0001
+offset_top = -108.0
+offset_right = 1258.0001
+offset_bottom = 20.0
+upgrade_id = "raririty_bonuses_2"
+
+[node name="UpgradeNode15" parent="GraphRoot" unique_id=559977083 instance=ExtResource("1_v8ny2")]
+offset_left = 1326.0001
+offset_top = -107.99997
+offset_right = 1454.0001
+offset_bottom = 20.0
+upgrade_id = "raririty_bonuses_3"
+
+[node name="UpgradeNode16" parent="GraphRoot" unique_id=148115241 instance=ExtResource("1_v8ny2")]
+offset_left = 1504.0001
+offset_top = -107.99997
+offset_right = 1632.0001
+offset_bottom = 20.0
+upgrade_id = "raririty_bonuses_4"
+
 [node name="UpgradeNode3" parent="GraphRoot" unique_id=158135056 instance=ExtResource("1_v8ny2")]
 offset_left = 1129.0
 offset_top = 294.0
@@ -123,6 +165,30 @@ offset_right = 834.0
 offset_bottom = 224.00002
 texture_normal = ExtResource("4_ybft6")
 upgrade_id = "lucky_1"
+
+[node name="UpgradeNode10" parent="GraphRoot" unique_id=601516112 instance=ExtResource("1_v8ny2")]
+offset_left = 918.0
+offset_top = 97.0
+offset_right = 1046.0
+offset_bottom = 225.0
+texture_normal = ExtResource("6_lt0d2")
+upgrade_id = "feed_1"
+
+[node name="UpgradeNode11" parent="GraphRoot" unique_id=1944615102 instance=ExtResource("1_v8ny2")]
+offset_left = 1130.0001
+offset_top = 97.0
+offset_right = 1258.0001
+offset_bottom = 225.0
+texture_normal = ExtResource("6_lt0d2")
+upgrade_id = "feed_2"
+
+[node name="UpgradeNode12" parent="GraphRoot" unique_id=1923201656 instance=ExtResource("1_v8ny2")]
+offset_left = 1327.0
+offset_top = 97.0
+offset_right = 1455.0
+offset_bottom = 225.0
+texture_normal = ExtResource("6_lt0d2")
+upgrade_id = "feed_3"
 
 [node name="UpgradeNode5" parent="GraphRoot" unique_id=1611075887 instance=ExtResource("1_v8ny2")]
 offset_left = 706.0
@@ -147,6 +213,30 @@ offset_right = 635.0
 offset_bottom = 421.0
 texture_normal = ExtResource("4_8qunu")
 upgrade_id = "speedy_sheep_1"
+
+[node name="UpgradeButton4" parent="GraphRoot" unique_id=1883955249 instance=ExtResource("1_v8ny2")]
+offset_left = 507.0
+offset_top = 95.0
+offset_right = 635.0
+offset_bottom = 223.0
+texture_normal = ExtResource("8_mndg8")
+upgrade_id = "big_brain_1"
+
+[node name="UpgradeButton5" parent="GraphRoot" unique_id=360698294 instance=ExtResource("1_v8ny2")]
+offset_left = 507.00003
+offset_top = -109.0
+offset_right = 635.0
+offset_bottom = 19.0
+texture_normal = ExtResource("8_mndg8")
+upgrade_id = "big_brain_2"
+
+[node name="UpgradeButton6" parent="GraphRoot" unique_id=366254117 instance=ExtResource("1_v8ny2")]
+offset_left = 507.00003
+offset_top = -287.0
+offset_right = 635.0
+offset_bottom = -159.0
+texture_normal = ExtResource("8_mndg8")
+upgrade_id = "big_brain_3"
 
 [node name="UpgradeButton2" parent="GraphRoot" unique_id=453049788 instance=ExtResource("1_v8ny2")]
 offset_left = 319.00003
@@ -205,19 +295,9 @@ layout_mode = 2
 texture = ExtResource("5_54pk2")
 expand_mode = 2
 
-[node name="next_button" type="Button" parent="CanvasLayer" unique_id=842067315]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -65.0
-offset_top = -48.0
-offset_right = -16.0
-offset_bottom = -17.0
-grow_horizontal = 0
-grow_vertical = 0
-theme = SubResource("Theme_dddj4")
-text = "NEXT"
-
-[connection signal="pressed" from="CanvasLayer/next_button" to="." method="_on_next_button_pressed"]
+[node name="next_button" parent="CanvasLayer" unique_id=1598570472 instance=ExtResource("9_o5je6")]
+offset_left = -59.0
+offset_top = -43.0
+offset_right = -10.0
+offset_bottom = -12.0
+disabled = false

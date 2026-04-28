@@ -107,8 +107,6 @@ func start_count():
 # --------------------------------------------------
 
 func _animate_money_gain(amount: int):
-	if amount <= 0:
-		return
 
 	var start_money = G.money
 	var end_money = G.money + amount
