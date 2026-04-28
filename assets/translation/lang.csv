@@ -12,5 +12,78 @@ key_result_salary,Result:,Итого:
 key_night_time_label,Until Morning:,До утра:
 key_tired_label,Tiredness:,Усталость:
 key_jumps_label,Jumps,Прыжки
-key_upgrade_owl_1,Owl I,Сова I
 key_exit,Exit,Выход
+key_owl_1_name_upgrade,Owl I,Сова I
+key_owl_1_description_upgrade,You stay awake for [color=green]-value[/color] seconds,Вы не спите [color=green]-value[/color] секунд
+,,
+key_owl_2_name_upgrade,Owl II,Сова II
+key_owl_2_description_upgrade,You stay awake for [color=green]-value[/color] seconds,Вы не спите [color=green]-value[/color] секунд
+,,
+key_owl_3_name_upgrade,Owl III,Сова III
+key_owl_3_description_upgrade,You stay awake for [color=green]-value[/color] seconds,Вы не спите [color=green]-value[/color] секунд
+,,
+key_lucky_1_name_upgrade,Lucky I,Везунчик I
+key_lucky_1_description_upgrade,[color=green]+-value%[/color] chance to encounter strange sheep,[color=green]+-value%[/color] к удаче встретить странных овец
+,,
+key_lucky_2_name_upgrade,Lucky II,Везунчик II
+key_lucky_2_description_upgrade,[color=green]+-value%[/color] chance to encounter strange sheep,[color=green]+-value%[/color] к удаче встретить странных овец
+,,
+key_lucky_3_name_upgrade,Lucky III,Везунчик III
+key_lucky_3_description_upgrade,[color=green]+-value%[/color] chance to encounter strange sheep,[color=green]+-value%[/color] к удаче встретить странных овец
+,,
+key_speedy_sheep_1_name_upgrade,Speed I,Скорость I
+key_speedy_sheep_1_description_upgrade,[color=green]+-value%[/color] sheep speed,[color=green]+-value%[/color] к скорости овец
+,,
+key_speedy_sheep_2_name_upgrade,Speed II,Скорость II
+key_speedy_sheep_2_description_upgrade,[color=green]+-value%[/color] sheep speed,[color=green]+-value%[/color] к скорости овец
+,,
+key_speedy_sheep_3_name_upgrade,Speed III,Скорость III
+key_speedy_sheep_3_description_upgrade,[color=green]+-value%[/color] sheep speed,[color=green]+-value%[/color] к скорости овец
+,,
+key_dog_1_name_upgrade,Dog Lover I,Собачник I
+key_dog_1_description_upgrade,A new friend and a great [color=green][wave]helper[/wave][/color]!,Новый друг и хороший [color=green][wave]помощник[/wave][/color]!
+,,
+key_dog_2_name_upgrade,Dog Lover II,Собачник II
+key_dog_2_description_upgrade,Another [color=green][wave]friend[/wave][/color]!,Еще один [color=green][wave]друг[/wave][/color]!
+,,
+key_dog_3_name_upgrade,Dog Lover III,Собачник III
+key_dog_3_description_upgrade,More friends — more [color=green][wave]fun![/wave][/color],Больше друзей - будет [color=green][wave]веселей![/wave][/color]
+,,
+key_feed_1_name_upgrade,Bait I,Прикормка I
+key_feed_1_description_upgrade,Sheep spawn increased by [color=green]-value%[/color],Спавн овечек увеличен на [color=green]-value%[/color]
+,,
+key_feed_2_name_upgrade,Bait II,Прикормка II
+key_feed_2_description_upgrade,Sheep spawn increased by [color=green]-value%[/color],Спавн овечек увеличен на [color=green]-value%[/color]
+,,
+key_feed_3_name_upgrade,Bait III,Прикормка III
+key_feed_3_description_upgrade,Sheep spawn increased by [color=green]-value%[/color],Спавн овечек увеличен на [color=green]-value%[/color]
+,,
+key_big_brain_1_name_upgrade,Intellect I,Ум I
+key_big_brain_1_description_upgrade,Sheep hesitates [color=green]-value%[/color] longer before running away,Овечка думает дольше на [color=green]-value%[/color]
+,,
+key_big_brain_2_name_upgrade,Intellect II,Ум II
+key_big_brain_2_description_upgrade,Sheep hesitates [color=green]-value%[/color] longer before running away,Овечка думает дольше на [color=green]-value%[/color]
+,,
+key_big_brain_3_name_upgrade,Intellect III,Ум III
+key_big_brain_3_description_upgrade,Sheep hesitates [color=green]-value%[/color] longer before running away,Овечка думает дольше на [color=green]-value%[/color]
+,,
+key_rarity_bonuses_1_name_upgrade,Bonuses I,Бонусы I
+key_rarity_bonuses_1_description_upgrade,Uncommon sheep bonus increased by [color=green]-value%[/color],Бонус за необычных овечек увеличен на [color=green]-value%[/color]
+,,
+key_rarity_bonuses_2_name_upgrade,Bonuses II,Бонусы II
+key_rarity_bonuses_2_description_upgrade,Rare sheep bonus increased by [color=green]-value%[/color],Бонус за редких овечек увеличен на [color=green]-value%[/color]
+,,
+key_rarity_bonuses_3_name_upgrade,Bonuses III,Бонусы III
+key_rarity_bonuses_3_description_upgrade,Epic sheep bonus increased by [color=green]-value%[/color],Бонус за эпических овечек увеличен на [color=green]-value%[/color]
+,,
+key_rarity_bonuses_4_name_upgrade,Bonuses IV,Бонусы IIII
+key_rarity_bonuses_4_description_upgrade,Legendary sheep bonus increased by [color=green]-value%[/color],Бонус за легенд. овечек увеличен на [color=green]-value%[/color]
+,,
+key_speedy_dogs_1_name_upgrade,Dog Speed I,Скорость I
+key_speedy_dogs_1_description_upgrade,Dogs run faster by [color=green]-value%[/color],Собаки бегают быстрее на [color=green]-value%[/color]
+,,
+key_speedy_dogs_2_name_upgrade,Dog Speed II,Скорость II
+key_speedy_dogs_2_description_upgrade,Dogs run faster by [color=green]-value%[/color],Собаки бегают быстрее на [color=green]-value%[/color]
+,,
+key_speedy_dogs_3_name_upgrade,Dog Speed III,Скорость III
+key_speedy_dogs_3_description_upgrade,Dogs run faster by [color=green]-value%[/color],Собаки бегают быстрее на [color=green]-value%[/color]
