@@ -166,9 +166,9 @@ static func get_data():
 			"next": ["feed_2"],
 			"description": "key_feed_1_description_upgrade",
 			"effects": [
-				[{ "type": "sheep_max_time", "value": 10 }],
-				[{ "type": "sheep_max_time", "value": 10 }],
-				[{ "type": "sheep_max_time", "value": 10 }]
+				[{ "type": "sheep_max_time", "value": 5 }],
+				[{ "type": "sheep_max_time", "value": 6 }],
+				[{ "type": "sheep_max_time", "value": 7 }]
 			]
 		},
 
@@ -180,8 +180,8 @@ static func get_data():
 			"next": ["feed_3"],
 			"description": "key_feed_2_description_upgrade",
 			"effects": [
-				[{ "type": "sheep_max_time", "value": 10 }],
-				[{ "type": "sheep_max_time", "value": 10 }],
+				[{ "type": "sheep_max_time", "value": 8 }],
+				[{ "type": "sheep_max_time", "value": 9 }],
 				[{ "type": "sheep_max_time", "value": 10 }]
 			]
 		},
@@ -194,9 +194,9 @@ static func get_data():
 			"next": [],
 			"description": "key_feed_3_description_upgrade",
 			"effects": [
-				[{ "type": "sheep_max_time", "value": 20 }],
-				[{ "type": "sheep_max_time", "value": 30 }],
-				[{ "type": "sheep_max_time", "value": 50 }]
+				[{ "type": "sheep_max_time", "value": 10 }],
+				[{ "type": "sheep_max_time", "value": 10 }],
+				[{ "type": "sheep_max_time", "value": 10 }]
 			]
 		},
 

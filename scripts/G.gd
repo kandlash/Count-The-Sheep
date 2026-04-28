@@ -11,6 +11,9 @@ var income_multiplier := 1.0
 
 var sheep_walk_speed := 0.2
 
+var sheep_spawn_delay_min := 7.0
+var sheep_spawn_delay_max := 15.0
+
 var upgrades := {} # id -> level
 
 var world: World

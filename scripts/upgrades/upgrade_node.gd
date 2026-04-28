@@ -10,7 +10,7 @@ class_name UpgradeNode
 @onready var upgrade_name: Label = $upgrade_info/upgrade_name
 @onready var upgrade_discription: RichTextLabel = $upgrade_info/upgrade_discription
 @onready var upgrade_level: Label = $upgrade_info/upgrade_level
-@onready var cost_label: Label = $upgrade_info/cost_label
+@onready var cost_label: Label = $upgrade_info/HBoxContainer/cost_label
 @onready var upgrade_info: Panel = $upgrade_info
 @onready var editor_name_label: Label = $editor_name_label
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpsd8hp32k5k" path="res://scripts/upgrades/upgrade_node.gd" id="1_i2vvs"]
 [ext_resource type="Texture2D" uid="uid://cbmfartp8hfor" path="res://assets/sprites/upgrade_icons/owl_upgrade.png" id="1_o6dpi"]
+[ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="3_fthb7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6dpi"]
 bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
@@ -81,10 +82,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 18.224487
-offset_top = -35.673233
-offset_right = 309.10632
-offset_bottom = 65.16147
+offset_left = 18.13925
+offset_top = -54.313206
+offset_right = 309.0211
+offset_bottom = 57.24382
 grow_vertical = 2
 theme = SubResource("Theme_o6dpi")
 bbcode_enabled = true
@@ -109,23 +110,32 @@ label_settings = SubResource("LabelSettings_fthb7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="cost_label" type="Label" parent="upgrade_info" unique_id=504803476]
+[node name="HBoxContainer" type="HBoxContainer" parent="upgrade_info" unique_id=975216666]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -32.033783
-offset_top = -44.764603
-offset_right = 31.966217
-offset_bottom = -5.7646027
+offset_left = -54.03306
+offset_top = -47.229614
+offset_right = 53.96695
+offset_bottom = -7.2296143
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
+
+[node name="cost_label" type="Label" parent="upgrade_info/HBoxContainer" unique_id=504803476]
+layout_mode = 2
 text = "1222"
 label_settings = SubResource("LabelSettings_5d8m8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="upgrade_info/HBoxContainer" unique_id=394584259]
+layout_mode = 2
+texture = ExtResource("3_fthb7")
+expand_mode = 2
 
 [node name="editor_name_label" type="Label" parent="." unique_id=1328957915]
 layout_mode = 1

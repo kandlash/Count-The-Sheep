@@ -20,7 +20,7 @@ func _ready() -> void:
 	add_child(timer)
 	timer.timeout.connect(_spawn_sheep)
 	
-	_start_timer(3.0, 5.0)
+	_start_timer(2.0, 4.0)
 
 func _start_timer(sdmin: float = spawn_delay_min, sdmax: float = spawn_delay_max):
 	timer.wait_time = randf_range(sdmin, sdmax)
@@ -38,7 +38,7 @@ func _spawn_sheep():
 	var rarity = _roll_rarity()
 	sheep.set_rarity(rarity)
 
-	_start_timer()
+	_start_timer(G.sheep_spawn_delay_min, G.sheep_spawn_delay_max)
 
 func _roll_rarity() -> int:
 	var chances = G.sheep_chances

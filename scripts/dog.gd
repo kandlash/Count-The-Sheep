@@ -7,10 +7,13 @@ enum State {
 	BARK
 }
 
+@export var debug_line_color: Color = Color.RED
+@export var debug_line_width: float = 0.0
+
 @export var scan_radius := 600.0
 @export var move_speed := 90.0
 @export var bark_distance := 26.0
-@export var scan_interval := 0.3
+@export var scan_interval := 0.15
 
 @export var wander_radius := 40.0
 @export var wander_speed := 25.0
@@ -66,7 +69,18 @@ func _physics_process(delta: float) -> void:
 
 		State.BARK:
 			pass
+			
+	queue_redraw()
 
+func _draw() -> void:
+	if state != State.CHASE:
+		return
+
+	if not is_instance_valid(target_sheep):
+		return
+
+	var local_target_pos = to_local(target_sheep.global_position)
+	draw_line(Vector2.ZERO, local_target_pos, debug_line_color, debug_line_width)
 
 func _wander(delta: float) -> void:
 	var dir = _wander_target - global_position

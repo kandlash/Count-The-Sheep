@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://8d2d6w081idb" path="res://assets/sprites/upgrade_icons/sheep_speed_upgrade.png" id="4_8qunu"]
 [ext_resource type="Texture2D" uid="uid://bjj5b62k3vv5f" path="res://assets/sprites/upgrade_icons/dog_upgrade.png" id="4_qu5s7"]
 [ext_resource type="Texture2D" uid="uid://cu24x8j6x52mu" path="res://assets/sprites/upgrade_icons/shee_lucky_upgrade.png" id="4_ybft6"]
-[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="5_54pk2"]
 [ext_resource type="Texture2D" uid="uid://caifbefs6piv7" path="res://assets/sprites/upgrade_icons/dog_speed_upgrade.png" id="5_q1psx"]
 [ext_resource type="Texture2D" uid="uid://e32o4pylq7gg" path="res://assets/sprites/upgrade_icons/shee_feed_upgrade.png" id="6_lt0d2"]
 [ext_resource type="Texture2D" uid="uid://baocqqy5x0bc1" path="res://assets/sprites/upgrade_icons/big_brain_upgrade.png" id="8_mndg8"]
 [ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="9_o5je6"]
+[ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="11_q1psx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s07o"]
 bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
@@ -292,7 +292,7 @@ label_settings = SubResource("LabelSettings_ybft6")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Panel4/HBoxContainer" unique_id=667235179]
 layout_mode = 2
-texture = ExtResource("5_54pk2")
+texture = ExtResource("11_q1psx")
 expand_mode = 2
 
 [node name="next_button" parent="CanvasLayer" unique_id=1598570472 instance=ExtResource("9_o5je6")]

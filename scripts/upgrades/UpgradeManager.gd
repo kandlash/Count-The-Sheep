@@ -57,7 +57,6 @@ func _apply_single_effect(effect: Dictionary):
 		"income_multiplier":
 			G.income_multiplier = effect["value"]
 
-		# 🆕 LUCKY
 		"lucky":
 			G.apply_lucky(effect["value"])
 		
@@ -66,6 +65,10 @@ func _apply_single_effect(effect: Dictionary):
 			
 		"spawn_dog":
 			G.dogs_to_spawn += effect["value"]
+			
+		"sheep_max_time":
+			G.sheep_spawn_delay_min -= G.sheep_spawn_delay_min * effect["value"]/100
+			G.sheep_spawn_delay_max -= G.sheep_spawn_delay_max * effect["value"]/100
 		_:
 			push_warning("Unknown effect: " + str(effect))
 

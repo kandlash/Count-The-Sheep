@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cflrdcsxowdni" path="res://scripts/money_count.gd" id="1_iaony"]
 [ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="2_gq3fm"]
 [ext_resource type="Texture2D" uid="uid://dm0ry6jw84fv4" path="res://assets/sprites/20250420manaSoulHeaderA-Sheet.png" id="3_0j7l4"]
+[ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="3_46pkb"]
 [ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="4_7s07o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq3fm"]
@@ -139,7 +140,7 @@ label_settings = SubResource("LabelSettings_yoy78")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/jump_container" unique_id=2118010586]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="comon_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=1056795010]
@@ -162,7 +163,7 @@ label_settings = SubResource("LabelSettings_yoy78")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/comon_container" unique_id=1957887276]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="uncomon_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=607765951]
@@ -185,7 +186,7 @@ label_settings = SubResource("LabelSettings_yoy78")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/uncomon_container" unique_id=1223899382]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="rare_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=2069167572]
@@ -208,7 +209,7 @@ label_settings = SubResource("LabelSettings_yoy78")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/rare_container" unique_id=530152942]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="epic_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=1513426893]
@@ -231,7 +232,7 @@ label_settings = SubResource("LabelSettings_yoy78")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/epic_container" unique_id=1206481866]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="legendary_container" type="HBoxContainer" parent="Panel2/VBoxContainer" unique_id=58824122]
@@ -254,7 +255,7 @@ label_settings = SubResource("LabelSettings_yoy78")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/legendary_container" unique_id=1727506536]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="Panel" type="Panel" parent="Panel2" unique_id=363207188]
@@ -295,7 +296,7 @@ label_settings = SubResource("LabelSettings_gq3fm")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel2/Panel/result_container" unique_id=134537208]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/Panel" unique_id=1760884745]
@@ -346,7 +347,7 @@ alignment = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Panel3/HBoxContainer" unique_id=731686389]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel3/HBoxContainer" unique_id=805258904]
@@ -356,7 +357,7 @@ label_settings = SubResource("LabelSettings_46pkb")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel3/HBoxContainer" unique_id=1012318002]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel3" unique_id=1676773628]
@@ -408,7 +409,7 @@ label_settings = SubResource("LabelSettings_0j7l4")
 
 [node name="TextureRect2" type="TextureRect" parent="Panel4/HBoxContainer" unique_id=1872405234]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("3_46pkb")
 expand_mode = 2
 
 [node name="next_button" parent="." unique_id=1598570472 instance=ExtResource("4_7s07o")]
