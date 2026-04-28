@@ -100,6 +100,7 @@ func start_count():
 	# очистка (важно)
 	for k in G.rarity_counts.keys():
 		G.rarity_counts[k] = 0
+	G.jumps_count = 0
 
 # --------------------------------------------------
 # 🧮 LINE
@@ -134,6 +135,7 @@ func _animate_money_gain(amount: int):
 
 	# фиксируем в G после анимации
 	G.money = end_money
+	$next_button.disabled = false
 
 func _show_line(container: Control, label: Label, rarity: int) -> int:
 	var count = G.rarity_counts[rarity]
