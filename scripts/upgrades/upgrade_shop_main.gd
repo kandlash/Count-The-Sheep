@@ -45,8 +45,7 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	money_label.text = str(G.money)
-	if Input.is_action_just_pressed("ui_accept"):
-		get_tree().change_scene_to_file("res://scenes/world.tscn")
+
 
 func _apply_zoom(factor: float, mouse_pos: Vector2):
 	var new_zoom = clamp(zoom * factor, zoom_min, zoom_max)
@@ -63,3 +62,9 @@ func _apply_zoom(factor: float, mouse_pos: Vector2):
 
 	# компенсируем смещение (чтобы зум был к курсору)
 	content.position += (mouse_pos - (content.position + after))
+
+
+func _on_next_button_pressed() -> void:
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().change_scene_to_file("res://scenes/world.tscn")

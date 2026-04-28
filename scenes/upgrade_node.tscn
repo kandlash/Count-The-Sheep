@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cct7xr4pxwt6a"]
 
 [ext_resource type="Script" uid="uid://bpsd8hp32k5k" path="res://scripts/upgrades/upgrade_node.gd" id="1_i2vvs"]
-[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="1_o6dpi"]
+[ext_resource type="Texture2D" uid="uid://cbmfartp8hfor" path="res://assets/sprites/upgrade_icons/owl_upgrade.png" id="1_o6dpi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6dpi"]
 bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
@@ -33,25 +33,35 @@ font_size = 28
 font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_t7abb"]
-font_size = 19
-shadow_size = 23
+font_size = 21
+shadow_size = 2
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="UpgradeButton" type="TextureButton" unique_id=1815895742]
-offset_right = 128.0
-offset_bottom = 128.0
-rotation = 0.78689164
+z_index = 11
+offset_top = -0.9999962
+offset_right = 104.04242
+offset_bottom = 110.57861
+rotation = 0.0045728087
 texture_normal = ExtResource("1_o6dpi")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("1_i2vvs")
 
 [node name="upgrade_info" type="Panel" parent="." unique_id=994263373]
-z_index = 5
-layout_mode = 0
-offset_left = -278.58823
-offset_top = -43.501762
-offset_right = 50.06186
-offset_bottom = 183.49078
-rotation = -0.7810317
+z_index = 34
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.2078
+offset_top = -306.53973
+offset_right = 163.44229
+offset_bottom = -79.54718
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_fthb7")
 
 [node name="upgrade_name" type="Label" parent="upgrade_info" unique_id=991754411]
@@ -124,13 +134,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -49.62869
-offset_top = 33.4758
-offset_right = 71.03845
-offset_bottom = 60.4758
+offset_left = -60.228474
+offset_top = 7.9835052
+offset_right = 60.438667
+offset_bottom = 37.983505
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.7851997
+rotation = -0.0052301884
 text = "test"
 label_settings = SubResource("LabelSettings_t7abb")
 horizontal_alignment = 1

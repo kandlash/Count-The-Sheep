@@ -40,12 +40,6 @@ func _ready():
 
 # --------------------------------------------------
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		Transition.transition()
-		await Transition.on_transition_finished
-		get_tree().change_scene_to_file("res://scenes/upgrade_shop.tscn")
-
 
 func _hide_all():
 	comon_container.visible = false
@@ -199,3 +193,9 @@ func _show_result(total: int):
 	await tween.finished
 
 	await _animate_number(result_label, 0, total)
+
+
+func _on_next_button_pressed() -> void:
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().change_scene_to_file("res://scenes/upgrade_shop.tscn")
