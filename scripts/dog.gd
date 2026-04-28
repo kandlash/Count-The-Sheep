@@ -167,6 +167,7 @@ func _bark() -> void:
 	state = State.BARK
 
 	if is_instance_valid(target_sheep):
+		AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.DOG_WOOF)
 		target_sheep.request_jump()
 
 	await get_tree().create_timer(0.25).timeout
