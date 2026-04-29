@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dm25grvgcife6"]
+
+[ext_resource type="Texture2D" uid="uid://wtu4muwy223g" path="res://assets/sprites/ground_particle.png" id="1_0ovqs"]
+
+[sub_resource type="Curve" id="Curve_n54i3"]
+_data = [Vector2(0.010638304, 0.97752815), 0.0, 0.0, 0, 0, Vector2(1, 0.17977536), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="ground_particle" type="CPUParticles2D" unique_id=1637286466]
+z_index = -1
+emitting = false
+amount = 12
+texture = ExtResource("1_0ovqs")
+lifetime = 0.35000000000000003
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_n54i3")

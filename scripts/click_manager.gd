@@ -1,5 +1,6 @@
 extends Node2D
 const WOOL_EXPLOSION = preload("uid://c1clqw5ixuui1")
+const GROUND_PARTICLE = preload("uid://dm25grvgcife6")
 
 func _input(event):
 	if event is InputEventMouseButton \
@@ -19,6 +20,11 @@ func _handle_click(pos: Vector2):
 
 	var result = space.intersect_point(query, 16)
 	if result.is_empty():
+		var click_effect = GROUND_PARTICLE.instantiate()
+		add_child(click_effect)
+		click_effect.global_position = pos
+		click_effect.emitting = true
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 		return
 
 	for hit in result:

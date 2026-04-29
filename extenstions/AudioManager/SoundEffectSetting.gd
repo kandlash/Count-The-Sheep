@@ -9,7 +9,8 @@ enum SOUND_EFFECT_TYPE {
 	SHEEP_CLICK,
 	SHEEP_MOVE,
 	DOG_WOOF,
-	SHEEP_LAND
+	SHEEP_LAND,
+	SHEEP_RUN
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.

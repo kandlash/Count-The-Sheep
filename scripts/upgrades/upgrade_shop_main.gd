@@ -11,6 +11,7 @@ var zoom := 0.2
 @export var zoom_min := 0.1
 @export var zoom_max := 3.5
 @export var zoom_speed := 0.1
+@onready var next_button: Button = $CanvasLayer/next_button
 
 func _ready():
 	content.scale = Vector2.ONE * zoom
@@ -65,6 +66,7 @@ func _apply_zoom(factor: float, mouse_pos: Vector2):
 
 
 func _on_next_button_pressed() -> void:
+	next_button.disabled = true
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 	Transition.transition()
 	await Transition.on_transition_finished

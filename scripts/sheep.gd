@@ -16,6 +16,8 @@ enum State {
 @onready var run_progressbar: ProgressBar = $Control/run_progressbar
 @onready var land_particle: CPUParticles2D = $land_particle
 
+@onready var jump_point_label: RichTextLabel = $Control/jump_point_label
+
 const STEP := 16
 const JUMP_STEP := 32
 
@@ -25,10 +27,46 @@ var is_busy := false
 var move_dir := -1
 
 var blocked_tween: Tween
-
-# 🧠 ВАЖНО ДЛЯ СОБАКИ
 var blocked_by_fence := false
 
+# -------------------- POPUP --------------------
+
+var _label_start_pos: Vector2
+
+func show_jump_points():
+	jump_point_label.visible = true
+	jump_point_label.clear()
+
+	var col: Color = rarity_colors.get(rarity, Color.WHITE)
+	var hex := col.to_html(false)
+
+	var text := "[center][color=#%s][font_size=10]+1[/font_size][/color][/center]" % hex
+	jump_point_label.append_text(text)
+
+	jump_point_label.position = _label_start_pos
+	jump_point_label.modulate.a = 1.0
+
+	var angle := deg_to_rad(randf_range(-15.0, 15.0))
+	var distance := randf_range(5.0, 10.0)
+	var offset := Vector2(cos(angle), sin(angle)) * distance
+	offset.y -= 0.0
+
+	var target_pos := _label_start_pos + offset
+
+	var tween = create_tween()
+	tween.set_parallel(true)
+
+	tween.tween_property(jump_point_label, "position", target_pos, 0.5)\
+		.set_trans(Tween.TRANS_QUAD)\
+		.set_ease(Tween.EASE_OUT)
+
+	tween.tween_property(jump_point_label, "modulate:a", 0.0, 0.5)
+
+	await tween.finished
+
+	jump_point_label.visible = false
+	jump_point_label.position = _label_start_pos
+	jump_point_label.modulate.a = 1.0
 
 # -------------------- EXPORTS --------------------
 
@@ -73,22 +111,7 @@ var reward := 1.0
 	4: Color(1.0, 0.7, 0.2)
 }
 
-# 🧠 NEW: кто "охотится" за овцой
 var hunted_by: Node = null
-
-
-# -------------------- CLAIM SYSTEM --------------------
-
-func try_claim(dog: Node) -> bool:
-	if hunted_by == null or not is_instance_valid(hunted_by):
-		hunted_by = dog
-		return true
-	return false
-
-
-func release_claim(dog: Node) -> void:
-	if hunted_by == dog:
-		hunted_by = null
 
 # --------------------------------------------------
 
@@ -98,6 +121,9 @@ func _ready() -> void:
 	
 	run_progressbar.visible = false
 	run_progressbar.value = 0
+	
+	jump_point_label.visible = false
+	_label_start_pos = jump_point_label.position
 	
 	timer.start()
 
@@ -110,8 +136,6 @@ func _process(delta: float) -> void:
 		run_progressbar.value = (1.0 - t / total) * 100.0
 
 # --------------------------------------------------
-# BOOST
-# --------------------------------------------------
 
 func apply_speed_boost():
 	if is_busy:
@@ -123,8 +147,6 @@ func apply_speed_boost():
 	
 	_has_walk_boost = true
 
-# --------------------------------------------------
-# DIRECTION
 # --------------------------------------------------
 
 func set_rarity(r: int):
@@ -149,15 +171,11 @@ func set_direction(dir: int):
 	ray.target_position.x = abs(ray.target_position.x) * dir
 
 # --------------------------------------------------
-# INPUT
-# --------------------------------------------------
 
 func request_jump():
 	if not is_busy:
 		want_jump = true
 
-# --------------------------------------------------
-# CHECKS
 # --------------------------------------------------
 
 func can_walk() -> bool:
@@ -208,8 +226,6 @@ func can_jump() -> bool:
 	return true
 
 # --------------------------------------------------
-# BLOCKED EFFECT
-# --------------------------------------------------
 
 func start_blocked_effect():
 	if blocked_tween and blocked_tween.is_running():
@@ -221,17 +237,10 @@ func start_blocked_effect():
 	blocked_tween = create_tween()
 	blocked_tween.set_loops()
 
-	blocked_tween.tween_property(vosklisatilni_znak, "scale", znak_scale_max, pulse_duration)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	blocked_tween.parallel().tween_property(vosklisatilni_light, "energy", light_energy_max, pulse_duration)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	blocked_tween.tween_property(vosklisatilni_znak, "scale", znak_scale_min, pulse_duration)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-	blocked_tween.parallel().tween_property(vosklisatilni_light, "energy", light_energy_min, pulse_duration)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	blocked_tween.tween_property(vosklisatilni_znak, "scale", znak_scale_max, pulse_duration)
+	blocked_tween.parallel().tween_property(vosklisatilni_light, "energy", light_energy_max, pulse_duration)
+	blocked_tween.tween_property(vosklisatilni_znak, "scale", znak_scale_min, pulse_duration)
+	blocked_tween.parallel().tween_property(vosklisatilni_light, "energy", light_energy_min, pulse_duration)
 
 func stop_blocked_effect():
 	if blocked_tween:
@@ -244,8 +253,6 @@ func stop_blocked_effect():
 	vosklisatilni_znak.scale = Vector2.ONE
 	vosklisatilni_light.energy = light_energy_min
 
-# --------------------------------------------------
-# TIMER LOOP
 # --------------------------------------------------
 
 func _on_timer_timeout() -> void:
@@ -279,8 +286,6 @@ func _on_timer_timeout() -> void:
 	timer.start()
 
 # --------------------------------------------------
-# ANIMATIONS
-# --------------------------------------------------
 
 func do_walk() -> void:
 	is_busy = true
@@ -298,9 +303,7 @@ func do_walk() -> void:
 	var tween = create_tween()
 
 	tween.tween_property(self, "scale", walk_squash, walk_duration_squash)
-	tween.tween_property(self, "position:x", position.x + STEP * move_dir, move_time)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position:x", position.x + STEP * move_dir, move_time)
 	tween.tween_property(self, "scale", Vector2.ONE, restore_time)
 
 	await tween.finished
@@ -321,21 +324,16 @@ func do_jump() -> void:
 	var tween = create_tween()
 
 	tween.tween_property(self, "scale", jump_squash, 0.1)
-
-	tween.parallel().tween_property(self, "position", peak_pos, jump_up_duration)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_OUT)
-
+	tween.parallel().tween_property(self, "position", peak_pos, jump_up_duration)
 	tween.parallel().tween_property(self, "scale", jump_stretch, jump_up_duration)
 
 	await tween.finished
 	
 	G.world.add_jump(1, 0, rarity)
+	show_jump_points()
 
 	var fall = create_tween()
-	fall.tween_property(self, "position", end_pos, jump_down_duration)\
-		.set_trans(Tween.TRANS_BOUNCE)
-
+	fall.tween_property(self, "position", end_pos, jump_down_duration)
 	fall.parallel().tween_property(self, "scale", Vector2.ONE, jump_down_duration)
 
 	await fall.finished
@@ -349,19 +347,24 @@ func click_animation():
 		return
 
 	var tween = create_tween()
-
-	tween.tween_property(self, "scale", click_squash, click_duration_in)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
-	tween.tween_property(self, "scale", Vector2.ONE, click_duration_out)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "scale", click_squash, click_duration_in)
+	tween.tween_property(self, "scale", Vector2.ONE, click_duration_out)
 
 # --------------------------------------------------
+
+func try_claim(dog: Node) -> bool:
+	if hunted_by == null or not is_instance_valid(hunted_by):
+		hunted_by = dog
+		return true
+	return false
+
+func release_claim(dog: Node) -> void:
+	if hunted_by == dog:
+		hunted_by = null
 
 func start_run_bar():
 	run_progressbar.visible = true
 	run_progressbar.value = 0
-
 
 func stop_run_bar():
 	run_progressbar.visible = false
@@ -375,7 +378,6 @@ func _on_run_timer_timeout() -> void:
 	stop_blocked_effect()
 	stop_run_bar()
 
-	# --- границы экрана ---
 	var cam := get_viewport().get_camera_2d()
 	var screen_size := get_viewport_rect().size
 	
@@ -387,33 +389,30 @@ func _on_run_timer_timeout() -> void:
 
 	var half := screen_size * 0.5
 
-	# --- выбираем сторону (за экраном) ---
 	var side := randi() % 4
 	var margin := 100.0
 	var target := Vector2.ZERO
 
 	match side:
-		0: # left
+		0:
 			target.x = center.x - half.x - margin
 			target.y = randf_range(center.y - half.y, center.y + half.y)
-		1: # right
+		1:
 			target.x = center.x + half.x + margin
 			target.y = randf_range(center.y - half.y, center.y + half.y)
-		2: # top
+		2:
 			target.y = center.y - half.y - margin
 			target.x = randf_range(center.x - half.x, center.x + half.x)
-		3: # bottom
+		3:
 			target.y = center.y + half.y + margin
 			target.x = randf_range(center.x - half.x, center.x + half.x)
 
-	# --- разворачиваем овцу ---
 	set_direction(sign(target.x - global_position.x))
+	
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SHEEP_RUN)
 
-	# --- быстрый забег ---
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", target, 0.6)\
-		.set_trans(Tween.TRANS_SINE)\
-		.set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "global_position", target, 2.2)
 
 	await tween.finished
 	queue_free()

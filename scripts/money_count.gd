@@ -18,6 +18,7 @@ class_name MoneyCount
 @onready var result_label: Label = $Panel2/Panel/result_container/result_label
 
 @onready var money_label: Label = $Panel4/HBoxContainer/money_label
+@onready var next_button: Button = $next_button
 
 
 # 💰 награды
@@ -196,6 +197,7 @@ func _show_result(total: int):
 
 
 func _on_next_button_pressed() -> void:
+	next_button.disabled = true
 	Transition.transition()
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 	await Transition.on_transition_finished
