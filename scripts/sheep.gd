@@ -62,7 +62,7 @@ var blocked_by_fence := false
 var _has_walk_boost := false
 
 var rarity: int = 0
-var reward := 1
+var reward := 1.0
 
 @export var rarity_colors := {
 	0: Color.WHITE,
@@ -133,11 +133,11 @@ func set_rarity(r: int):
 		animated_sprite_2d.modulate = rarity_colors[r]
 
 	match r:
-		0: reward = 1
-		1: reward = 2
-		2: reward = 5
-		3: reward = 15
-		4: reward = 50
+		0: reward = 0.1
+		1: reward = 0.5
+		2: reward = 1.0
+		3: reward = 3.0
+		4: reward = 10.0
 
 	var scale_bonus := 1.0 + (r * 0.05)
 	scale *= scale_bonus
