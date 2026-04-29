@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bav2fdjul3d57" path="res://scenes/sheep_generator.tscn" id="7_i7141"]
 [ext_resource type="Script" uid="uid://bjahiosubxxof" path="res://scripts/sheep_killer.gd" id="8_4mrxx"]
 [ext_resource type="Script" uid="uid://m1h6s2vr774l" path="res://scripts/game_ui.gd" id="13_o8fc1"]
+[ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="14_dss4m"]
 [ext_resource type="PackedScene" uid="uid://dyxu8bdgmd3aj" path="res://scenes/dog.tscn" id="14_o8fc1"]
 [ext_resource type="Texture2D" uid="uid://bda1mc5fgivib" path="res://assets/sprites/shee_feed_upgrade.png" id="14_xo05s"]
 
@@ -416,6 +417,7 @@ shadow_size = 3
 Panel/styles/panel = SubResource("StyleBoxFlat_o8fc1")
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3hyu"]
+font = ExtResource("14_dss4m")
 font_size = 6
 
 [sub_resource type="Theme" id="Theme_q5onr"]
@@ -439,9 +441,11 @@ shadow_size = 2
 Panel/styles/panel = SubResource("StyleBoxFlat_7t5mc")
 
 [sub_resource type="LabelSettings" id="LabelSettings_q5onr"]
+font = ExtResource("14_dss4m")
 font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_jhx03"]
+font = ExtResource("14_dss4m")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dss4m"]
 bg_color = Color(0.2, 0.16470589, 0.14117648, 1)
@@ -457,6 +461,7 @@ corner_radius_bottom_left = 3
 corner_detail = 20
 
 [sub_resource type="Theme" id="Theme_7t5mc"]
+default_font = ExtResource("14_dss4m")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 15
 Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
@@ -614,9 +619,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
+offset_left = -62.0
 offset_top = 88.0
-offset_right = 53.0
+offset_right = 62.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -626,7 +631,7 @@ theme = SubResource("Theme_xo05s")
 layout_mode = 0
 offset_left = 7.0
 offset_top = 5.0
-offset_right = 101.0
+offset_right = 114.0
 offset_bottom = 18.0
 value = 28.88
 show_percentage = false
@@ -666,7 +671,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 7.0
 offset_top = 23.0
-offset_right = 101.0
+offset_right = 115.0
 offset_bottom = 36.0
 theme = SubResource("Theme_q5onr")
 value = 57.4

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="2_gq3fm"]
 [ext_resource type="Texture2D" uid="uid://dm0ry6jw84fv4" path="res://assets/sprites/20250420manaSoulHeaderA-Sheet.png" id="3_0j7l4"]
 [ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="3_46pkb"]
+[ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="3_yoy78"]
 [ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="4_7s07o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq3fm"]
@@ -30,10 +31,12 @@ shadow_size = 10
 Panel/styles/panel = SubResource("StyleBoxFlat_7s07o")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vlaoy"]
+font = ExtResource("3_yoy78")
 font_size = 13
 font_color = Color(0.8156863, 0.7254902, 0.6117647, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yoy78"]
+font = ExtResource("3_yoy78")
 font_size = 13
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j7l4"]
@@ -53,6 +56,7 @@ corner_detail = 2
 Panel/styles/panel = SubResource("StyleBoxFlat_0j7l4")
 
 [sub_resource type="LabelSettings" id="LabelSettings_gq3fm"]
+font = ExtResource("3_yoy78")
 font_size = 20
 font_color = Color(0, 0, 0, 1)
 
@@ -73,11 +77,40 @@ corner_detail = 2
 Panel/styles/panel = SubResource("StyleBoxFlat_46pkb")
 
 [sub_resource type="LabelSettings" id="LabelSettings_46pkb"]
+font = ExtResource("3_yoy78")
 font_size = 10
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0j7l4"]
+font = ExtResource("3_yoy78")
 font_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yoy78"]
+bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh3e3"]
+bg_color = Color(0.2, 0.16470589, 0.14117648, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4745098, 0.3372549, 0.20392157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+
+[sub_resource type="Theme" id="Theme_jh3e3"]
+default_font = ExtResource("3_yoy78")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 15
+Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
+Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
 
 [node name="money_count" type="Control" unique_id=710266520]
 layout_mode = 3
@@ -368,9 +401,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -80.0
-offset_top = -48.0
+offset_top = -46.0
 offset_right = 80.0
-offset_bottom = 4.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_0j7l4")
@@ -380,7 +413,7 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -79.0
+offset_left = -89.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = 45.0
@@ -418,5 +451,6 @@ offset_left = -58.0
 offset_top = -41.0
 offset_right = -9.0
 offset_bottom = -10.0
+theme = SubResource("Theme_jh3e3")
 
 [connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

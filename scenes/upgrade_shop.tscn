@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://e32o4pylq7gg" path="res://assets/sprites/upgrade_icons/shee_feed_upgrade.png" id="6_lt0d2"]
 [ext_resource type="Texture2D" uid="uid://baocqqy5x0bc1" path="res://assets/sprites/upgrade_icons/big_brain_upgrade.png" id="8_mndg8"]
 [ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="9_o5je6"]
+[ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="11_8goot"]
 [ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="11_q1psx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s07o"]
@@ -31,6 +32,7 @@ shadow_size = 10
 Panel/styles/panel = SubResource("StyleBoxFlat_7s07o")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ybft6"]
+font = ExtResource("11_8goot")
 font_size = 10
 
 [node name="UpgradeShop" type="Control" unique_id=1169477032]
@@ -263,7 +265,7 @@ default_color = Color(1, 0, 0, 1)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -79.0
+offset_left = -90.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = 45.0
@@ -277,9 +279,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -18.5
+offset_left = -36.0
 offset_top = -11.5
-offset_right = 18.5
+offset_right = 36.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2

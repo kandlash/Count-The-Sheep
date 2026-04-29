@@ -60,7 +60,7 @@ func show_jump_points():
 		.set_trans(Tween.TRANS_QUAD)\
 		.set_ease(Tween.EASE_OUT)
 
-	tween.tween_property(jump_point_label, "modulate:a", 0.0, 0.5)
+	tween.tween_property(jump_point_label, "modulate:a", 0.0, 1.5)
 
 	await tween.finished
 

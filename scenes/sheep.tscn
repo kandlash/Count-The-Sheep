@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drhtvrwj10otq" path="res://assets/sprites/sheep_default.png" id="2_6qn06"]
 [ext_resource type="Texture2D" uid="uid://dak30k3kndy6y" path="res://assets/sprites/vosklisatilni_znak.png" id="3_6qn06"]
 [ext_resource type="Texture2D" uid="uid://wtu4muwy223g" path="res://assets/sprites/ground_particle.png" id="4_55m3e"]
+[ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="4_n54i3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qn06"]
 animations = [{
@@ -29,6 +30,7 @@ fill_from = Vector2(0.5, 0.5)
 radius = 12.0
 
 [sub_resource type="Theme" id="Theme_55m3e"]
+default_font = ExtResource("4_n54i3")
 RichTextLabel/constants/outline_size = 4
 
 [sub_resource type="Curve" id="Curve_n54i3"]
@@ -91,9 +93,9 @@ show_percentage = false
 
 [node name="jump_point_label" type="RichTextLabel" parent="Control" unique_id=63073276]
 layout_mode = 0
-offset_left = -17.0
+offset_left = -21.0
 offset_top = -22.0
-offset_right = 2.0
+offset_right = 6.0
 offset_bottom = 1.0
 theme = SubResource("Theme_55m3e")
 bbcode_enabled = true

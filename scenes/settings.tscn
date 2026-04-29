@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7ab6n4n3jkph"]
 
-[ext_resource type="Script" uid="uid://dis06wd20s7mh" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="2_6wm04"]
 [ext_resource type="PackedScene" uid="uid://bwpt13qsdlfuu" path="res://scenes/volume_slider.tscn" id="2_r6d6q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8fc1"]
@@ -19,6 +20,18 @@ shadow_size = 3
 
 [sub_resource type="Theme" id="Theme_r6d6q"]
 Panel/styles/panel = SubResource("StyleBoxFlat_o8fc1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f4mfi"]
+font = ExtResource("2_6wm04")
+
+[sub_resource type="LabelSettings" id="LabelSettings_es4n0"]
+font = ExtResource("2_6wm04")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gis3k"]
+font = ExtResource("2_6wm04")
+
+[sub_resource type="LabelSettings" id="LabelSettings_83j8s"]
+font = ExtResource("2_6wm04")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6d6q"]
 bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
@@ -41,6 +54,7 @@ corner_radius_bottom_left = 1
 corner_detail = 1
 
 [sub_resource type="Theme" id="Theme_f4mfi"]
+default_font = ExtResource("2_6wm04")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 9
 Button/styles/hover = SubResource("StyleBoxFlat_r6d6q")
@@ -78,6 +92,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1281693857]
 layout_mode = 2
 text = "MENU"
+label_settings = SubResource("LabelSettings_f4mfi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -87,6 +102,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer3" unique_id=1169894360]
 layout_mode = 2
 text = "Master"
+label_settings = SubResource("LabelSettings_es4n0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -100,6 +116,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer" unique_id=2123667192]
 layout_mode = 2
 text = "Music"
+label_settings = SubResource("LabelSettings_gis3k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -113,6 +130,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer2" unique_id=573580839]
 layout_mode = 2
 text = "Sound Effects"
+label_settings = SubResource("LabelSettings_83j8s")
 horizontal_alignment = 1
 vertical_alignment = 1
 

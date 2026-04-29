@@ -73,6 +73,7 @@ func _physics_process(delta: float) -> void:
 			
 	queue_redraw()
 
+
 func _draw() -> void:
 	if state != State.CHASE:
 		return
