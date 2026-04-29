@@ -70,6 +70,8 @@ func _apply_single_effect(effect: Dictionary):
 		"sheep_max_time":
 			G.sheep_spawn_delay_min -= G.sheep_spawn_delay_min * effect["value"]/100
 			G.sheep_spawn_delay_max -= G.sheep_spawn_delay_max * effect["value"]/100
+		"dogs_speed_percent":
+			G.dogs_speed += G.dogs_speed * effect["value"]/100
 		_:
 			push_warning("Unknown effect: " + str(effect))
 

@@ -307,8 +307,8 @@ static func get_data():
 			"description": "key_speedy_dogs_1_description_upgrade",
 			"effects": [
 				[{ "type": "dogs_speed_percent", "value": 5 }],
-				[{ "type": "dogs_speed_percent", "value": 5 }],
-				[{ "type": "dogs_speed_percent", "value": 5 }]
+				[{ "type": "dogs_speed_percent", "value": 6 }],
+				[{ "type": "dogs_speed_percent", "value": 7 }]
 			]
 		},
 
@@ -321,8 +321,8 @@ static func get_data():
 			"description": "key_speedy_dogs_2_description_upgrade",
 			"effects": [
 				[{ "type": "dogs_speed_percent", "value": 5 }],
-				[{ "type": "dogs_speed_percent", "value": 5 }],
-				[{ "type": "dogs_speed_percent", "value": 5 }]
+				[{ "type": "dogs_speed_percent", "value": 6 }],
+				[{ "type": "dogs_speed_percent", "value": 7 }]
 			]
 		},
 
@@ -335,8 +335,8 @@ static func get_data():
 			"description": "key_speedy_dogs_3_description_upgrade",
 			"effects": [
 				[{ "type": "dogs_speed_percent", "value": 5 }],
-				[{ "type": "dogs_speed_percent", "value": 5 }],
-				[{ "type": "dogs_speed_percent", "value": 5 }]
+				[{ "type": "dogs_speed_percent", "value": 6 }],
+				[{ "type": "dogs_speed_percent", "value": 300 }]
 			]
 		},
 	}

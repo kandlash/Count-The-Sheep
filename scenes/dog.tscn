@@ -24,6 +24,7 @@ point_count = 2
 [node name="dog" type="Node2D" unique_id=537338450]
 script = ExtResource("1_vwjdu")
 debug_line_color = Color(1, 0, 0, 0.26666668)
+scan_interval = 0.01
 turn_duration = 0.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1577758006]

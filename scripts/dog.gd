@@ -122,10 +122,10 @@ func _chase(delta: float) -> void:
 
 	dir = dir.normalized()
 
-	global_position += dir * move_speed * delta
+	global_position += dir * G.dogs_speed * delta
 
 	_face(dir)
-	_apply_walk_animation(move_speed)
+	_apply_walk_animation(G.dogs_speed)
 
 
 func _try_find_target() -> void:
