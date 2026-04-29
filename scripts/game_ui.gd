@@ -7,7 +7,9 @@ func _on_setting_button_pressed() -> void:
 	var settings = SETTINGS.instantiate()
 	settings.connect("closed", _on_settings_closed)
 	setting_button.visible  = false
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 	add_child(settings)
 
 func _on_settings_closed():
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 	setting_button.visible = true

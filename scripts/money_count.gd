@@ -197,5 +197,6 @@ func _show_result(total: int):
 
 func _on_next_button_pressed() -> void:
 	Transition.transition()
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file("res://scenes/upgrade_shop.tscn")

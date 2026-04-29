@@ -3,6 +3,23 @@
 [ext_resource type="Script" uid="uid://dis06wd20s7mh" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="PackedScene" uid="uid://bwpt13qsdlfuu" path="res://scenes/volume_slider.tscn" id="2_r6d6q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8fc1"]
+bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.56078434, 0.42352942, 0.33333334, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 15
+shadow_size = 3
+
+[sub_resource type="Theme" id="Theme_r6d6q"]
+Panel/styles/panel = SubResource("StyleBoxFlat_o8fc1")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6d6q"]
 bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
 corner_radius_top_left = 5
@@ -39,18 +56,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -92.0
-offset_top = -116.0
+offset_top = -102.0
 offset_right = 92.0
-offset_bottom = 116.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_r6d6q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1997963193]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 17.0
 offset_top = 20.0
+offset_right = -17.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2

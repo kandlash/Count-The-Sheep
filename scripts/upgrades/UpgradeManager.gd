@@ -23,7 +23,8 @@ func can_buy(id: String) -> bool:
 func buy(id: String):
 	if !can_buy(id):
 		return
-
+	
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 	var lvl = get_level(id)
 	var cfg = data[id]
 
