@@ -1,19 +1,19 @@
 extends Node2D
 class_name World
 
-@onready var time_progressbar: ProgressBar = $Camera2D/UIHolder/Control/Panel/time_progressbar
-@onready var time_label: Label = $Camera2D/UIHolder/Control/Panel/time_progressbar/time_label
+@onready var time_progressbar: ProgressBar = $Camera2D/UIHolder/gameUI/Panel/time_progressbar
+@onready var time_label: Label = $Camera2D/UIHolder/gameUI/Panel/time_progressbar/time_label
 @onready var main_light: DirectionalLight2D = $main_light
 @onready var sunset_light: DirectionalLight2D = $sunset_light
-@onready var jumps_label: Label = $Camera2D/UIHolder/Control/Panel2/jumps_label
-@onready var tired_progressbar: ProgressBar = $Camera2D/UIHolder/Control/Panel/tired_progressbar
-@onready var tired_label: Label = $Camera2D/UIHolder/Control/Panel/tired_progressbar/tired_label
+@onready var jumps_label: Label = $Camera2D/UIHolder/gameUI/Panel2/jumps_label
+@onready var tired_progressbar: ProgressBar = $Camera2D/UIHolder/gameUI/Panel/tired_progressbar
+@onready var tired_label: Label = $Camera2D/UIHolder/gameUI/Panel/tired_progressbar/tired_label
 
-@onready var common_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer/common_label
-@onready var uncommon_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer2/uncommon_label
-@onready var rare_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer3/rare_label
-@onready var epic_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer4/epic_label
-@onready var legendary_label: Label = $Camera2D/UIHolder/Control/Panel2/VBoxContainer/HBoxContainer5/legendary_label
+@onready var common_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer/common_label
+@onready var uncommon_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer2/uncommon_label
+@onready var rare_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer3/rare_label
+@onready var epic_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer4/epic_label
+@onready var legendary_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer5/legendary_label
 
 @export var dog_scene: PackedScene
 
@@ -45,6 +45,7 @@ func _ready() -> void:
 	time_progressbar.min_value = 0
 	time_progressbar.max_value = REAL_DURATION
 	time_progressbar.value = 0
+	MusicManager.play(MusicManager.Track.GAME_1)
 
 	# tired теперь тоже countdown
 	tired_progressbar.min_value = 0

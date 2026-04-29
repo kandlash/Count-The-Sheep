@@ -2,21 +2,22 @@
 
 [ext_resource type="Script" uid="uid://drnf7w20q5757" path="res://extenstions/AudioManager/AudioManager.gd" id="1_8qd8g"]
 [ext_resource type="Script" uid="uid://d3tecsfeqmjlg" path="res://extenstions/AudioManager/SoundEffectSetting.gd" id="2_liach"]
-[ext_resource type="AudioStream" uid="uid://c77wnm35eha72" path="res://assets/sounds/pop_3.mp3" id="4_m6ggh"]
-[ext_resource type="AudioStream" uid="uid://dmw2yrkvrl75h" path="res://assets/sounds/water_drop_synthetic.mp3" id="5_aoitu"]
-[ext_resource type="AudioStream" uid="uid://7e7y1l2f0edn" path="res://assets/sounds/woof.mp3" id="5_njtn3"]
+[ext_resource type="AudioStream" uid="uid://c77wnm35eha72" path="res://assets/sound_effects/pop_3.mp3" id="3_njtn3"]
+[ext_resource type="AudioStream" uid="uid://dmw2yrkvrl75h" path="res://assets/sound_effects/water_drop_synthetic.mp3" id="4_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://7e7y1l2f0edn" path="res://assets/sound_effects/woof.mp3" id="5_02gw7"]
+[ext_resource type="AudioStream" uid="uid://6sjsq6qp3eha" path="res://assets/sound_effects/digital_footstep_snow_1.mp3" id="6_ujhup"]
 
 [sub_resource type="Resource" id="Resource_aoitu"]
 script = ExtResource("2_liach")
 type = 2
-sound_effect = ExtResource("4_m6ggh")
+sound_effect = ExtResource("3_njtn3")
 volume = -30.0
 pitch_randomness = 0.3
 metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
 
 [sub_resource type="Resource" id="Resource_njtn3"]
 script = ExtResource("2_liach")
-sound_effect = ExtResource("5_aoitu")
+sound_effect = ExtResource("4_kq7b2")
 volume = -20.0
 pitch_randomness = 0.3
 metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
@@ -24,11 +25,19 @@ metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
 [sub_resource type="Resource" id="Resource_m6ggh"]
 script = ExtResource("2_liach")
 type = 4
-sound_effect = ExtResource("5_njtn3")
+sound_effect = ExtResource("5_02gw7")
 volume = -20.0
 pitch_randomness = 0.35
 metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
 
+[sub_resource type="Resource" id="Resource_kq7b2"]
+script = ExtResource("2_liach")
+type = 5
+sound_effect = ExtResource("6_ujhup")
+volume = -30.303
+pitch_randomness = 0.23
+metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
+
 [node name="AudioManager" type="Node2D" unique_id=1774653072]
 script = ExtResource("1_8qd8g")
-sound_effects = Array[ExtResource("2_liach")]([SubResource("Resource_aoitu"), SubResource("Resource_njtn3"), SubResource("Resource_m6ggh")])
+sound_effects = Array[ExtResource("2_liach")]([SubResource("Resource_aoitu"), SubResource("Resource_njtn3"), SubResource("Resource_m6ggh"), SubResource("Resource_kq7b2")])

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjri81c5siiyq"]
+
+[ext_resource type="Script" uid="uid://d3bctxmrxckao" path="res://scripts/music_manager.gd" id="1_hetdf"]
+[ext_resource type="AudioStream" uid="uid://c6opn1ux3b0tm" path="res://assets/music/Warmth.mp3" id="1_tn5dr"]
+
+[node name="MusicManager" type="Node" unique_id=120788877]
+script = ExtResource("1_hetdf")
+
+[node name="Game1" type="AudioStreamPlayer" parent="." unique_id=736891427]
+stream = ExtResource("1_tn5dr")
+volume_db = -20.0
+bus = &"Music"
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="." unique_id=197730953]
+bus = &"Music"

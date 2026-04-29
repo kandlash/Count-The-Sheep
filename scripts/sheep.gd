@@ -338,6 +338,7 @@ func do_jump() -> void:
 	fall.parallel().tween_property(self, "scale", Vector2.ONE, jump_down_duration)
 
 	await fall.finished
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SHEEP_LAND)
 
 	is_busy = false
 	blocked_by_fence = false
@@ -366,4 +367,52 @@ func stop_run_bar():
 	run_progressbar.value = 0
 
 func _on_run_timer_timeout() -> void:
+	if is_busy:
+		return
+
+	is_busy = true
+	stop_blocked_effect()
+	stop_run_bar()
+
+	# --- границы экрана ---
+	var cam := get_viewport().get_camera_2d()
+	var screen_size := get_viewport_rect().size
+	
+	var center := Vector2.ZERO
+	if cam:
+		center = cam.global_position
+	else:
+		center = screen_size * 0.5
+
+	var half := screen_size * 0.5
+
+	# --- выбираем сторону (за экраном) ---
+	var side := randi() % 4
+	var margin := 100.0
+	var target := Vector2.ZERO
+
+	match side:
+		0: # left
+			target.x = center.x - half.x - margin
+			target.y = randf_range(center.y - half.y, center.y + half.y)
+		1: # right
+			target.x = center.x + half.x + margin
+			target.y = randf_range(center.y - half.y, center.y + half.y)
+		2: # top
+			target.y = center.y - half.y - margin
+			target.x = randf_range(center.x - half.x, center.x + half.x)
+		3: # bottom
+			target.y = center.y + half.y + margin
+			target.x = randf_range(center.x - half.x, center.x + half.x)
+
+	# --- разворачиваем овцу ---
+	set_direction(sign(target.x - global_position.x))
+
+	# --- быстрый забег ---
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", target, 0.6)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN)
+
+	await tween.finished
 	queue_free()
