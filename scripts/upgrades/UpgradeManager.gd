@@ -74,6 +74,17 @@ func _apply_single_effect(effect: Dictionary):
 			G.dogs_speed += G.dogs_speed * effect["value"]/100
 		"sheep_confusion_time":
 			G.sheep_run_timer += G.sheep_run_timer * effect["value"]/100
+		"uncomon_bonuses":
+			G.reward_multipliers[G.Rarity.UNCOMMON] += effect["value"] / 100.0
+
+		"rare_bonuses":
+			G.reward_multipliers[G.Rarity.RARE] += effect["value"] / 100.0
+
+		"epic_bonuses":
+			G.reward_multipliers[G.Rarity.EPIC] += effect["value"] / 100.0
+
+		"legend_bonuses":
+			G.reward_multipliers[G.Rarity.LEGENDARY] += effect["value"] / 100.0
 		_:
 			push_warning("Unknown effect: " + str(effect))
 

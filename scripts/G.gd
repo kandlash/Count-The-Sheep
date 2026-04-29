@@ -48,6 +48,26 @@ var rarity_counts := {
 	Rarity.LEGENDARY: 0
 }
 
+var base_rewards := {
+	Rarity.COMMON: 0.1,
+	Rarity.UNCOMMON: 0.5,
+	Rarity.RARE: 1.0,
+	Rarity.EPIC: 3.0,
+	Rarity.LEGENDARY: 10.0
+}
+
+func get_reward(rarity: int) -> float:
+	return base_rewards[rarity] * reward_multipliers[rarity] * income_multiplier
+
+# множители (проценты)
+var reward_multipliers := {
+	Rarity.COMMON: 1.0,
+	Rarity.UNCOMMON: 1.0,
+	Rarity.RARE: 1.0,
+	Rarity.EPIC: 1.0,
+	Rarity.LEGENDARY: 1.0
+}
+
 var sheep_chances := sheep_base_chances.duplicate()
 
 var dogs_to_spawn := 0

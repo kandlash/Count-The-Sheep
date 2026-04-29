@@ -21,14 +21,6 @@ class_name MoneyCount
 @onready var next_button: Button = $next_button
 
 
-# 💰 награды
-var rewards := {
-	G.Rarity.COMMON: 0.1,
-	G.Rarity.UNCOMMON: 0.5,
-	G.Rarity.RARE: 1,
-	G.Rarity.EPIC: 3,
-	G.Rarity.LEGENDARY: 10
-}
 
 var jump_reward := 1
 
@@ -152,7 +144,7 @@ func _show_line(container: Control, label: Label, rarity: int) -> int:
 
 	await tween.finished
 
-	var money = int(count * rewards[rarity])
+	var money = int(count * G.get_reward(rarity))
 
 	await _animate_number(label, 0, money)
 
