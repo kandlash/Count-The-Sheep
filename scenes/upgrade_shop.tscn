@@ -9,7 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cu24x8j6x52mu" path="res://assets/sprites/upgrade_icons/shee_lucky_upgrade.png" id="4_ybft6"]
 [ext_resource type="Texture2D" uid="uid://caifbefs6piv7" path="res://assets/sprites/upgrade_icons/dog_speed_upgrade.png" id="5_q1psx"]
 [ext_resource type="Texture2D" uid="uid://e32o4pylq7gg" path="res://assets/sprites/upgrade_icons/shee_feed_upgrade.png" id="6_lt0d2"]
+[ext_resource type="Texture2D" uid="uid://cvua1anj26mhl" path="res://assets/sprites/upgrade_icons/uncommon_bonus_icon.png" id="6_ojws6"]
+[ext_resource type="Texture2D" uid="uid://c4mums6n204iw" path="res://assets/sprites/upgrade_icons/rare_bonus_icon.png" id="7_3r51h"]
+[ext_resource type="Texture2D" uid="uid://c4uhfqhl34tpw" path="res://assets/sprites/upgrade_icons/epic_bonus_icon.png" id="8_57m7w"]
 [ext_resource type="Texture2D" uid="uid://baocqqy5x0bc1" path="res://assets/sprites/upgrade_icons/big_brain_upgrade.png" id="8_mndg8"]
+[ext_resource type="Texture2D" uid="uid://dfsbx67665txl" path="res://assets/sprites/upgrade_icons/legend_bonus_icon.png" id="9_4h17k"]
 [ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="9_o5je6"]
 [ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="11_8goot"]
 [ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="11_q1psx"]
@@ -130,6 +134,7 @@ offset_left = 916.0
 offset_top = -108.0
 offset_right = 1044.0
 offset_bottom = 20.0
+texture_normal = ExtResource("6_ojws6")
 upgrade_id = "raririty_bonuses_1"
 
 [node name="UpgradeNode14" parent="GraphRoot" unique_id=1016548520 instance=ExtResource("1_v8ny2")]
@@ -137,6 +142,7 @@ offset_left = 1130.0001
 offset_top = -108.0
 offset_right = 1258.0001
 offset_bottom = 20.0
+texture_normal = ExtResource("7_3r51h")
 upgrade_id = "raririty_bonuses_2"
 
 [node name="UpgradeNode15" parent="GraphRoot" unique_id=559977083 instance=ExtResource("1_v8ny2")]
@@ -144,6 +150,7 @@ offset_left = 1326.0001
 offset_top = -107.99997
 offset_right = 1454.0001
 offset_bottom = 20.0
+texture_normal = ExtResource("8_57m7w")
 upgrade_id = "raririty_bonuses_3"
 
 [node name="UpgradeNode16" parent="GraphRoot" unique_id=148115241 instance=ExtResource("1_v8ny2")]
@@ -151,6 +158,7 @@ offset_left = 1504.0001
 offset_top = -107.99997
 offset_right = 1632.0001
 offset_bottom = 20.0
+texture_normal = ExtResource("9_4h17k")
 upgrade_id = "raririty_bonuses_4"
 
 [node name="UpgradeNode3" parent="GraphRoot" unique_id=158135056 instance=ExtResource("1_v8ny2")]

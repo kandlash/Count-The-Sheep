@@ -103,6 +103,13 @@ var _has_walk_boost := false
 var rarity: int = 0
 var reward := 1.0
 
+const COMMON_SHEEP = preload("uid://cg32ypr50jcma")
+const EPIC_SHEEP = preload("uid://c8oh3lky5wwob")
+const LEGEND_SHEEP = preload("uid://cpkbwotwgcpdv")
+const RARE_SHEEP = preload("uid://bol8n2qff8iyn")
+const UNCOMMON_SHEEP = preload("uid://c04tagakc6v1h")
+
+
 @export var rarity_colors := {
 	0: Color.WHITE,
 	1: Color(0.4, 1.0, 0.4),
@@ -124,7 +131,7 @@ func _ready() -> void:
 	
 	jump_point_label.visible = false
 	_label_start_pos = jump_point_label.position
-	
+	run_timer.wait_time = G.sheep_run_timer
 	timer.start()
 
 # --------------------------------------------------
@@ -152,9 +159,23 @@ func apply_speed_boost():
 func set_rarity(r: int):
 	rarity = r
 
-	if rarity_colors.has(r):
-		animated_sprite_2d.modulate = rarity_colors[r]
+	match r:
+		0:
+			# обычная — оставляем дефолт
+			pass
+		1:
+			animated_sprite_2d.sprite_frames = UNCOMMON_SHEEP
+		2:
+			animated_sprite_2d.sprite_frames = RARE_SHEEP
+		3:
+			animated_sprite_2d.sprite_frames = EPIC_SHEEP
+		4:
+			animated_sprite_2d.sprite_frames = LEGEND_SHEEP
 
+	# сбрасываем цвет (если раньше использовал)
+	animated_sprite_2d.modulate = Color.WHITE
+
+	# reward как было
 	match r:
 		0: reward = 0.1
 		1: reward = 0.5

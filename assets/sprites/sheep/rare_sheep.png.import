@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bda1mc5fgivib"
-path="res://.godot/imported/shee_feed_upgrade.png-55bf1f965bd78d445db922938a3c0743.ctex"
+uid="uid://baghxm2xvuoi"
+path="res://.godot/imported/rare_sheep.png-62a1c57c432ab01ea1c07bf367e71b6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/shee_feed_upgrade.png"
-dest_files=["res://.godot/imported/shee_feed_upgrade.png-55bf1f965bd78d445db922938a3c0743.ctex"]
+source_file="res://assets/sprites/sheep/rare_sheep.png"
+dest_files=["res://.godot/imported/rare_sheep.png-62a1c57c432ab01ea1c07bf367e71b6c.ctex"]
 
 [params]
 

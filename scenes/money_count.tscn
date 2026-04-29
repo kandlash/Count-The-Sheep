@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://cv68enrx1jy60"]
 
 [ext_resource type="Script" uid="uid://cflrdcsxowdni" path="res://scripts/money_count.gd" id="1_iaony"]
-[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="2_gq3fm"]
+[ext_resource type="Texture2D" uid="uid://bda1mc5fgivib" path="res://assets/sprites/sheep_jump_icon.png" id="2_brb7r"]
 [ext_resource type="Texture2D" uid="uid://dm0ry6jw84fv4" path="res://assets/sprites/20250420manaSoulHeaderA-Sheet.png" id="3_0j7l4"]
 [ext_resource type="Texture2D" uid="uid://cnbnid2n3weku" path="res://assets/sprites/gold_coin.png" id="3_46pkb"]
 [ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="3_yoy78"]
 [ext_resource type="PackedScene" uid="uid://bcijxcxc35oqi" path="res://scenes/next_button.tscn" id="4_7s07o"]
+[ext_resource type="Texture2D" uid="uid://drhtvrwj10otq" path="res://assets/sprites/sheep_default.png" id="5_qincu"]
+[ext_resource type="Texture2D" uid="uid://cpn3xqpdchf0g" path="res://assets/sprites/sheep/uncommon_sheep.png" id="6_yen8n"]
+[ext_resource type="Texture2D" uid="uid://baghxm2xvuoi" path="res://assets/sprites/sheep/rare_sheep.png" id="7_rytxu"]
+[ext_resource type="Texture2D" uid="uid://b6bp7yc0hginv" path="res://assets/sprites/sheep/epic_sheep.png" id="8_7ohq1"]
+[ext_resource type="Texture2D" uid="uid://butnt2rk5jctw" path="res://assets/sprites/sheep/legend_sheep.png" id="9_7l8fb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq3fm"]
 bg_color = Color(0, 0, 0, 1)
@@ -158,7 +163,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/jump_container" unique_id=337319088]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("2_brb7r")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer/jump_container" unique_id=1088530075]
@@ -181,7 +186,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/comon_container" unique_id=1443971493]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("5_qincu")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer/comon_container" unique_id=528125909]
@@ -204,7 +209,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/uncomon_container" unique_id=374057246]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("6_yen8n")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer/uncomon_container" unique_id=1499821594]
@@ -227,7 +232,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/rare_container" unique_id=1597140274]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("7_rytxu")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer/rare_container" unique_id=1966972663]
@@ -250,7 +255,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/epic_container" unique_id=532457749]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("8_7ohq1")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer/epic_container" unique_id=857934552]
@@ -273,7 +278,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel2/VBoxContainer/legendary_container" unique_id=716439552]
 layout_mode = 2
-texture = ExtResource("2_gq3fm")
+texture = ExtResource("9_7l8fb")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer/legendary_container" unique_id=552953470]

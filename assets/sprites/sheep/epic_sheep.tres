@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c8oh3lky5wwob"]
+
+[ext_resource type="Texture2D" uid="uid://b6bp7yc0hginv" path="res://assets/sprites/sheep/epic_sheep.png" id="1_et0xa"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_et0xa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

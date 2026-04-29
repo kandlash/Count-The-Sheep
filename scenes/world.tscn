@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://m1h6s2vr774l" path="res://scripts/game_ui.gd" id="13_o8fc1"]
 [ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="14_dss4m"]
 [ext_resource type="PackedScene" uid="uid://dyxu8bdgmd3aj" path="res://scenes/dog.tscn" id="14_o8fc1"]
-[ext_resource type="Texture2D" uid="uid://bda1mc5fgivib" path="res://assets/sprites/shee_feed_upgrade.png" id="14_xo05s"]
+[ext_resource type="Texture2D" uid="uid://bda1mc5fgivib" path="res://assets/sprites/sheep_jump_icon.png" id="14_xo05s"]
 
 [sub_resource type="Gradient" id="Gradient_4mrxx"]
 offsets = PackedFloat32Array(0.12048193, 0.7560241)
