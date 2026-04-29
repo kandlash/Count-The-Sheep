@@ -398,26 +398,50 @@ size = Vector2(8, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3hyu"]
 size = Vector2(26, 368)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8fc1"]
+bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.56078434, 0.42352942, 0.33333334, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 15
+shadow_size = 3
+
+[sub_resource type="Theme" id="Theme_xo05s"]
+Panel/styles/panel = SubResource("StyleBoxFlat_o8fc1")
+
 [sub_resource type="LabelSettings" id="LabelSettings_e3hyu"]
-font_size = 8
+font_size = 6
 
 [sub_resource type="Theme" id="Theme_q5onr"]
 ProgressBar/font_sizes/font_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t5mc"]
+bg_color = Color(0.12941177, 0.12156863, 0.1254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.56078434, 0.42352942, 0.33333334, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 15
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_lakw3"]
+Panel/styles/panel = SubResource("StyleBoxFlat_7t5mc")
 
 [sub_resource type="LabelSettings" id="LabelSettings_q5onr"]
 font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_jhx03"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_o8fc1"]
-font_size = 7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo05s"]
-bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dss4m"]
 bg_color = Color(0.2, 0.16470589, 0.14117648, 1)
@@ -426,21 +450,22 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.4745098, 0.3372549, 0.20392157, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
 
 [sub_resource type="Theme" id="Theme_7t5mc"]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_xo05s")
+Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
 Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
 
 [node name="world" type="Node2D" unique_id=520197805]
 script = ExtResource("1_e3hyu")
 dog_scene = ExtResource("14_o8fc1")
+metadata/_edit_vertical_guides_ = [48.0]
 
 [node name="cursor_light" type="PointLight2D" parent="." unique_id=1528558070]
 position = Vector2(-136, 0)
@@ -586,19 +611,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -171.0
+offset_left = -53.0
 offset_top = 88.0
-offset_right = 171.0
+offset_right = 53.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_xo05s")
 
 [node name="time_progressbar" type="ProgressBar" parent="Camera2D/UIHolder/gameUI/Panel" unique_id=649715511]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 19.0
-offset_right = 159.0
-offset_bottom = 35.0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 101.0
+offset_bottom = 18.0
 value = 28.88
 show_percentage = false
 
@@ -607,9 +633,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 70.0
-offset_bottom = -8.0
+offset_left = 3.0
+offset_top = -3.5
+offset_right = 73.0
+offset_bottom = 3.5
 grow_vertical = 2
 text = "key_night_time_label"
 label_settings = SubResource("LabelSettings_e3hyu")
@@ -621,10 +648,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -6.0
-offset_right = 35.0
-offset_bottom = 6.0
+offset_left = 35.0
+offset_top = -6.5
+offset_right = 47.0
+offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "2:45"
@@ -634,11 +661,12 @@ vertical_alignment = 1
 
 [node name="tired_progressbar" type="ProgressBar" parent="Camera2D/UIHolder/gameUI/Panel" unique_id=500886129]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 19.0
-offset_right = 326.0
-offset_bottom = 35.0
+offset_left = 7.0
+offset_top = 23.0
+offset_right = 101.0
+offset_bottom = 36.0
 theme = SubResource("Theme_q5onr")
+value = 57.4
 show_percentage = false
 
 [node name="Label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel/tired_progressbar" unique_id=1584307640]
@@ -646,9 +674,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 70.0
-offset_bottom = -8.0
+offset_left = 3.0
+offset_top = -3.5
+offset_right = 47.0
+offset_bottom = 3.5
 grow_vertical = 2
 text = "key_tired_label"
 label_settings = SubResource("LabelSettings_e3hyu")
@@ -660,23 +689,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -6.0
-offset_right = 35.0
-offset_bottom = 6.0
+offset_left = 35.0
+offset_top = -6.5
+offset_right = 47.0
+offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "40/150"
+text = "2:45"
 label_settings = SubResource("LabelSettings_e3hyu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="Camera2D/UIHolder/gameUI" unique_id=1185795328]
 layout_mode = 0
-offset_left = 17.0
+offset_left = 14.0
 offset_top = 10.0
-offset_right = 80.0
-offset_bottom = 118.0
+offset_right = 83.0
+offset_bottom = 49.0
+theme = SubResource("Theme_lakw3")
 
 [node name="Label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2" unique_id=297908134]
 layout_mode = 1
@@ -692,113 +722,32 @@ label_settings = SubResource("LabelSettings_q5onr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="jumps_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2" unique_id=893835692]
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2" unique_id=533282730]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -46.0
-offset_right = 20.0
-offset_bottom = -23.0
+offset_left = -18.5
+offset_top = -6.5
+offset_right = 18.5
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/HBoxContainer" unique_id=492572264]
+layout_mode = 2
+texture = ExtResource("4_jhx03")
+expand_mode = 2
+
+[node name="jumps_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/HBoxContainer" unique_id=893835692]
+layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_jhx03")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2" unique_id=1600461306]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.5
-offset_top = -24.0
-offset_right = -0.5
-offset_bottom = 47.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer" unique_id=2022545447]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer" unique_id=874928587]
-layout_mode = 2
-texture = ExtResource("4_jhx03")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="common_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer" unique_id=479461844]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_o8fc1")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer" unique_id=1481198686]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer2" unique_id=968845962]
-layout_mode = 2
-texture = ExtResource("4_jhx03")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="uncommon_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer2" unique_id=1624602761]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_o8fc1")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer" unique_id=1704214411]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer3" unique_id=1364546263]
-layout_mode = 2
-texture = ExtResource("4_jhx03")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="rare_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer3" unique_id=1469422090]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_o8fc1")
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer" unique_id=1232199308]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer4" unique_id=46741752]
-layout_mode = 2
-texture = ExtResource("4_jhx03")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="epic_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer4" unique_id=664886753]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_o8fc1")
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer" unique_id=753327357]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer5" unique_id=1555948951]
-layout_mode = 2
-texture = ExtResource("4_jhx03")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="legendary_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer5" unique_id=444637347]
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_o8fc1")
 
 [node name="setting_button" type="Button" parent="Camera2D/UIHolder/gameUI" unique_id=469087800]
 layout_mode = 1

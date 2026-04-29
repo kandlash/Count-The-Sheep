@@ -5,15 +5,15 @@ class_name World
 @onready var time_label: Label = $Camera2D/UIHolder/gameUI/Panel/time_progressbar/time_label
 @onready var main_light: DirectionalLight2D = $main_light
 @onready var sunset_light: DirectionalLight2D = $sunset_light
-@onready var jumps_label: Label = $Camera2D/UIHolder/gameUI/Panel2/jumps_label
+@onready var jumps_label: Label = $Camera2D/UIHolder/gameUI/Panel2/HBoxContainer/jumps_label
 @onready var tired_progressbar: ProgressBar = $Camera2D/UIHolder/gameUI/Panel/tired_progressbar
 @onready var tired_label: Label = $Camera2D/UIHolder/gameUI/Panel/tired_progressbar/tired_label
 
-@onready var common_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer/common_label
-@onready var uncommon_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer2/uncommon_label
-@onready var rare_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer3/rare_label
-@onready var epic_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer4/epic_label
-@onready var legendary_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer5/legendary_label
+#@onready var common_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer/common_label
+#@onready var uncommon_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer2/uncommon_label
+#@onready var rare_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer3/rare_label
+#@onready var epic_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer4/epic_label
+#@onready var legendary_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer5/legendary_label
 
 @export var dog_scene: PackedScene
 
@@ -166,8 +166,9 @@ func _update_tired_ui_animated() -> void:
 
 
 func _update_rarity_ui():
-	common_label.text = str(G.rarity_counts[G.Rarity.COMMON])
-	uncommon_label.text = str(G.rarity_counts[G.Rarity.UNCOMMON])
-	rare_label.text = str(G.rarity_counts[G.Rarity.RARE])
-	epic_label.text = str(G.rarity_counts[G.Rarity.EPIC])
-	legendary_label.text = str(G.rarity_counts[G.Rarity.LEGENDARY])
+	pass
+	#common_label.text = str(G.rarity_counts[G.Rarity.COMMON])
+	#uncommon_label.text = str(G.rarity_counts[G.Rarity.UNCOMMON])
+	#rare_label.text = str(G.rarity_counts[G.Rarity.RARE])
+	#epic_label.text = str(G.rarity_counts[G.Rarity.EPIC])
+	#legendary_label.text = str(G.rarity_counts[G.Rarity.LEGENDARY])
