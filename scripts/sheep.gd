@@ -14,6 +14,7 @@ enum State {
 @onready var vosklisatilni_light: PointLight2D = $VosklisatilniLight
 @onready var run_timer: Timer = $run_timer
 @onready var run_progressbar: ProgressBar = $Control/run_progressbar
+@onready var land_particle: CPUParticles2D = $land_particle
 
 const STEP := 16
 const JUMP_STEP := 32
@@ -339,7 +340,7 @@ func do_jump() -> void:
 
 	await fall.finished
 	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SHEEP_LAND)
-
+	land_particle.emitting = true
 	is_busy = false
 	blocked_by_fence = false
 

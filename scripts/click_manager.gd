@@ -1,4 +1,5 @@
 extends Node2D
+const WOOL_EXPLOSION = preload("uid://c1clqw5ixuui1")
 
 func _input(event):
 	if event is InputEventMouseButton \
@@ -23,7 +24,15 @@ func _handle_click(pos: Vector2):
 	for hit in result:
 		var obj = hit.collider
 		if obj.is_in_group("sheep"):
+			var click_effect = WOOL_EXPLOSION.instantiate()
+			add_child(click_effect)
+			click_effect.global_position = obj.global_position
+			click_effect.play_explosion()
 			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)
 			obj.get_parent().click_animation()
 			obj.get_parent().request_jump()
-			return
+			await get_tree().create_timer(0.5).timeout
+			click_effect.queue_free()
+		if obj.is_in_group("dogs"):
+			obj.get_parent().on_click()
+			AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.SHEEP_CLICK)

@@ -27,6 +27,7 @@ enum State {
 @export var turn_duration := 0.12
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var click_particles: CPUParticles2D = $click_particles
 
 var state: State = State.WANDER
 var target_sheep: Node2D = null
@@ -241,3 +242,31 @@ func _apply_bob() -> void:
 
 func _is_valid_target(sheep: Node) -> bool:
 	return sheep.state == sheep.State.BLOCKED and sheep.blocked_by_fence
+
+
+var _click_tween: Tween
+func on_click():
+	click_particles.emitting = true
+	
+	if _click_tween:
+		_click_tween.kill()
+
+	var target_squash = Vector2(
+		_base_scale.x * squash.x * _facing,
+		_base_scale.y * squash.y
+	)
+
+	var target_stretch = Vector2(
+		_base_scale.x * stretch.x * _facing,
+		_base_scale.y * stretch.y
+	)
+
+	_click_tween = create_tween()
+	_click_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+	# squash
+	_click_tween.tween_property(self, "scale", target_squash, 0.08)
+	# stretch (отскок)
+	_click_tween.tween_property(self, "scale", target_stretch, 0.1)
+	# возврат в норму
+	_click_tween.tween_property(self, "scale", Vector2(_base_scale.x * _facing, _base_scale.y), 0.08)

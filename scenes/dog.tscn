@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwjpgj6aub1b3" path="res://scripts/dog.gd" id="1_vwjdu"]
 [ext_resource type="Texture2D" uid="uid://br8ringofgaqf" path="res://assets/sprites/dog_default.png" id="2_qjqk5"]
+[ext_resource type="Texture2D" uid="uid://b7wbw1xmi582x" path="res://assets/sprites/dog_particles.png" id="3_qjqk5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gmowd"]
 animations = [{
@@ -14,6 +15,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwjdu"]
+
+[sub_resource type="Curve" id="Curve_gmowd"]
+_data = [Vector2(0.010638304, 0.97752815), 0.0, 0.0, 0, 0, Vector2(1, 0.17977536), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="dog" type="Node2D" unique_id=537338450]
 script = ExtResource("1_vwjdu")
 debug_line_color = Color(1, 0, 0, 0.26666668)
@@ -21,3 +28,24 @@ turn_duration = 0.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1577758006]
 sprite_frames = SubResource("SpriteFrames_gmowd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=967481451 groups=["dogs"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1479631091]
+shape = SubResource("CircleShape2D_vwjdu")
+
+[node name="click_particles" type="CPUParticles2D" parent="." unique_id=2070368151]
+z_index = -1
+emitting = false
+amount = 12
+texture = ExtResource("3_qjqk5")
+lifetime = 0.35000000000000003
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_gmowd")

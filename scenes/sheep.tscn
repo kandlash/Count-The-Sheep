@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://df78k8rqr8eeq" path="res://scripts/sheep.gd" id="1_gw4f6"]
 [ext_resource type="Texture2D" uid="uid://drhtvrwj10otq" path="res://assets/sprites/sheep_default.png" id="2_6qn06"]
 [ext_resource type="Texture2D" uid="uid://dak30k3kndy6y" path="res://assets/sprites/vosklisatilni_znak.png" id="3_6qn06"]
+[ext_resource type="Texture2D" uid="uid://wtu4muwy223g" path="res://assets/sprites/ground_particle.png" id="4_55m3e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qn06"]
 animations = [{
@@ -26,6 +27,10 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gw4f6"]
 radius = 12.0
+
+[sub_resource type="Curve" id="Curve_n54i3"]
+_data = [Vector2(0.010638304, 0.97752815), 0.0, 0.0, 0, 0, Vector2(1, 0.17977536), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="sheep" type="Node2D" unique_id=1588974740]
 script = ExtResource("1_gw4f6")
@@ -80,6 +85,22 @@ offset_right = 8.092911
 offset_bottom = 12.0
 value = 62.84
 show_percentage = false
+
+[node name="land_particle" type="CPUParticles2D" parent="." unique_id=1053766910]
+z_index = -1
+emitting = false
+amount = 12
+texture = ExtResource("4_55m3e")
+lifetime = 0.35000000000000003
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_n54i3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="run_timer" to="." method="_on_run_timer_timeout"]
