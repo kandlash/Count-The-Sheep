@@ -6,8 +6,8 @@ const SETTINGS = preload("uid://c7ab6n4n3jkph")
 func _on_setting_button_pressed() -> void:
 	var settings = SETTINGS.instantiate()
 	settings.connect("closed", _on_settings_closed)
-	setting_button.disabled = true
+	setting_button.visible  = false
 	add_child(settings)
 
 func _on_settings_closed():
-	setting_button.disabled = false
+	setting_button.visible = true

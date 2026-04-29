@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://bm5ehjn8k76r1" path="res://assets/tilesets/Fence's copiar.png" id="2_k0juu"]
 [ext_resource type="Texture2D" uid="uid://cbx7skcq4af2g" path="res://assets/tilesets/Road copiar.png" id="3_71j4m"]
 [ext_resource type="Texture2D" uid="uid://c0l03rsk3kemu" path="res://assets/tilesets/Spring Crops.png" id="4_71j4m"]
-[ext_resource type="Texture2D" uid="uid://d1v0oxc03b7es" path="res://icon.svg" id="4_jhx03"]
 [ext_resource type="Texture2D" uid="uid://b35yh7efhnesu" path="res://assets/tilesets/Maple Tree.png" id="5_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bav2fdjul3d57" path="res://scenes/sheep_generator.tscn" id="7_i7141"]
 [ext_resource type="Script" uid="uid://bjahiosubxxof" path="res://scripts/sheep_killer.gd" id="8_4mrxx"]
 [ext_resource type="Script" uid="uid://m1h6s2vr774l" path="res://scripts/game_ui.gd" id="13_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://dyxu8bdgmd3aj" path="res://scenes/dog.tscn" id="14_o8fc1"]
+[ext_resource type="Texture2D" uid="uid://bda1mc5fgivib" path="res://assets/sprites/shee_feed_upgrade.png" id="14_xo05s"]
 
 [sub_resource type="Gradient" id="Gradient_4mrxx"]
 offsets = PackedFloat32Array(0.12048193, 0.7560241)
@@ -461,6 +461,7 @@ Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 15
 Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
 Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
+Button/styles/pressed = SubResource("StyleBoxFlat_dss4m")
 
 [node name="world" type="Node2D" unique_id=520197805]
 script = ExtResource("1_e3hyu")
@@ -739,7 +740,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/UIHolder/gameUI/Panel2/HBoxContainer" unique_id=492572264]
 layout_mode = 2
-texture = ExtResource("4_jhx03")
+texture = ExtResource("14_xo05s")
 expand_mode = 2
 
 [node name="jumps_label" type="Label" parent="Camera2D/UIHolder/gameUI/Panel2/HBoxContainer" unique_id=893835692]
@@ -760,7 +761,7 @@ offset_right = -6.0
 offset_bottom = 37.0
 grow_horizontal = 0
 theme = SubResource("Theme_7t5mc")
-text = "❄"
+text = "MENU"
 
 [connection signal="area_entered" from="sheep_killer" to="sheep_killer" method="_on_area_entered"]
 [connection signal="area_entered" from="sheep_killer2" to="sheep_killer2" method="_on_area_entered"]

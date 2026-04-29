@@ -12,15 +12,15 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wm04"]
 bg_color = Color(0.2, 0.16470589, 0.14117648, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(0.4745098, 0.3372549, 0.20392157, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 corner_detail = 1
 
 [sub_resource type="Theme" id="Theme_f4mfi"]
@@ -57,7 +57,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1281693857]
 layout_mode = 2
-text = "SETTINGS"
+text = "MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
