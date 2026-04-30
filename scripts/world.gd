@@ -8,6 +8,7 @@ class_name World
 @onready var jumps_label: Label = $Camera2D/UIHolder/gameUI/Panel2/HBoxContainer/jumps_label
 @onready var tired_progressbar: ProgressBar = $Camera2D/UIHolder/gameUI/Panel/tired_progressbar
 @onready var tired_label: Label = $Camera2D/UIHolder/gameUI/Panel/tired_progressbar/tired_label
+@onready var cursor_light: PointLight2D = $cursor_light
 
 #@onready var common_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer/common_label
 #@onready var uncommon_label: Label = $Camera2D/UIHolder/gameUI/Panel2/VBoxContainer/HBoxContainer2/uncommon_label
@@ -40,6 +41,7 @@ func _spawn_dog():
 
 
 func _ready() -> void:
+	cursor_light.enabled = false
 	G.world = self
 	_sync_dogs_from_g()
 	time_progressbar.min_value = 0
@@ -77,7 +79,6 @@ func _update_time():
 	var total_sec := int(remaining)
 	var minutes := total_sec / 60
 	var seconds := total_sec % 60
-
 	time_label.text = "%02d:%02d" % [minutes, seconds]
 
 	_update_lighting()
@@ -99,6 +100,16 @@ func _update_lighting() -> void:
 		sunset_light.energy = lerp(0.3, 0.0, sunset_t)
 	else:
 		sunset_light.energy = 0.0
+		
+	var night_start := 0.1
+
+	if t >= night_start:
+		var night_t := (t - night_start) / (1.0 - night_start)/2
+		cursor_light.enabled = true
+		cursor_light.energy = lerp(0.0, 2.2, night_t)
+	else:
+		cursor_light.energy = 0.0
+		cursor_light.enabled = false
 
 
 # ---------------- TIRED (COUNTDOWN) ----------------

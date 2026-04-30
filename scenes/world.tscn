@@ -489,6 +489,7 @@ color = Color(1, 0.34117648, 0, 1)
 energy = 1.31
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_7r4gi")
+texture_scale = 2.0
 script = ExtResource("1_w7kh3")
 
 [node name="ClickManager" type="Node2D" parent="." unique_id=656076700]
@@ -630,9 +631,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -91.0
-offset_top = 88.0
+offset_top = 94.0
 offset_right = 91.0
-offset_bottom = 128.0
+offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_xo05s")

@@ -120,9 +120,13 @@ const UNCOMMON_SHEEP = preload("uid://c04tagakc6v1h")
 
 var hunted_by: Node = null
 
+var panic_started := false
+var znak_base_pos: Vector2
+
 # --------------------------------------------------
 
 func _ready() -> void:
+	znak_base_pos = vosklisatilni_znak.position
 	vosklisatilni_znak.visible = false
 	vosklisatilni_light.enabled = false
 	
@@ -135,12 +139,49 @@ func _ready() -> void:
 	timer.start()
 
 # --------------------------------------------------
+var want_to_run = false
+const WOOL_EXPLOSION = preload("uid://c1clqw5ixuui1")
 
 func _process(delta: float) -> void:
 	if not run_timer.is_stopped():
 		var t := run_timer.time_left
 		var total := run_timer.wait_time
+		
+		# запуск паники за 1.5 секунды
+		if t <= 1.5 and !panic_started:
+			start_panic_effect()
+
+		# звук за 1 секунду (как у тебя было)
+		if t <= 1.5 and !want_to_run:
+			var wool_explosion = WOOL_EXPLOSION.instantiate()
+			add_child(wool_explosion)
+			wool_explosion.global_position = global_position
+			wool_explosion.scale *= 5
+			wool_explosion.play_explosion()
+			want_to_run = true
+			AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.SHEEP_BLOCKED)
+			await get_tree().create_timer(0.5).timeout
+			wool_explosion.queue_free()
+
 		run_progressbar.value = (1.0 - t / total) * 100.0
+
+		# тряска
+		if panic_started:
+			var shake_strength := 1.0
+			vosklisatilni_znak.position = znak_base_pos + Vector2(
+				randf_range(-shake_strength, shake_strength),
+				randf_range(-shake_strength, shake_strength)
+			)
+
+func start_panic_effect():
+	panic_started = true
+
+	vosklisatilni_znak.visible = true
+
+	var tween = create_tween()
+	tween.tween_property(vosklisatilni_znak, "scale", Vector2(1.4, 1.4), 0.2)\
+		.set_trans(Tween.TRANS_BACK)\
+		.set_ease(Tween.EASE_OUT)
 
 # --------------------------------------------------
 
@@ -262,6 +303,9 @@ func start_blocked_effect():
 	blocked_tween.parallel().tween_property(vosklisatilni_light, "energy", light_energy_max, pulse_duration)
 	blocked_tween.tween_property(vosklisatilni_znak, "scale", znak_scale_min, pulse_duration)
 	blocked_tween.parallel().tween_property(vosklisatilni_light, "energy", light_energy_min, pulse_duration)
+	panic_started = false
+	vosklisatilni_znak.position = znak_base_pos
+	vosklisatilni_znak.scale = Vector2.ONE
 
 func stop_blocked_effect():
 	if blocked_tween:
@@ -315,7 +359,7 @@ func do_walk() -> void:
 
 	var move_time = G.sheep_walk_speed
 	var restore_time = walk_duration_restore
-
+	want_to_run = false
 	if _has_walk_boost:
 		move_time *= boost_multiplier
 		restore_time *= boost_multiplier
@@ -334,7 +378,7 @@ func do_jump() -> void:
 	stop_blocked_effect()
 	stop_run_bar()
 	run_timer.stop()
-
+	want_to_run = false
 	is_busy = true
 	state = State.JUMP
 	
@@ -399,6 +443,12 @@ func _on_run_timer_timeout() -> void:
 	stop_blocked_effect()
 	stop_run_bar()
 
+	var wool_explosion = WOOL_EXPLOSION.instantiate()
+	add_child(wool_explosion)
+	wool_explosion.global_position = global_position
+	wool_explosion.scale *= 10
+	wool_explosion.play_explosion()
+
 	var cam := get_viewport().get_camera_2d()
 	var screen_size := get_viewport_rect().size
 	
@@ -436,4 +486,5 @@ func _on_run_timer_timeout() -> void:
 	tween.tween_property(self, "global_position", target, 2.2)
 
 	await tween.finished
+	wool_explosion.queue_free()
 	queue_free()

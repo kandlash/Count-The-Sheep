@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://djshyromfvm0e" path="res://assets/sound_effects/woof.mp3" id="5_02gw7"]
 [ext_resource type="AudioStream" uid="uid://brndakl7jcrni" path="res://assets/sound_effects/digital_footstep_snow_1.mp3" id="6_ujhup"]
 [ext_resource type="AudioStream" uid="uid://vquv8byi607x" path="res://assets/sound_effects/xylophone_negative_long.mp3" id="7_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://bcn4cml7chioo" path="res://assets/sound_effects/sheep_blocked.mp3" id="8_02gw7"]
 
 [sub_resource type="Resource" id="Resource_aoitu"]
 script = ExtResource("2_liach")
@@ -47,6 +48,13 @@ volume = -25.0
 pitch_randomness = 0.5
 metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
 
+[sub_resource type="Resource" id="Resource_ujhup"]
+script = ExtResource("2_liach")
+sound_effect = ExtResource("8_02gw7")
+volume = -20.0
+pitch_randomness = 0.3
+metadata/_custom_type_script = "uid://d3tecsfeqmjlg"
+
 [node name="AudioManager" type="Node2D" unique_id=1774653072]
 script = ExtResource("1_8qd8g")
-sound_effects = Array[ExtResource("2_liach")]([SubResource("Resource_aoitu"), SubResource("Resource_njtn3"), SubResource("Resource_m6ggh"), SubResource("Resource_kq7b2"), SubResource("Resource_02gw7")])
+sound_effects = Array[ExtResource("2_liach")]([SubResource("Resource_aoitu"), SubResource("Resource_njtn3"), SubResource("Resource_m6ggh"), SubResource("Resource_kq7b2"), SubResource("Resource_02gw7"), SubResource("Resource_ujhup")])
