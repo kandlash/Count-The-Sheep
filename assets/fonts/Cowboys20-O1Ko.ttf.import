@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://clkpibny8r2kt"
-path="res://.godot/imported/NicoBold-Monospaced.otf-70ff3fe3854526bf1edaeee8552797fc.fontdata"
+uid="uid://5xekyfcf2mhh"
+path="res://.godot/imported/Cowboys20-O1Ko.ttf-f9275e9ff84305e01e4ba6e5a0c42261.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/NicoBold-Monospaced.otf"
-dest_files=["res://.godot/imported/NicoBold-Monospaced.otf-70ff3fe3854526bf1edaeee8552797fc.fontdata"]
+source_file="res://assets/fonts/Cowboys20-O1Ko.ttf"
+dest_files=["res://.godot/imported/Cowboys20-O1Ko.ttf-f9275e9ff84305e01e4ba6e5a0c42261.fontdata"]
 
 [params]
 
@@ -27,16 +27,10 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[Resource("uid://cuxgt6t0win57", "res://assets/fonts/vcrosdmonorusbyd.ttf")]
+fallbacks=[]
 Compress=null
 compress=true
-preload=[{
-"chars": [],
-"glyphs": [],
-"name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
-}]
+preload=[]
 language_support={}
 script_support={}
 opentype_features={}
