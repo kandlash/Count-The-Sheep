@@ -4,7 +4,9 @@ var tired_points :=  0.0
 var jumps_count := 0
 
 var max_tired_points := 30.0
-var money := 100000
+var money := 0
+
+var jump_reward = 1.0
 
 var jump_power := 1.0
 var income_multiplier := 1.0

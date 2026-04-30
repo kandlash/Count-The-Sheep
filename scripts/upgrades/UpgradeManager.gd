@@ -85,6 +85,8 @@ func _apply_single_effect(effect: Dictionary):
 
 		"legend_bonuses":
 			G.reward_multipliers[G.Rarity.LEGENDARY] += effect["value"] / 100.0
+		"jump_bonus":
+			G.jump_reward += G.jump_reward * effect["value"]/100
 		_:
 			push_warning("Unknown effect: " + str(effect))
 

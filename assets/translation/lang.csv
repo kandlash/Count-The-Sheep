@@ -92,3 +92,9 @@ key_music,Music,Музыка
 key_sound,Sound Effects,Звуковые эффекты
 key_next,Next,Далее
 key_master,Master,Мастер
+key_jump_bonus_1,Jump I,Прыжок I
+key_jump_bonus_2,Jump II,Прыжок II
+key_jump_bonus_3,Jump III,Прыжок III
+key_jump_bonus_description_1,Jump bonus [color=green]+-value%[/color],Бонус прыжка [color=green]+-value%[/color]
+key_jump_bonus_description_2,Jump bonus [color=green]+-value%[/color],Бонус прыжка [color=green]+-value%[/color]
+key_jump_bonus_description_3,Jump bonus [color=green]+-value%[/color],Бонус прыжка [color=green]+-value%[/color]

@@ -52,7 +52,7 @@ func start_count():
 	# 💥 JUMPS FIRST
 	# =========================
 
-	var jump_money = G.jumps_count * jump_reward
+	var jump_money = int(G.jumps_count * G.jump_reward)
 
 	jump_container.visible = true
 	jump_container.modulate.a = 0.0
