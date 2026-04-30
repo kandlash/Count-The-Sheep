@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7ab6n4n3jkph"]
 
-[ext_resource type="Script" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://dis06wd20s7mh" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="2_6wm04"]
 [ext_resource type="PackedScene" uid="uid://bwpt13qsdlfuu" path="res://scenes/volume_slider.tscn" id="2_r6d6q"]
 
@@ -91,7 +91,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1281693857]
 layout_mode = 2
-text = "MENU"
+text = "key_menu"
 label_settings = SubResource("LabelSettings_f4mfi")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -101,7 +101,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer3" unique_id=1169894360]
 layout_mode = 2
-text = "Master"
+text = "key_master"
 label_settings = SubResource("LabelSettings_es4n0")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -115,7 +115,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer" unique_id=2123667192]
 layout_mode = 2
-text = "Music"
+text = "key_music"
 label_settings = SubResource("LabelSettings_gis3k")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -129,7 +129,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer2" unique_id=573580839]
 layout_mode = 2
-text = "Sound Effects"
+text = "key_sound"
 label_settings = SubResource("LabelSettings_83j8s")
 horizontal_alignment = 1
 vertical_alignment = 1
