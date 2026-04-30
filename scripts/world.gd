@@ -18,7 +18,7 @@ class_name World
 @export var dog_scene: PackedScene
 
 
-const REAL_DURATION := 15.0 * 60.0 # ночь
+const REAL_DURATION := 5.0 * 60.0 # ночь
 var elapsed := 0.0
 
 var dogs := []

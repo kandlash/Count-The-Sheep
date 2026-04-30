@@ -40,7 +40,7 @@ static func get_data():
 			"next": [],
 			"description": "key_owl_3_description_upgrade",
 			"effects": [
-				[{ "type": "max_tired", "value": 300 }]
+				[{ "type": "max_tired", "value": 330 }]
 			]
 		},
 

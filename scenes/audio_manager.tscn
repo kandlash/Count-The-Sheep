@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://drnf7w20q5757" path="res://extenstions/AudioManager/AudioManager.gd" id="1_8qd8g"]
 [ext_resource type="Script" uid="uid://d3tecsfeqmjlg" path="res://extenstions/AudioManager/SoundEffectSetting.gd" id="2_liach"]
-[ext_resource type="AudioStream" uid="uid://c77wnm35eha72" path="res://assets/sound_effects/pop_3.mp3" id="3_njtn3"]
-[ext_resource type="AudioStream" uid="uid://dmw2yrkvrl75h" path="res://assets/sound_effects/water_drop_synthetic.mp3" id="4_kq7b2"]
-[ext_resource type="AudioStream" uid="uid://7e7y1l2f0edn" path="res://assets/sound_effects/woof.mp3" id="5_02gw7"]
-[ext_resource type="AudioStream" uid="uid://6sjsq6qp3eha" path="res://assets/sound_effects/digital_footstep_snow_1.mp3" id="6_ujhup"]
-[ext_resource type="AudioStream" uid="uid://d2m810qpc8kot" path="res://assets/sound_effects/xylophone_negative_long.mp3" id="7_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://bsoqox3qfn7ih" path="res://assets/sound_effects/pop_3.mp3" id="3_njtn3"]
+[ext_resource type="AudioStream" uid="uid://cb7c13qpvqhry" path="res://assets/sound_effects/water_drop_synthetic.mp3" id="4_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://djshyromfvm0e" path="res://assets/sound_effects/woof.mp3" id="5_02gw7"]
+[ext_resource type="AudioStream" uid="uid://brndakl7jcrni" path="res://assets/sound_effects/digital_footstep_snow_1.mp3" id="6_ujhup"]
+[ext_resource type="AudioStream" uid="uid://vquv8byi607x" path="res://assets/sound_effects/xylophone_negative_long.mp3" id="7_kq7b2"]
 
 [sub_resource type="Resource" id="Resource_aoitu"]
 script = ExtResource("2_liach")

@@ -10,7 +10,7 @@ key_legend_bonus,Legend Bonus:,Бонус легендарных:
 key_salary,Your Salary,Ваша зарплата
 key_result_salary,Result:,Итого:
 key_night_time_label,Until Morning:,До утра:
-key_tired_label,Fall a  sleep in:,Уснете через:
+key_tired_label,Fall a sleep in:,Уснете через:
 key_jumps_label,Jumps,Прыжки
 key_exit,Exit,Выход
 key_owl_1_name_upgrade,Owl I,Сова I
@@ -91,3 +91,4 @@ key_menu,Menu,Меню
 key_music,Music,Музыка
 key_sound,Sound Effects,Звуковые эффекты
 key_next,Next,Далее
+key_master,Master,Мастер
