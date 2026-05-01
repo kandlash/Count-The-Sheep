@@ -346,9 +346,9 @@ static func get_data():
 			"next": ["raririty_bonuses_1", "jump_bonus_2"],
 			"description": "key_jump_bonus_description_1",
 			"effects": [
-				[{ "type": "jump_bonus", "value": 15 }],
 				[{ "type": "jump_bonus", "value": 25 }],
-				[{ "type": "jump_bonus", "value": 35 }]
+				[{ "type": "jump_bonus", "value": 25 }],
+				[{ "type": "jump_bonus", "value": 25 }]
 			]
 		},
 
@@ -360,9 +360,9 @@ static func get_data():
 			"next": ["jump_bonus_3"],
 			"description": "key_jump_bonus_description_2",
 			"effects": [
-				[{ "type": "jump_bonus", "value": 15 }],
 				[{ "type": "jump_bonus", "value": 25 }],
-				[{ "type": "jump_bonus", "value": 35 }]
+				[{ "type": "jump_bonus", "value": 25 }],
+				[{ "type": "jump_bonus", "value": 30 }]
 			]
 		},
 

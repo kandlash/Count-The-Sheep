@@ -23,6 +23,7 @@ func _ready() -> void:
 	_start_timer(2.0, 4.0)
 
 func _start_timer(sdmin: float = spawn_delay_min, sdmax: float = spawn_delay_max):
+	randomize()
 	timer.wait_time = randf_range(sdmin, sdmax)
 	timer.start()
 
@@ -41,6 +42,7 @@ func _spawn_sheep():
 	_start_timer(G.sheep_spawn_delay_min, G.sheep_spawn_delay_max)
 
 func _roll_rarity() -> int:
+	randomize()
 	var chances = G.sheep_chances
 
 	var total := 0.0

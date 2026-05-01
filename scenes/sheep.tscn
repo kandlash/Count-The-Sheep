@@ -93,14 +93,16 @@ show_percentage = false
 
 [node name="jump_point_label" type="RichTextLabel" parent="Control" unique_id=63073276]
 layout_mode = 0
-offset_left = -21.0
-offset_top = -22.0
-offset_right = 6.0
-offset_bottom = 1.0
+offset_left = -25.0
+offset_top = -24.0
+offset_right = 2.0
+offset_bottom = -1.0
 theme = SubResource("Theme_55m3e")
 bbcode_enabled = true
 text = "+1"
 fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="land_particle" type="CPUParticles2D" parent="." unique_id=1053766910]
 z_index = -1
