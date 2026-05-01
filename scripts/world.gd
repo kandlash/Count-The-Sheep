@@ -19,7 +19,7 @@ class_name World
 @export var dog_scene: PackedScene
 
 
-const REAL_DURATION := 5.0 * 60.0 # ночь
+const REAL_DURATION := 3.0 * 60.0 # ночь
 var elapsed := 0.0
 
 var dogs := []
@@ -47,7 +47,6 @@ func _ready() -> void:
 	time_progressbar.min_value = 0
 	time_progressbar.max_value = REAL_DURATION
 	time_progressbar.value = 0
-	MusicManager.play(MusicManager.Track.GAME_1)
 
 	# tired теперь тоже countdown
 	tired_progressbar.min_value = 0
@@ -58,9 +57,13 @@ func _ready() -> void:
 	_update_jumps_ui()
 	_update_rarity_ui()
 
+var legendary_event_started := false
 
 func _process(delta: float) -> void:
 	if elapsed >= REAL_DURATION:
+		_update_tired(delta)
+		if !legendary_event_started:
+			_start_legendary_event()
 		return
 
 	elapsed += delta
@@ -69,6 +72,25 @@ func _process(delta: float) -> void:
 	_update_time()
 	_update_tired(delta)
 
+
+var normal_delay_min
+var normal_delay_max
+func _start_legendary_event():
+	legendary_event_started = true
+
+	print("LEGENDARY EVENT STARTED")
+	$Camera2D/UIHolder/gameUI/legendary_run_label.visible = true
+	# делаем 100% шанс легендарных
+	for k in G.sheep_chances.keys():
+		G.sheep_chances[k] = 0.0
+	
+	normal_delay_min = G.sheep_spawn_delay_min
+	normal_delay_max = G.sheep_spawn_delay_max
+	G.sheep_chances[G.Rarity.LEGENDARY] = 100.0
+	G.sheep_spawn_delay_min = 1.0
+	G.sheep_spawn_delay_max = 3.0
+	await get_tree().create_timer(3.0).timeout
+	$Camera2D/UIHolder/gameUI/legendary_run_label.visible = false
 
 # ---------------- TIME ----------------
 
@@ -126,10 +148,10 @@ func _update_tired(delta: float) -> void:
 
 func _on_exhausted():
 	G.tired_points = 0
-
-	_update_jumps_ui()
-	_update_rarity_ui()
-
+	if legendary_event_started:
+		G.sheep_chances = G.sheep_base_chances.duplicate()
+		G.sheep_spawn_delay_min = normal_delay_min
+		G.sheep_spawn_delay_max = normal_delay_max
 	Transition.transition()
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file("res://scenes/money_count.tscn")

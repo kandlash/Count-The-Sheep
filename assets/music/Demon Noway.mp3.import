@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://g2esu3s8e3rl"
+path="res://.godot/imported/Demon Noway.mp3-07cc6582497e4c8f1d59fb007df5df4c.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Demon Noway.mp3"
+dest_files=["res://.godot/imported/Demon Noway.mp3-07cc6582497e4c8f1d59fb007df5df4c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

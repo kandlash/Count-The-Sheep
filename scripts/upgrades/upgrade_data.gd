@@ -5,49 +5,47 @@ static func get_data():
 		"owl_1": {
 			"name": "key_owl_1_name_upgrade",
 			"max_level": 3,
-			"cost": [10, 40, 70],
+			"cost": [7, 28, 49],
 			"parents": [],
 			"next": ["owl_2"],
 			"description": "key_owl_1_description_upgrade",
-
 			"effects": [
 				[{ "type": "max_tired", "value": 45 }],
 				[{ "type": "max_tired", "value": 60 }],
-				[{ "type": "max_tired", "value": 100 }]
+				[{ "type": "max_tired", "value": 75 }]
 			]
 		},
 
 		"owl_2": {
 			"name": "key_owl_2_name_upgrade",
 			"max_level": 3,
-			"cost": [120, 160, 200],
+			"cost": [84, 112, 140],
 			"parents": ["owl_1"],
 			"next": ["owl_3"],
 			"description": "key_owl_2_description_upgrade",
-
 			"effects": [
-				[{ "type": "max_tired", "value": 120 }],
-				[{ "type": "max_tired", "value": 155 }],
-				[{ "type": "max_tired", "value": 180 }]
+				[{ "type": "max_tired", "value": 100 }],
+				[{ "type": "max_tired", "value": 115 }],
+				[{ "type": "max_tired", "value": 130 }]
 			]
 		},
 
 		"owl_3": {
 			"name": "key_owl_3_name_upgrade",
 			"max_level": 1,
-			"cost": [1000],
+			"cost": [350],
 			"parents": ["owl_2"],
 			"next": [],
 			"description": "key_owl_3_description_upgrade",
 			"effects": [
-				[{ "type": "max_tired", "value": 330 }]
+				[{ "type": "max_tired", "value": 230 }]
 			]
 		},
 
 		"lucky_1": {
 			"name": "key_lucky_1_name_upgrade",
 			"max_level": 1,
-			"cost": [150],
+			"cost": [105],
 			"parents": [],
 			"next": ["lucky_2", "feed_1"],
 			"description": "key_lucky_1_description_upgrade",
@@ -59,7 +57,7 @@ static func get_data():
 		"lucky_2": {
 			"name": "key_lucky_2_name_upgrade",
 			"max_level": 1,
-			"cost": [300],
+			"cost": [210],
 			"parents": ["lucky_1"],
 			"next": ["lucky_3"],
 			"description": "key_lucky_2_description_upgrade",
@@ -71,7 +69,7 @@ static func get_data():
 		"lucky_3": {
 			"name": "key_lucky_3_name_upgrade",
 			"max_level": 1,
-			"cost": [500],
+			"cost": [350],
 			"parents": ["lucky_2"],
 			"next": [],
 			"description": "key_lucky_3_description_upgrade",
@@ -83,7 +81,7 @@ static func get_data():
 		"speedy_sheep_1": {
 			"name": "key_speedy_sheep_1_name_upgrade",
 			"max_level": 3,
-			"cost": [30, 35, 40],
+			"cost": [21, 24, 28],
 			"parents": [],
 			"next": ["speedy_sheep_2", "big_brain_1"],
 			"description": "key_speedy_sheep_1_description_upgrade",
@@ -97,7 +95,7 @@ static func get_data():
 		"speedy_sheep_2": {
 			"name": "key_speedy_sheep_2_name_upgrade",
 			"max_level": 3,
-			"cost": [120, 200, 300],
+			"cost": [84, 140, 210],
 			"parents": ["speedy_sheep_1"],
 			"next": ["speedy_sheep_2"],
 			"description": "key_speedy_sheep_2_description_upgrade",
@@ -111,7 +109,7 @@ static func get_data():
 		"speedy_sheep_3": {
 			"name": "key_speedy_sheep_3_name_upgrade",
 			"max_level": 3,
-			"cost": [400, 500, 800],
+			"cost": [280, 350, 560],
 			"parents": ["speedy_sheep_2"],
 			"next": [],
 			"description": "key_speedy_sheep_3_description_upgrade",
@@ -125,7 +123,7 @@ static func get_data():
 		"dog_1": {
 			"name": "key_dog_1_name_upgrade",
 			"max_level": 1,
-			"cost": [100],
+			"cost": [70],
 			"parents": [],
 			"next": ["dog_2"],
 			"description": "key_dog_1_description_upgrade",
@@ -137,7 +135,7 @@ static func get_data():
 		"dog_2": {
 			"name": "key_dog_2_name_upgrade",
 			"max_level": 1,
-			"cost": [300],
+			"cost": [210],
 			"parents": ["dog_1"],
 			"next": ["dog_3"],
 			"description": "key_dog_2_description_upgrade",
@@ -149,7 +147,7 @@ static func get_data():
 		"dog_3": {
 			"name": "key_dog_3_name_upgrade",
 			"max_level": 1,
-			"cost": [450],
+			"cost": [315],
 			"parents": ["dog_2"],
 			"next": [],
 			"description": "key_dog_3_description_upgrade",
@@ -161,7 +159,7 @@ static func get_data():
 		"feed_1": {
 			"name": "key_feed_1_name_upgrade",
 			"max_level": 3,
-			"cost": [50, 70, 100],
+			"cost": [35, 49, 70],
 			"parents": ["lucky_1"],
 			"next": ["feed_2"],
 			"description": "key_feed_1_description_upgrade",
@@ -175,7 +173,7 @@ static func get_data():
 		"feed_2": {
 			"name": "key_feed_2_name_upgrade",
 			"max_level": 3,
-			"cost": [110, 150, 200],
+			"cost": [77, 105, 140],
 			"parents": ["feed_1"],
 			"next": ["feed_3"],
 			"description": "key_feed_2_description_upgrade",
@@ -189,7 +187,7 @@ static func get_data():
 		"feed_3": {
 			"name": "key_feed_3_name_upgrade",
 			"max_level": 3,
-			"cost": [220, 250, 300],
+			"cost": [154, 175, 210],
 			"parents": ["feed_2"],
 			"next": [],
 			"description": "key_feed_3_description_upgrade",
@@ -203,7 +201,7 @@ static func get_data():
 		"big_brain_1": {
 			"name": "key_big_brain_1_name_upgrade",
 			"max_level": 3,
-			"cost": [50, 70, 80],
+			"cost": [35, 49, 56],
 			"parents": ["speedy_sheep_1"],
 			"next": ["big_brain_2"],
 			"description": "key_big_brain_1_description_upgrade",
@@ -217,7 +215,7 @@ static func get_data():
 		"big_brain_2": {
 			"name": "key_big_brain_2_name_upgrade",
 			"max_level": 3,
-			"cost": [100, 120, 130],
+			"cost": [70, 84, 91],
 			"parents": ["big_brain_1"],
 			"next": ["big_brain_3"],
 			"description": "key_big_brain_2_description_upgrade",
@@ -231,7 +229,7 @@ static func get_data():
 		"big_brain_3": {
 			"name": "key_big_brain_3_name_upgrade",
 			"max_level": 3,
-			"cost": [150, 160, 200],
+			"cost": [105, 112, 140],
 			"parents": ["big_brain_2"],
 			"next": [],
 			"description": "key_big_brain_3_description_upgrade",
@@ -245,7 +243,7 @@ static func get_data():
 		"raririty_bonuses_1": {
 			"name": "key_rarity_bonuses_1_name_upgrade",
 			"max_level": 3,
-			"cost": [35, 50, 100],
+			"cost": [24, 35, 70],
 			"parents": ["jump_bonus_1"],
 			"next": ["raririty_bonuses_2"],
 			"description": "key_rarity_bonuses_1_description_upgrade",
@@ -259,7 +257,7 @@ static func get_data():
 		"raririty_bonuses_2": {
 			"name": "key_rarity_bonuses_2_name_upgrade",
 			"max_level": 3,
-			"cost": [110, 130, 150],
+			"cost": [77, 91, 105],
 			"parents": ["raririty_bonuses_1"],
 			"next": ["raririty_bonuses_3"],
 			"description": "key_rarity_bonuses_2_description_upgrade",
@@ -273,7 +271,7 @@ static func get_data():
 		"raririty_bonuses_3": {
 			"name": "key_rarity_bonuses_3_name_upgrade",
 			"max_level": 3,
-			"cost": [200, 250, 270],
+			"cost": [140, 175, 189],
 			"parents": ["raririty_bonuses_2"],
 			"next": ["raririty_bonuses_4"],
 			"description": "key_rarity_bonuses_3_description_upgrade",
@@ -287,7 +285,7 @@ static func get_data():
 		"raririty_bonuses_4": {
 			"name": "key_rarity_bonuses_4_name_upgrade",
 			"max_level": 3,
-			"cost": [300, 310, 320],
+			"cost": [210, 217, 224],
 			"parents": ["raririty_bonuses_3"],
 			"next": [],
 			"description": "key_rarity_bonuses_4_description_upgrade",
@@ -301,7 +299,7 @@ static func get_data():
 		"speedy_dogs_1": {
 			"name": "key_speedy_dogs_1_name_upgrade",
 			"max_level": 3,
-			"cost": [50, 70, 80],
+			"cost": [35, 49, 56],
 			"parents": ["dog_1"],
 			"next": ["speedy_dogs_2"],
 			"description": "key_speedy_dogs_1_description_upgrade",
@@ -315,7 +313,7 @@ static func get_data():
 		"speedy_dogs_2": {
 			"name": "key_speedy_dogs_2_name_upgrade",
 			"max_level": 3,
-			"cost": [100, 120, 150],
+			"cost": [70, 84, 105],
 			"parents": ["speedy_dogs_1"],
 			"next": ["speedy_dogs_3"],
 			"description": "key_speedy_dogs_2_description_upgrade",
@@ -329,7 +327,7 @@ static func get_data():
 		"speedy_dogs_3": {
 			"name": "key_speedy_dogs_3_name_upgrade",
 			"max_level": 3,
-			"cost": [160, 200, 350],
+			"cost": [112, 140, 245],
 			"parents": ["speedy_dogs_2"],
 			"next": [],
 			"description": "key_speedy_dogs_3_description_upgrade",
@@ -339,11 +337,11 @@ static func get_data():
 				[{ "type": "dogs_speed_percent", "value": 100 }]
 			]
 		},
-		
+
 		"jump_bonus_1": {
 			"name": "key_jump_bonus_1",
 			"max_level": 3,
-			"cost": [30, 50, 70],
+			"cost": [21, 35, 49],
 			"parents": [],
 			"next": ["raririty_bonuses_1", "jump_bonus_2"],
 			"description": "key_jump_bonus_description_1",
@@ -353,11 +351,11 @@ static func get_data():
 				[{ "type": "jump_bonus", "value": 35 }]
 			]
 		},
-		
+
 		"jump_bonus_2": {
 			"name": "key_jump_bonus_2",
 			"max_level": 3,
-			"cost": [100, 150, 200],
+			"cost": [70, 105, 140],
 			"parents": ["jump_bonus_1"],
 			"next": ["jump_bonus_3"],
 			"description": "key_jump_bonus_description_2",
@@ -367,11 +365,11 @@ static func get_data():
 				[{ "type": "jump_bonus", "value": 35 }]
 			]
 		},
-		
+
 		"jump_bonus_3": {
 			"name": "key_jump_bonus_3",
 			"max_level": 3,
-			"cost": [210, 220, 500],
+			"cost": [147, 154, 350],
 			"parents": ["jump_bonus_2"],
 			"next": ["jump_bonus_3"],
 			"description": "key_jump_bonus_description_3",

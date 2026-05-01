@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b28bwi2kiukef"
+path="res://.godot/imported/Tiny FaLL.mp3-c14805c5db8ca18d117e1f2ecda76554.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Tiny FaLL.mp3"
+dest_files=["res://.godot/imported/Tiny FaLL.mp3-c14805c5db8ca18d117e1f2ecda76554.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

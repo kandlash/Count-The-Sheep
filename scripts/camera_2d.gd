@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var max_offset := 10.0
+@export var max_offset := 20.0
 @export var follow_speed := 5.0
 @export var ui_strength := 0.5
 

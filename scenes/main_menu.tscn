@@ -1,67 +1,67 @@
 [gd_scene format=3 uid="uid://bu0qhypduq5y8"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://cidu5eksephjs" path="res://assets/sprites/test.png" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://c7g3o7r3gl6cx" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://onpk746gjmlx" path="res://assets/sprites/backgrounds/Summer3.png" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://clkpibny8r2kt" path="res://assets/fonts/NicoBold-Monospaced.otf" id="3_bqqt6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font = ExtResource("3_bqqt6")
 font_size = 32
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yoy78"]
-bg_color = Color(0.3541258, 0.25773245, 0.19408664, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh3e3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dss4m"]
 bg_color = Color(0.2, 0.16470589, 0.14117648, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.4745098, 0.3372549, 0.20392157, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 1
-
-[sub_resource type="Theme" id="Theme_8ln24"]
-default_font = ExtResource("3_bqqt6")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
-
-[sub_resource type="Theme" id="Theme_rtw2f"]
-default_font = ExtResource("3_bqqt6")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
-
-[sub_resource type="Theme" id="Theme_ekxnf"]
-default_font = ExtResource("3_bqqt6")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
-
-[sub_resource type="Theme" id="Theme_bqqt6"]
-default_font = ExtResource("3_bqqt6")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
 
 [sub_resource type="Theme" id="Theme_wu84c"]
 default_font = ExtResource("3_bqqt6")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 15
-Button/styles/hover = SubResource("StyleBoxFlat_yoy78")
-Button/styles/normal = SubResource("StyleBoxFlat_jh3e3")
+Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
+Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
+Button/styles/pressed = SubResource("StyleBoxFlat_dss4m")
+
+[sub_resource type="Theme" id="Theme_8ln24"]
+default_font = ExtResource("3_bqqt6")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 15
+Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
+Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
+Button/styles/pressed = SubResource("StyleBoxFlat_dss4m")
+
+[sub_resource type="Theme" id="Theme_rtw2f"]
+default_font = ExtResource("3_bqqt6")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 15
+Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
+Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
+Button/styles/pressed = SubResource("StyleBoxFlat_dss4m")
+
+[sub_resource type="Theme" id="Theme_oa1go"]
+default_font = ExtResource("3_bqqt6")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 15
+Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
+Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
+Button/styles/pressed = SubResource("StyleBoxFlat_dss4m")
+
+[sub_resource type="Theme" id="Theme_tbmy8"]
+default_font = ExtResource("3_bqqt6")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 15
+Button/styles/hover = SubResource("StyleBoxFlat_dss4m")
+Button/styles/normal = SubResource("StyleBoxFlat_dss4m")
+Button/styles/pressed = SubResource("StyleBoxFlat_dss4m")
 
 [node name="Control" type="Control" unique_id=250678743]
 layout_mode = 3
@@ -71,25 +71,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
+metadata/_edit_vertical_guides_ = [240.0]
+metadata/_edit_horizontal_guides_ = [135.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=483571529]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -24.888885
+offset_top = -14.0
+offset_right = 24.888885
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ekxnf")
+texture = ExtResource("2_bqqt6")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=1459073156]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -82.5
-offset_top = 19.0
-offset_right = 82.5
-offset_bottom = 112.0
+offset_left = -108.0
+offset_top = 27.0
+offset_right = 108.0
+offset_bottom = 120.0
 grow_horizontal = 2
 text = "COUNT
 THE SHEEP"
@@ -110,7 +117,7 @@ offset_right = 191.0
 offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_8ln24")
+theme = SubResource("Theme_wu84c")
 text = "RU"
 
 [node name="Button5" type="Button" parent="." unique_id=413929557]
@@ -126,7 +133,7 @@ offset_right = 232.0
 offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_rtw2f")
+theme = SubResource("Theme_8ln24")
 text = "EN"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1112798132]
@@ -145,17 +152,17 @@ grow_vertical = 2
 
 [node name="play_button" type="Button" parent="VBoxContainer" unique_id=367293920]
 layout_mode = 2
-theme = SubResource("Theme_ekxnf")
+theme = SubResource("Theme_rtw2f")
 text = "key_play"
 
 [node name="settings_button" type="Button" parent="VBoxContainer" unique_id=496867753]
 layout_mode = 2
-theme = SubResource("Theme_bqqt6")
+theme = SubResource("Theme_oa1go")
 text = "key_settings"
 
 [node name="exit_button" type="Button" parent="VBoxContainer" unique_id=1308325615]
 layout_mode = 2
-theme = SubResource("Theme_wu84c")
+theme = SubResource("Theme_tbmy8")
 text = "key_exit"
 
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://cjri81c5siiyq"]
 
 [ext_resource type="Script" uid="uid://d3bctxmrxckao" path="res://scripts/music_manager.gd" id="1_hetdf"]
-[ext_resource type="AudioStream" uid="uid://c6opn1ux3b0tm" path="res://assets/music/Warmth.mp3" id="1_tn5dr"]
+[ext_resource type="AudioStream" uid="uid://g2esu3s8e3rl" path="res://assets/music/Demon Noway.mp3" id="2_p07gy"]
+[ext_resource type="AudioStream" uid="uid://c3g1b46o4t7r2" path="res://assets/music/Evening street.mp3" id="3_fb0y8"]
+[ext_resource type="AudioStream" uid="uid://dvol3jol5ooth" path="res://assets/music/Gets Night's Creak.mp3" id="4_fkbch"]
+[ext_resource type="AudioStream" uid="uid://bwi358veg16gx" path="res://assets/music/sapphire.mp3" id="5_r6agn"]
+[ext_resource type="AudioStream" uid="uid://b28bwi2kiukef" path="res://assets/music/Tiny FaLL.mp3" id="6_suxwa"]
+[ext_resource type="AudioStream" uid="uid://bu4ir7b4ux665" path="res://assets/music/Until U Alive.mp3" id="7_r5t12"]
+[ext_resource type="AudioStream" uid="uid://dpseoha0tyrja" path="res://assets/music/Yesterday vibe.mp3" id="8_l62sp"]
 
 [node name="MusicManager" type="Node" unique_id=120788877]
 script = ExtResource("1_hetdf")
+tracks = Array[AudioStream]([ExtResource("2_p07gy"), ExtResource("3_fb0y8"), ExtResource("4_fkbch"), ExtResource("5_r6agn"), ExtResource("6_suxwa"), ExtResource("7_r5t12"), ExtResource("8_l62sp")])
 
-[node name="Game1" type="AudioStreamPlayer" parent="." unique_id=736891427]
-stream = ExtResource("1_tn5dr")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=379261466]
 volume_db = -20.0
-bus = &"Music"
-
-[node name="MainMenu" type="AudioStreamPlayer" parent="." unique_id=197730953]
 bus = &"Music"
