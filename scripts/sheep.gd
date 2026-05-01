@@ -17,6 +17,7 @@ enum State {
 @onready var land_particle: CPUParticles2D = $land_particle
 
 @onready var jump_point_label: RichTextLabel = $Control/jump_point_label
+@onready var name_label: Label = $Control/name_label
 
 const STEP := 16
 const JUMP_STEP := 32
@@ -137,6 +138,7 @@ func _ready() -> void:
 	_label_start_pos = jump_point_label.position
 	run_timer.wait_time = G.sheep_run_timer
 	timer.start()
+	name_label.text = G.get_random_name()
 
 # --------------------------------------------------
 var want_to_run = false
@@ -488,3 +490,9 @@ func _on_run_timer_timeout() -> void:
 	await tween.finished
 	wool_explosion.queue_free()
 	queue_free()
+
+func show_name():
+	name_label.visible = true
+
+func hide_name():
+	name_label.visible = false

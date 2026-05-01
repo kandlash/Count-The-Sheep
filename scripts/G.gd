@@ -21,7 +21,7 @@ var upgrades := {} # id -> level
 var world: World
 
 var sheep_run_timer := 5.0
-
+var names: Array = []
 # =========================
 # 🐑 РЕДКОСТИ (ЕДИНЫЙ ИСТОЧНИК)
 # =========================
@@ -104,3 +104,19 @@ func _normalize_sheep_chances():
 
 	for k in sheep_chances.keys():
 		sheep_chances[k] = (sheep_chances[k] / total) * 100.0
+
+func _ready():
+	load_names()
+
+func load_names():
+	var file = FileAccess.open("res://scripts/data/names.json", FileAccess.READ)
+	if file:
+		var text = file.get_as_text()
+		names = JSON.parse_string(text)
+	else:
+		names = ["Sheep"]
+
+func get_random_name() -> String:
+	if names.is_empty():
+		return "Sheep"
+	return names[randi() % names.size()]
