@@ -13,6 +13,7 @@ config_version=5
 config/name="Count the sheep"
 run/main_scene="uid://bu0qhypduq5y8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/image="uid://sp8kvburud4p"
 config/icon="res://icon.svg"
 
 [audio]

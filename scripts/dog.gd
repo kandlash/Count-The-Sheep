@@ -249,6 +249,9 @@ var _click_tween: Tween
 func on_click():
 	click_particles.emitting = true
 	
+	# Звук лая
+	AudioManager.create_2d_audio_at_location(global_position, SoundEffect.SOUND_EFFECT_TYPE.DOG_WOOF)
+	
 	if _click_tween:
 		_click_tween.kill()
 
@@ -262,12 +265,18 @@ func on_click():
 		_base_scale.y * stretch.y
 	)
 
+	var original_y = position.y
+
 	_click_tween = create_tween()
 	_click_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
-	# squash
+	# squash + прыжок вверх
 	_click_tween.tween_property(self, "scale", target_squash, 0.08)
-	# stretch (отскок)
+	_click_tween.parallel().tween_property(self, "position:y", original_y - 15.0, 0.08)
+	
+	# stretch (отскок) + возврат вниз
 	_click_tween.tween_property(self, "scale", target_stretch, 0.1)
+	_click_tween.parallel().tween_property(self, "position:y", original_y, 0.1)
+	
 	# возврат в норму
 	_click_tween.tween_property(self, "scale", Vector2(_base_scale.x * _facing, _base_scale.y), 0.08)
